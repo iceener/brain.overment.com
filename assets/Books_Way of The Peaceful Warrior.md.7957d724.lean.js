@@ -1,0 +1,1 @@
+import{_ as e,c as a,o}from"./app.4f5bed01.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Way of The Peaceful Warrior.md"}'),r={name:"Books/Way of The Peaceful Warrior.md"};function t(c,s,n,_,f,i){return o(),a("div")}const l=e(r,[["render",t]]);export{d as __pageData,l as default};

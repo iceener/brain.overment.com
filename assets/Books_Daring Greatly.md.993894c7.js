@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./app.7e6380bf.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Daring Greatly.md"}'),r={name:"Books/Daring Greatly.md"};function o(n,s,c,i,_,p){return a(),t("div")}const m=e(r,[["render",o]]);export{l as __pageData,m as default};
