@@ -1,5 +1,5 @@
 export default {
-    base: '/brain.overment.com/',
+    base: '/',
     title: 'brain.overment.com',
     description: 'Everything I know',
     themeConfig: {

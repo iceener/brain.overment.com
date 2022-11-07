@@ -9,3 +9,9 @@
     display: block;
     width: 150px;
 }
+
+[alt="avatar"] {
+    width: 150px;
+    border: 1px solid #1a1a1a;
+    border-radius: 3px;
+}
