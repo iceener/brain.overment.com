@@ -1,1 +1,0 @@
-import{_ as e,c as o,o as t}from"./app.ef8d2e1f.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Deep Work.md"}'),r={name:"Books/Deep Work.md"};function a(s,c,n,p,_,d){return t(),o("div")}const f=e(r,[["render",a]]);export{m as __pageData,f as default};

@@ -1,1 +1,0 @@
-import{_ as e,c as o,o as s}from"./app.ef8d2e1f.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Fooled by Randomness.md"}'),t={name:"Books/Fooled by Randomness.md"};function a(n,r,c,d,_,m){return s(),o("div")}const l=e(t,[["render",a]]);export{i as __pageData,l as default};

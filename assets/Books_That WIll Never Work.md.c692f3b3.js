@@ -1,1 +1,0 @@
-import{_ as e,c as t,o}from"./app.ef8d2e1f.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/That WIll Never Work.md"}'),r={name:"Books/That WIll Never Work.md"};function a(s,c,n,_,l,p){return o(),t("div")}const m=e(r,[["render",a]]);export{i as __pageData,m as default};

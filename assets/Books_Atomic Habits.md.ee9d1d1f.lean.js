@@ -1,1 +1,0 @@
-import{_ as t,c as e,o}from"./app.ef8d2e1f.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Atomic Habits.md"}'),a={name:"Books/Atomic Habits.md"};function s(c,r,i,n,_,m){return o(),e("div")}const f=t(a,[["render",s]]);export{d as __pageData,f as default};
