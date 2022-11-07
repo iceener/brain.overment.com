@@ -1,1 +1,0 @@
-import{_ as t,c as e,o}from"./app.7e6380bf.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Projects/Automation House.md"}'),a={name:"Projects/Automation House.md"};function s(r,n,c,i,_,m){return o(),e("div")}const d=t(a,[["render",s]]);export{u as __pageData,d as default};
