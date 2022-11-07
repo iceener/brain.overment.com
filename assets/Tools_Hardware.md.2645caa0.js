@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as r}from"./app.ef8d2e1f.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Tools/Hardware.md"}'),t={name:"Tools/Hardware.md"};function o(s,c,n,d,p,_){return r(),a("div")}const m=e(t,[["render",o]]);export{l as __pageData,m as default};

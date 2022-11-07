@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app.ef8d2e1f.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Antifragile.md"}'),o={name:"Books/Antifragile.md"};function r(n,s,c,i,p,_){return a(),t("div")}const l=e(o,[["render",r]]);export{d as __pageData,l as default};

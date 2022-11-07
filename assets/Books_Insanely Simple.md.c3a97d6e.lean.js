@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app.ef8d2e1f.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Insanely Simple.md"}'),n={name:"Books/Insanely Simple.md"};function o(s,r,c,p,i,l){return a(),t("div")}const d=e(n,[["render",o]]);export{m as __pageData,d as default};
