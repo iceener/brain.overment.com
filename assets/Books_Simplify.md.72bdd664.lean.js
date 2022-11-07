@@ -1,0 +1,1 @@
+import{_ as e,c as t,o}from"./app.3d401718.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Simplify.md"}'),a={name:"Books/Simplify.md"};function r(s,c,i,n,p,m){return o(),t("div")}const d=e(a,[["render",r]]);export{f as __pageData,d as default};
