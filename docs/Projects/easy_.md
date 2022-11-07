@@ -14,7 +14,8 @@ As for now in easy_ we are creating a products like:
 - EasyCookie — create a beautiful cookie consent popups
 - EasyFaq — generate FAQ sections without writing a line of code
 
-**Updates:**
+## Updates:
+- November 2022 EasyCart exceedes PLN 14,000,000 in transactions
 - October 2022 EasyCart exceedes PLN 11,000,000 in transactions
 - September 2022 EasyCart exceedes PLN 6,000,000 in transactions 
 - August 2022 EasyCart exceedes PLN 5,000,000 in transactions
