@@ -1,0 +1,11 @@
+:root {
+    --vp-c-brand: #FF00FB;
+    --vp-c-brand-light: #747bff;
+}
+
+
+[alt="overment-photo"] {
+    margin: 0 auto 25px;
+    display: block;
+    width: 150px;
+}

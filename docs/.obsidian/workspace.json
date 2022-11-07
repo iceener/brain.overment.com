@@ -1,0 +1,164 @@
+{
+  "main": {
+    "id": "6d074a45b381b23a",
+    "type": "split",
+    "children": [
+      {
+        "id": "f3d2624d15ed9088",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4a801f24b1eac8e1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Core/Process.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "19b85c7d170a1800",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Books/The Happines Advantage.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f8f7b1853377cd22",
+    "type": "split",
+    "children": [
+      {
+        "id": "6f170e6caa4abada",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "361fe435686e4265",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4f97eaec68061bbc",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "29401cccf1ec080a",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "7ab9e5a7762334f2",
+    "type": "split",
+    "children": [
+      {
+        "id": "d0800f318d65c68f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0092c39a4ca69596",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Core/Process.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e2baa40aaec97739",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Core/Process.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "44c9464c0ebcb585",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "e0cbdecd7121116f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Core/Process.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "4a801f24b1eac8e1",
+  "lastOpenFiles": [
+    "Tools/Automation.md",
+    "Tools/Apps.md",
+    "Core/Understanding.md",
+    "Books/Daring Greatly.md",
+    "Books/Untitled.md",
+    "Untitled.md",
+    "Books/Principles.md",
+    "index.md",
+    "Core/Values.md",
+    "Core/Process.md"
+  ]
+}
