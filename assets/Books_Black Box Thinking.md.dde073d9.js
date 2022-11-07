@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as t}from"./app.7e6380bf.js";const B=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Black Box Thinking.md"}'),a={name:"Books/Black Box Thinking.md"};function n(c,r,s,i,_,p){return t(),o("div")}const d=e(a,[["render",n]]);export{B as __pageData,d as default};

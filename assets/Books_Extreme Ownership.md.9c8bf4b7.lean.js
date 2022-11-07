@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as r}from"./app.7e6380bf.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Extreme Ownership.md"}'),o={name:"Books/Extreme Ownership.md"};function s(a,n,c,p,i,_){return r(),t("div")}const f=e(o,[["render",s]]);export{d as __pageData,f as default};

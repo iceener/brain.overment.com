@@ -1,1 +1,0 @@
-import{_ as t,c as e,o}from"./app.88c364b5.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/War of Art.md"}'),r={name:"Books/War of Art.md"};function a(s,c,n,_,p,f){return o(),e("div")}const m=t(r,[["render",a]]);export{i as __pageData,m as default};
