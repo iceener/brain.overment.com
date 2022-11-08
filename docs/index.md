@@ -6,7 +6,7 @@ Please keep in mind, that this project won't be finished. What's most important,
 
 ## The most important topics: 
 
-- My [Process](Core/Process.md) which allows me to move in the [Direction](Core/Direction.md) I have set for myself, based on my [Values](Core/Values.md) and [Understanding](Core/Understanding.md)
+- My [Process](Core/Process.md) which allows me to move in the [Direction](Core/Direction.md) I have set for myself, based on my [Values](Core/Values.md) and [Knowing thyself](Core/Knowing%20thyself.md)
 - How I learn based on my [Learning System](Core/Learning%20System.md)
 - Everything I know about [Mental Models](Mental%20Models/Mental%20Models.md)
 - My thoughts about [Books](Books/Books.md) I read

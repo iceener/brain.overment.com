@@ -12,7 +12,7 @@ This statement appears in every day, in almost every action I take. To put this 
 
 ## How do I define my Direction
 
-It was a pretty long process I've described here — [Understanding](Understanding.md). In a some way I was feeling this all the time, but it wasn't easy to put this in a simple words.
+It was a pretty long process I've described here — [Knowing thyself](Knowing%20thyself.md). In a some way I was feeling this all the time, but it wasn't easy to put this in a simple words.
 
 ## Do I use goals?
 

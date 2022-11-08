@@ -39,7 +39,7 @@ Among other reasons I use goals on a case-by-case basis. Previously I used an OK
 I operate on a basis of a continously optimized process that takes into account: 
 
 - Fundaments (a sleep, diet, sports, relax)
-- Getting to know myself by writing and reading my journal and [Understanding](Understanding.md) myself with i.e. [StrengthsFinder](https://www.gallup.com/cliftonstrengths/en/254033/strengthsfinder.aspx), MBTI or [Principles You](https://principlesyou.com/) assesments
+- Getting to know myself by writing and reading my journal and [Knowing thyself](Knowing%20thyself.md) myself with i.e. [StrengthsFinder](https://www.gallup.com/cliftonstrengths/en/254033/strengthsfinder.aspx), MBTI or [Principles You](https://principlesyou.com/) assesments
 - My environment (people, newsfeed)
 - Development of a [Learning System](Learning%20System.md)
 - Learning about [Mental Models](../Mental%20Models/Mental%20Models.md)
@@ -71,7 +71,7 @@ While designing my Process I rely on:
 - Not giving up (unless it's a matter of honor or a common sense) ([Grit](../Books/Grit.md) and [That WIll Never Work](../Books/That%20WIll%20Never%20Work.md))
 - Learning everything about everything ([Range](../Books/Range.md) and [Rebel Ideas](../Books/Rebel%20Ideas.md))
 - Making a smart decisions ([All I want to Know is Where Im Going to Die So Ill Never Go There](../Books/All%20I%20want%20to%20Know%20is%20Where%20Im%20Going%20to%20Die%20So%20Ill%20Never%20Go%20There.md), [The Great Mental Models](../Books/The%20Great%20Mental%20Models.md), [Seeking Wisdom](../Books/Seeking%20Wisdom.md), [Gladiators Pirates and Games of Trust](../Books/Gladiators%20Pirates%20and%20Games%20of%20Trust.md))
-- [Understanding](Understanding.md) myself ([Understanding the INFJ Personality Type](../Books/Understanding%20the%20INFJ%20Personality%20Type.md))
+- [Knowing thyself](Knowing%20thyself.md) myself ([Understanding the INFJ Personality Type](../Books/Understanding%20the%20INFJ%20Personality%20Type.md))
 - Questioning Authority, especially mine ([Authority Bias](../Mental%20Models/Authority%20Bias.md))
 - Shaping Shaping and updating the so-called "Models of Reality" ([The Code of The Extraordinary Mind](../Books/The%20Code%20of%20The%20Extraordinary%20Mind.md))
 - Bending reality to my will with [Can't Hurt Me](../Books/Cant%20Hurt%20Me.md)

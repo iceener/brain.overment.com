@@ -15,7 +15,7 @@ It is good to live playing the Wealth Game instead of seeking Status. It is usef
 
 ## Specific Knowledge 
 
-This is a type of knowledge that cannot be transferred and its [Automation](../Tools/Automation.md) is not possible. If someone can teach you something, it means they can also teach somone else. Such knowledge, in my opinion, comes from a combination of natural predispositions [Understanding](../Core/Understanding.md), hard work ([Process](../Core/Process.md)) and combining that with the unique qualities of our character.
+This is a type of knowledge that cannot be transferred and its [Automation](../Tools/Automation.md) is not possible. If someone can teach you something, it means they can also teach somone else. Such knowledge, in my opinion, comes from a combination of natural predispositions [Knowing thyself](../Core/Knowing%20thyself.md), hard work ([Process](../Core/Process.md)) and combining that with the unique qualities of our character.
 
 ## Lessons
 - Learn to build and sell: **you will become unstoppable.**
