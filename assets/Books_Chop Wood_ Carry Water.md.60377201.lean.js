@@ -1,1 +1,0 @@
-import{_ as o,c as e,o as r}from"./app.4f5bed01.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Chop Wood, Carry Water.md"}'),t={name:"Books/Chop Wood, Carry Water.md"};function a(s,c,n,_,p,d){return r(),e("div")}const f=o(t,[["render",a]]);export{m as __pageData,f as default};

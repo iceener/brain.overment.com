@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app.506c884f.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/The Great Mental Models.md"}'),o={name:"Books/The Great Mental Models.md"};function r(s,n,c,_,d,l){return a(),t("div")}const m=e(o,[["render",r]]);export{i as __pageData,m as default};
