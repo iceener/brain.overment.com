@@ -30,7 +30,7 @@ export default {
                     { text: 'Direction', link: '/Core/Direction.md' },
                     { text: 'Learning System', link: '/Core/Learning System.md' },
                     { text: 'Process', link: '/Core/Process.md' },
-                    { text: 'Understanding', link: '/Core/Understanding.md' },
+                    { text: 'Knowing thyself', link: '/Core/Knowing thyself.md' },
                     { text: 'Values', link: '/Core/Values.md' },
                 ]
             },
