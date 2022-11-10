@@ -8,6 +8,18 @@
     background: #1a1a1a;
 }
 
+@media(max-width: 600px) {
+    .search-text {
+        font-size: 9px;
+        padding: 3px 14px;
+    }
+}
+
+.modal {
+    min-width: initial;
+    max-width: 95vw;
+}
+
 
 [alt="overment-photo"] {
     margin: 0 auto 25px;
