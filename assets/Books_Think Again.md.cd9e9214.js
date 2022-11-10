@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app.ace293b6.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Think Again.md"}'),n={name:"Books/Think Again.md"};function o(r,s,c,i,_,p){return a(),t("div")}const f=e(n,[["render",o]]);export{m as __pageData,f as default};

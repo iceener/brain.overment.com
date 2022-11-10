@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app.ace293b6.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Range.md"}'),o={name:"Books/Range.md"};function n(r,s,c,p,_,d){return a(),t("div")}const f=e(o,[["render",n]]);export{m as __pageData,f as default};

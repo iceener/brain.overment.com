@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as t,d as r}from"./app.506c884f.js";const m=JSON.parse('{"title":"eduweb & ahoy!","description":"","frontmatter":{},"headers":[],"relativePath":"Projects/eduweb.md"}'),o={name:"Projects/eduweb.md"},i=r("",32),n=[i];function s(p,l,c,h,d,w){return t(),a("div",null,n)}const g=e(o,[["render",s]]);export{m as __pageData,g as default};
