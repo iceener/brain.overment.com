@@ -1,3 +1,7 @@
+---
+title: Fooled by Randomness
+---
+
 # Fooled by Randomness
 
 Usually we don't even realize how huge an impact randomness has on our lives. And the important word here is 'huge' and not total.

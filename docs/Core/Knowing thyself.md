@@ -1,3 +1,7 @@
+---
+title: How do I learn about myself?
+---
+
 # How do I learn about myself?
 
 > *Temet Nosce (ltn. Know Thyself)*

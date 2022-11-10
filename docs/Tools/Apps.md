@@ -1,3 +1,7 @@
+---
+title: Applications I use
+---
+
 # Applications I use
 
 This is a lastest (Nov 2022) list of apps I use:

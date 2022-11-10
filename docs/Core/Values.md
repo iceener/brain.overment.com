@@ -1,3 +1,7 @@
+---
+title: My Values
+---
+
 # My Values
 
 My fundamental values guides me throguh a decision making process. My [Process](Process.md) and a Direction are coming directly from them.

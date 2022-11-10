@@ -1,3 +1,7 @@
+---
+title: Direction
+---
+
 # Direction
 
 Direction has almost enirely replaced my Goals. Instead of trying **to predict where I want to go**, I just have a clear direction in which I'm heading. This may be equated with a vision or life philosophy, which I wrote more about when I was writing about my [Values](Values.md)

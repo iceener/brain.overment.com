@@ -1,3 +1,7 @@
+---
+title: Deep Work
+---
+
 # Deep Work
 
 This is a book which I recommend most often. I believe that everyone should read it, because we live in a world full of distractions — from notifications to bad habits of reaching for the phone every few minutes. 

@@ -1,3 +1,7 @@
+---
+title: eduweb & ahoy!
+---
+
 # eduweb & ahoy!
 
 eduweb is an educational platform with video courses for tech outliers. 

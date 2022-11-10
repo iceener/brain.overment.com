@@ -1,3 +1,7 @@
+---
+title: All I want to Know is Where Im Going to Die So Ill Never Go There
+---
+
 # All I want to Know is Where Im Going to Die So Ill Never Go There
 
 One of the more interesting form of books I've read. The whole thing takes the form of a dialogue between Warren Buffet, Charlie Munger, a librarian, and a Seeker.
