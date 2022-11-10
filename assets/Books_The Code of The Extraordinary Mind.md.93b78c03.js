@@ -1,1 +1,0 @@
-import{_ as e,c as o,o as r}from"./app.ace293b6.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/The Code of The Extraordinary Mind.md"}'),t={name:"Books/The Code of The Extraordinary Mind.md"};function a(n,d,s,_,c,i){return r(),o("div")}const h=e(t,[["render",a]]);export{f as __pageData,h as default};

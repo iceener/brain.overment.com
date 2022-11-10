@@ -1,0 +1,1 @@
+import{_ as e,c as t,o}from"./app.e009ea81.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Think Like a Rocket Scientist.md"}'),a={name:"Books/Think Like a Rocket Scientist.md"};function c(i,n,s,r,_,k){return o(),t("div")}const m=e(a,[["render",c]]);export{d as __pageData,m as default};
