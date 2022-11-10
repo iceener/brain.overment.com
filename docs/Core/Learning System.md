@@ -1,3 +1,7 @@
+---
+title: My Learning System
+---
+
 # My Learning System
 
 I consider the ability to **learn quickly** as one of the most important of all, especailly in the face of a very fast-changing world. I also believe that it's a skill that can simply be developed with some discipline and a good habits.

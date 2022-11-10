@@ -1,3 +1,7 @@
+---
+title: Daring Greatly
+---
+
 # Daring Greatly
 
 This book teaches something important:

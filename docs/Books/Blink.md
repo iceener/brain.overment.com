@@ -1,3 +1,7 @@
+---
+title: Blink
+---
+
 # Blink
 
 For as long as I can remember Intuition has played a key role in my life and since I realized this, I have been intentionally observing its presence and exploring all available materials on it.

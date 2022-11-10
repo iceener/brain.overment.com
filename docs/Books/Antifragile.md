@@ -1,3 +1,7 @@
+---
+title: Antifragile
+---
+
 # Antifragile
 
 If we think of the opposite of fragility, strength or hardness comes to mind. However even if we imagine a super-hard material, there is a good chance that we can find a harder one, use a wek point or [Leverage](../Mental%20Models/Leverage.md) to destroy or permanently damage it.

@@ -1,3 +1,7 @@
+---
+title: Black Box Thinking
+---
+
 # Black Box Thinking
 
 In book [Antifragile](Antifragile.md) we can learn why it is so safe to fly a plane. One of the main reasons is that, every mistake (or disaster) that occurs, contributes to the creation of new procedures that makes a whole system better.

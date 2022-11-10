@@ -1,3 +1,7 @@
+---
+title: My Automations
+---
+
 # My Automations
 
 > Every great software developer, for example, now has an army of robots working for him at nighttime while he or she sleeps, after they’ve written the code, and it’s cranking away. ~ Naval Ravikant

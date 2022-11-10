@@ -1,3 +1,7 @@
+---
+title: My Process
+---
+
 # My Process
 
 My everyday activities are based on a process I've created for myself. To make it better each day and what's more important, to make it effective, I'm constantly questioning, modyfing and improving it. It probably **will not work for you**, but you will certainly find plenty of inspiration and resources, which may help you build your own. 

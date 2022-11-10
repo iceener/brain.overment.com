@@ -1,3 +1,7 @@
+---
+title: Almanack of Naval Ravikant
+---
+
 # Almanack of Naval Ravikant
 
 
