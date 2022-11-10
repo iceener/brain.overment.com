@@ -4,6 +4,10 @@
     --vp-c-brand-dark: #a518a3;
 }
 
+.search-text {
+    background: #1a1a1a;
+}
+
 
 [alt="overment-photo"] {
     margin: 0 auto 25px;
