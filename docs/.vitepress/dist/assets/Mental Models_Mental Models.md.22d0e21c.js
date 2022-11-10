@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./app.3d401718.js";const M=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Mental Models/Mental Models.md"}'),o={name:"Mental Models/Mental Models.md"};function s(n,r,l,c,d,_){return a(),t("div")}const i=e(o,[["render",s]]);export{M as __pageData,i as default};
