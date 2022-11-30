@@ -19,6 +19,7 @@ The most important thing to me is performance of the hardware, minimalistic desi
 - Razer Seiren Pro Microphone & Rode PSA-1
 - Apple Magic Keyboard / Keychron K3
 - Apple Magic Trackpad
+- Logitech MX Master 3S for Mac
 - iPhone 13 Pro Max 512GB with [dbrand skin](https://dbrand.com)
 - AirPods Pro 2
 - AirPods Max

@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "527fb28f26f3b1e3",
+        "id": "b9aa2632897afb59",
         "type": "tabs",
         "children": [
           {
-            "id": "c40d1344288dc69a",
+            "id": "36c2426e3741d00e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Core/Knowing thyself.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -69,7 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 326.5
   },
   "right": {
     "id": "7ab9e5a7762334f2",
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Core/Knowing thyself.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Core/Knowing thyself.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Core/Knowing thyself.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -136,17 +128,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "c40d1344288dc69a",
+  "active": "36c2426e3741d00e",
   "lastOpenFiles": [
-    "Books/How to Fail at Almost Anything and Still Win Big.md",
-    "Books/Grit.md",
-    "Books/Great by Choice.md",
-    "Books/Fooled by Randomness.md",
-    "Books/Extreme Ownership.md",
-    "Books/Deep Work.md",
+    "Tools/Hardware.md",
+    "Books/All I want to Know is Where Im Going to Die So Ill Never Go There.md",
+    "Books/Books.md",
+    "Books/Book2.md",
+    "Books/Book.md",
+    "Books/Atomic Habits.md",
+    "Books/Blink.md",
     "Books/Daring Greatly.md",
-    "Books/Chop Wood, Carry Water.md",
     "Books/Cant Hurt Me.md",
-    "Books/Books.md"
+    "Tools/Apps.md"
   ]
 }
