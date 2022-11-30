@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as t}from"./app.e009ea81.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/The Happines Advantage.md"}'),n={name:"Books/The Happines Advantage.md"};function o(s,r,p,c,_,d){return t(),a("div")}const f=e(n,[["render",o]]);export{m as __pageData,f as default};
