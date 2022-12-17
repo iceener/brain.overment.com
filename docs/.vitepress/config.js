@@ -9,6 +9,7 @@ export default {
         ['link', { rel: "manifest", href: "/assets/img/favicons/site.webmanifest"}],
         ['link', { rel: "mask-icon", href: "/assets/img/favicons/safari-pinned-tab.svg", color: "#3a0839"}],
         ['link', { rel: "shortcut icon", href: "/assets/img/favicons/favicon.ico"}],
+        ['script', { src: "https://cdn.tailwindcss.com" }],
         ['meta', { name: "msapplication-TileColor", content: "#3a0839"}],
         ['meta', { name: "msapplication-config", content: "/assets/img/favicons/browserconfig.xml"}],
         ['meta', { name: "theme-color", content: "#ffffff"}],
