@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a}from"./app.013e8c71.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Mental Models/Status Quo Bias.md"}'),s={name:"Mental Models/Status Quo Bias.md"};function o(r,n,c,_,i,d){return a(),e("div")}const u=t(s,[["render",o]]);export{l as __pageData,u as default};

@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as t}from"./app.013e8c71.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Learning/Huberman Lab.md"}'),r={name:"Learning/Huberman Lab.md"};function n(o,s,c,_,i,m){return t(),a("div")}const f=e(r,[["render",n]]);export{d as __pageData,f as default};
