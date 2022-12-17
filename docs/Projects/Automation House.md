@@ -1,4 +1,8 @@
-## Automation House
+---
+title: Automation House
+---
+
+# Automation House
 
 ![automation.house](https://cloud.overment.com/ah_primary_logo_color_white-1667826493/ah_primary_logo_color_white.png)
 

@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "f85b412d1abd05cb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Projects/overment.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Core/Knowing thyself.md",
+                "file": "Projects/overment.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Core/Knowing thyself.md",
+                "file": "Projects/overment.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Core/Knowing thyself.md"
+                "file": "Projects/overment.md"
               }
             }
           }
@@ -136,17 +149,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "36c2426e3741d00e",
+  "active": "f85b412d1abd05cb",
   "lastOpenFiles": [
+    "Projects/Design Maestro.md",
+    "Projects/easy_.md",
+    "Projects/eduweb.md",
+    "Projects/overment.md",
+    "Projects/My Projects.md",
+    "Projects/Automation House.md",
+    "Core/Learning System.md",
+    "Core/Knowing thyself.md",
     "Core/Direction.md",
-    "Mental Models/20 Mile March.md",
-    "Mental Models/Authority Bias.md",
-    "Tools/Hardware.md",
-    "Books/All I want to Know is Where Im Going to Die So Ill Never Go There.md",
-    "Books/Books.md",
-    "Books/Book2.md",
-    "Books/Book.md",
-    "Books/Atomic Habits.md",
-    "Books/Blink.md"
+    "Untitled.md"
   ]
 }
