@@ -1,0 +1,1 @@
+import{_ as e,o as r,c as a,d as t}from"./app.1a24f5f4.js";const _=JSON.parse('{"title":"Applications I use","description":"","frontmatter":{"title":"Applications I use"},"headers":[],"relativePath":"Tools/Apps.md"}'),l={name:"Tools/Apps.md"},o=t("",3),i=[o];function n(p,s,f,h,c,d){return r(),a("div",null,i)}const g=e(l,[["render",n]]);export{_ as __pageData,g as default};

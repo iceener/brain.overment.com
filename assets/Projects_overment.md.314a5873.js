@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as r}from"./app.db776b52.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Projects/overment.md"}'),o={name:"Projects/overment.md"};function a(n,s,c,m,p,_){return t(),r("div")}const f=e(o,[["render",a]]);export{i as __pageData,f as default};

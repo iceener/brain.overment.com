@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as o}from"./app.db776b52.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Principles.md"}'),r={name:"Books/Principles.md"};function s(a,c,n,i,p,_){return t(),o("div")}const m=e(r,[["render",s]]);export{l as __pageData,m as default};
