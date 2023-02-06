@@ -9,6 +9,12 @@ Ahoy! is a closed, paid community for them. Both projects are using [easy_](easy
 
 I've published many courses and hundreds of articles and posts both on eduweb and ahoy! You can find an examples below. 
 
+**Newsletter on Autopilot**
+
+I use automation to optimize a process for creating my newsletters. This includes generating graphics, social media posts and also configuring and archiving. In this course I teach how to use Airtable, Shortcuts and MailerLite to create newsletters way easier. 
+
+🔗 [Course page](https://eduweb.pl/marketing-i-biznes/biznes/newsletter-na-autopilocie)
+
 **Keyboard Maestro** (PL)
 
 Keyboard Maestro is a macOS application that allows you to automate almost any action you do on your mac. In this course, you will find practical examples and inspiration to help you create simple and powerful macros that will save you hours of work.

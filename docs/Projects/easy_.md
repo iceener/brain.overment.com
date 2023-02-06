@@ -4,6 +4,8 @@ title: easy_
 
 # easy_
 
+![](https://cloud.overment.com/Shared-Image-2023-01-04-19-51-11-1672858271.png)
+
 easy_ is one of my companies in which we are creating products for making online selling easier. All of those products stands out with a great UX and something called a `network effect` (e.g.: payment details are saved across all of our merchants, thanks to Stripe's technology).
 
 ![easy_](https://cloud.overment.com/Shared-Image-2022-11-07-12-08-48-1667819328/Shared-Image-2022-11-07-12-08-48.png)

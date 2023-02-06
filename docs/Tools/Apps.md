@@ -7,9 +7,12 @@ title: Applications I use
 This is a lastest (Nov 2022) list of apps I use:
 
 - [Arc](https://arc.net/) — Web Browser from The Browser Company
+- [GPT-3 API](beta.openai.com) — AI assistant
 - [Notion](https://www.notion.so/) — Advanced text editor in which I store almost everything
+- [Craft](https://craft.do/) — Text editor, smiliar to Notion
 - [Kindle](https://apps.apple.com/pl/app/amazon-kindle/id302584613?l=pl) & [Audible](https://audible.com/) & [Goodreads](https://www.goodreads.com/user/show/91387486-adam-gospodarczyk) — Apps for reading & listening
 - [Keyboard Maestro](https://www.keyboardmaestro.com/main/) — Automation app for MacOS
+- [Midjourney](https://midjourney.com/) — Text to image
 - [Shortcuts](https://apps.apple.com/us/app/shortcuts/id915249334) — Automation app for MacOS & iOS & iPadOS
 - [Better Touch Tool](https://folivora.ai/) — App for custimizing gestures on trackpad
 - [Raycast](https://www.raycast.com/) — Advanced launcher for MacOS
@@ -30,7 +33,9 @@ This is a lastest (Nov 2022) list of apps I use:
 - [Headspace](https://headspace.com/) — Meditation app
 - [Rize](https://rize.io/) — Activity Tracker for MacOS
 - [Feedly](https://feedly.com/) — RSS Reader
+- [Texts](https://texts.com/) — All-in-one communicator
 - [1Password](https://1password.com/) — Password Manager
 - [IntelliJ](https://www.jetbrains.com/idea/) — IDE
 - [AirBuddy](https://v2.airbuddy.app/) — App for managing Airpods
-
+- [Balanceapp](https://www.balanceapp.com/) — Meditation app
+- [Texts](https://texts.com/) — Communicator for Instagram / Slack / Twitter / Discord

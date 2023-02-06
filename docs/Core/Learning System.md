@@ -37,10 +37,10 @@ At the end you can say thtat my learning process is all about:
 
 I don't measure it in any way, but learning is my habit and integral part of my day. This means that I use practically **every free moment to learn something**. AT the same time I also have space for total non-thinking, rest and silence, which I also see as a important part of the process of acquring knowledge ([Huberman Lab](../Learning/Huberman%20Lab.md) again, confirm that).
 
-## Newsletters I subscribe to
+## Newsletters I like to read
 
 - [trends.co](https://trends.co)
-- [trends.vc/(https://trends.vc/)
+- [trends.vc](https://trends.vc/)
 - [visualizevalue.substack.com](https://visualizevalue.substack.com)
 - [newsletter.pragmaticengineer.com](https://newsletter.pragmaticengineer.com)
 - [jamesclear.com/newsletter](https://jamesclear.com/newsletter)

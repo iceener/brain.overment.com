@@ -24,6 +24,5 @@ Of course I do. I believe in a some situations that's a good thing to have somet
 
 I've learned a lot about a proper attitude towards goals from books [Chop Wood, Carry Water](../Books/Chop%20Wood,%20Carry%20Water.md), [Way of The Peaceful Warrior](../Books/Way%20of%20The%20Peaceful%20Warrior.md) and [How to Fail at Almost Anything and Still Win Big](../Books/How%20to%20Fail%20at%20Almost%20Anything%20and%20Still%20Win%20Big.md).
 
---- title: VitePress ---
 
 
