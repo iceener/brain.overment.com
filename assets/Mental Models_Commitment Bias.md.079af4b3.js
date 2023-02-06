@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./app.e94dbe1f.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Mental Models/Commitment Bias.md"}'),o={name:"Mental Models/Commitment Bias.md"};function s(n,r,m,c,i,_){return t(),a("div")}const l=e(o,[["render",s]]);export{p as __pageData,l as default};

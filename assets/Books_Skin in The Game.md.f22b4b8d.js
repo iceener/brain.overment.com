@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./app.1a24f5f4.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Skin in The Game.md"}'),n={name:"Books/Skin in The Game.md"};function o(r,s,c,i,_,m){return t(),a("div")}const f=e(n,[["render",o]]);export{d as __pageData,f as default};
