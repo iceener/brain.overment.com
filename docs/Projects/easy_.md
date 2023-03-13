@@ -6,6 +6,8 @@ title: easy_
 
 ![](https://cloud.overment.com/Shared-Image-2023-01-04-19-51-11-1672858271.png)
 
+🔗 https://easy.tools
+
 easy_ is one of my companies in which we are creating products for making online selling easier. All of those products stands out with a great UX and something called a `network effect` (e.g.: payment details are saved across all of our merchants, thanks to Stripe's technology).
 
 ![easy_](https://cloud.overment.com/Shared-Image-2022-11-07-12-08-48-1667819328/Shared-Image-2022-11-07-12-08-48.png)
@@ -21,6 +23,8 @@ As for now in easy_ we are creating a products like:
 - EasyFaq — generate FAQ sections without writing a line of code
 
 ## Updates:
+
+- March 2023 EasyCart exeedes PLN 20,000,000 in transactions
 - November 2022 EasyCart exceedes PLN 14,000,000 in transactions
 - October 2022 EasyCart exceedes PLN 11,000,000 in transactions
 - September 2022 EasyCart exceedes PLN 6,000,000 in transactions 

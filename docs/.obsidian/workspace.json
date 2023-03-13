@@ -4,22 +4,47 @@
     "type": "split",
     "children": [
       {
-        "id": "2265a33e876afe5f",
+        "id": "170b4ed1a910f162",
         "type": "tabs",
         "children": [
           {
-            "id": "0e50158e3a46904e",
+            "id": "716cd38cb4684580",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tools/Apps.md",
+                "file": "Projects/eduweb & Ahoy!.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "dc0b93e1d3819a97",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tools/Hardware.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "70322756bce6d947",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Apps/Superhuman.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -85,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tools/Apps.md",
+                "file": "Apps/Superhuman.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Tools/Apps.md",
+                "file": "Apps/Superhuman.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tools/Apps.md"
+                "file": "Apps/Superhuman.md"
               }
             }
           }
@@ -146,17 +171,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0e50158e3a46904e",
+  "active": "70322756bce6d947",
   "lastOpenFiles": [
-    "Tools/Apps.md",
-    "Tools/Tools.md",
+    "Projects/eduweb & Ahoy!.md",
     "Tools/Hardware.md",
+    "Apps/Superhuman.md",
+    "Apps",
     "Tools/Automation.md",
-    "Core/Learning System.md",
-    "Core/Direction.md",
-    "Sharing/JavaScript.md",
+    "Tools/Apps.md",
+    "Projects/overment.md",
     "Projects/Design Maestro.md",
     "Projects/Automation House.md",
-    "Mental Models/20 Mile March.md"
+    "Projects/easy_.md",
+    "Projects/My Projects.md",
+    "index.md",
+    "qa.md",
+    "Learning/Huberman Lab.md",
+    "Core/Knowing thyself.md",
+    "Core/Learning System.md",
+    "Core/Process.md",
+    "Core/Values.md",
+    "Core/Direction.md",
+    "Sharing/JavaScript.md"
   ]
 }
