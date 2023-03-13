@@ -6,6 +6,7 @@ title: How do I learn about myself?
 
 > *Temet Nosce (ltn. Know Thyself)*
 
+Getting to know myself has become important to me.
 
 **A short context before we start:** 
 ⚠️ Personality tests are tools. They don't define anything, they just point out useful parts. Their greatest advantage is that they encourage self-reflection and comparison of their results with reality. Performing the test does not give much. I only became effective after exploring the enclosed materials and reading books about them. 

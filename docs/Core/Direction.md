@@ -4,7 +4,7 @@ title: Direction
 
 # Direction
 
-Direction has almost enirely replaced my Goals. Instead of trying **to predict where I want to go**, I just have a clear direction in which I'm heading. This may be equated with a vision or life philosophy, which I wrote more about when I was writing about my [Values](Values.md)
+Direction has **almost** enirely replaced my Goals. Instead of trying **to predict where I want to go**, I just have a clear direction in which I'm heading. This may be equated with a vision or life philosophy, which I wrote more about when I was writing about my [Values](Values.md)
 
 With a clearly defined direction, I just have to make sure, that I'm continually optimize my [Process](Process.md) and moving with the same pace — this is an example of using [20 Mile March](../Mental%20Models/20%20Mile%20March.md).
 
