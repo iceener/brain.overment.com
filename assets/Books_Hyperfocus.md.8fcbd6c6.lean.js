@@ -1,0 +1,1 @@
+import{_ as e,o,c as t}from"./app.c00a1f99.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Hyperfocus.md"}'),r={name:"Books/Hyperfocus.md"};function s(a,c,n,p,_,f){return o(),t("div")}const m=e(r,[["render",s]]);export{i as __pageData,m as default};
