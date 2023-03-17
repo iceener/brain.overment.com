@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Apps/Superhuman.md",
+                "file": "Projects/eduweb.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Apps/Superhuman.md",
+                "file": "Projects/eduweb.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Apps/Superhuman.md",
+                "file": "Projects/eduweb.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Apps/Superhuman.md"
+                "file": "Projects/eduweb.md"
               }
             }
           }
@@ -148,6 +148,8 @@
   },
   "active": "4ad715a6ca1f7556",
   "lastOpenFiles": [
-    "Projects/Automation House.md"
+    "Apps/Superhuman.md",
+    "Projects/Automation House.md",
+    "Projects/eduweb.md"
   ]
 }

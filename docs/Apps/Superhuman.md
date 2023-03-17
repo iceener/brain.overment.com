@@ -1,7 +1,7 @@
-
 ---
 title: Superhuman
 ---
+
 Superhuman is a fantastic email client focused on high efficiency through keyboard shortcuts support and a well-optimized UI. Its significant limitation is that it connects exclusively to Gmail or GSuite and Outlook mailboxes.
 
 **Errors:**
