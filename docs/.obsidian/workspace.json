@@ -1,38 +1,14 @@
 {
   "main": {
-    "id": "6d074a45b381b23a",
+    "id": "62d3882da32ed2a6",
     "type": "split",
     "children": [
       {
-        "id": "170b4ed1a910f162",
+        "id": "b34b9804e25f6356",
         "type": "tabs",
         "children": [
           {
-            "id": "716cd38cb4684580",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Projects/eduweb & Ahoy!.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "dc0b93e1d3819a97",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tools/Hardware.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "70322756bce6d947",
+            "id": "4ad715a6ca1f7556",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -43,22 +19,21 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "f8f7b1853377cd22",
+    "id": "57a9064af0dcba7a",
     "type": "split",
     "children": [
       {
-        "id": "6f170e6caa4abada",
+        "id": "8e2c76f523ab7a62",
         "type": "tabs",
         "children": [
           {
-            "id": "361fe435686e4265",
+            "id": "0c57d14fcf54e7a5",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -68,7 +43,7 @@
             }
           },
           {
-            "id": "4f97eaec68061bbc",
+            "id": "4656c3629fed332e",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -83,7 +58,7 @@
             }
           },
           {
-            "id": "29401cccf1ec080a",
+            "id": "c1925c2a556b9882",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -94,27 +69,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5
+    "width": 300
   },
   "right": {
-    "id": "7ab9e5a7762334f2",
+    "id": "b88000dbb0ddc25a",
     "type": "split",
     "children": [
       {
-        "id": "d0800f318d65c68f",
+        "id": "9126514be83f5126",
         "type": "tabs",
         "children": [
           {
-            "id": "0092c39a4ca69596",
+            "id": "0959a9cb7af8a6a6",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-<<<<<<< HEAD
                 "file": "Apps/Superhuman.md",
-=======
-                "file": "Projects/eduweb & Ahoy!.md",
->>>>>>> 6513b276aa531dab3b49ec5bde698cf2613c4aa6
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,23 +97,19 @@
             }
           },
           {
-            "id": "e2baa40aaec97739",
+            "id": "6cc4d6abd7416de9",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-<<<<<<< HEAD
                 "file": "Apps/Superhuman.md",
-=======
-                "file": "Projects/eduweb & Ahoy!.md",
->>>>>>> 6513b276aa531dab3b49ec5bde698cf2613c4aa6
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "44c9464c0ebcb585",
+            "id": "9872eb82918c7652",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -153,16 +120,12 @@
             }
           },
           {
-            "id": "e0cbdecd7121116f",
+            "id": "b725d0a6be54d7c2",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-<<<<<<< HEAD
                 "file": "Apps/Superhuman.md"
-=======
-                "file": "Projects/eduweb & Ahoy!.md"
->>>>>>> 6513b276aa531dab3b49ec5bde698cf2613c4aa6
               }
             }
           }
@@ -183,38 +146,8 @@
       "command-palette:Open command palette": false
     }
   },
-<<<<<<< HEAD
-  "active": "70322756bce6d947",
+  "active": "4ad715a6ca1f7556",
   "lastOpenFiles": [
-    "Projects/eduweb & Ahoy!.md",
-    "Tools/Hardware.md",
-    "Apps/Superhuman.md",
-    "Apps",
-    "Tools/Automation.md",
-    "Tools/Apps.md",
-    "Projects/overment.md",
-=======
-  "active": "716cd38cb4684580",
-  "lastOpenFiles": [
-    "Projects/overment.md",
-    "Projects/eduweb & Ahoy!.md",
->>>>>>> 6513b276aa531dab3b49ec5bde698cf2613c4aa6
-    "Projects/Design Maestro.md",
-    "Projects/Automation House.md",
-    "Projects/easy_.md",
-    "Projects/My Projects.md",
-    "index.md",
-<<<<<<< HEAD
-=======
-    "Tools/Apps.md",
->>>>>>> 6513b276aa531dab3b49ec5bde698cf2613c4aa6
-    "qa.md",
-    "Learning/Huberman Lab.md",
-    "Core/Knowing thyself.md",
-    "Core/Learning System.md",
-    "Core/Process.md",
-    "Core/Values.md",
-    "Core/Direction.md",
-    "Sharing/JavaScript.md"
+    "Projects/Automation House.md"
   ]
 }
