@@ -110,7 +110,11 @@
             "state": {
               "type": "backlink",
               "state": {
+<<<<<<< HEAD
                 "file": "Apps/Superhuman.md",
+=======
+                "file": "Projects/eduweb & Ahoy!.md",
+>>>>>>> 6513b276aa531dab3b49ec5bde698cf2613c4aa6
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +131,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+<<<<<<< HEAD
                 "file": "Apps/Superhuman.md",
+=======
+                "file": "Projects/eduweb & Ahoy!.md",
+>>>>>>> 6513b276aa531dab3b49ec5bde698cf2613c4aa6
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +158,11 @@
             "state": {
               "type": "outline",
               "state": {
+<<<<<<< HEAD
                 "file": "Apps/Superhuman.md"
+=======
+                "file": "Projects/eduweb & Ahoy!.md"
+>>>>>>> 6513b276aa531dab3b49ec5bde698cf2613c4aa6
               }
             }
           }
@@ -171,6 +183,7 @@
       "command-palette:Open command palette": false
     }
   },
+<<<<<<< HEAD
   "active": "70322756bce6d947",
   "lastOpenFiles": [
     "Projects/eduweb & Ahoy!.md",
@@ -180,11 +193,21 @@
     "Tools/Automation.md",
     "Tools/Apps.md",
     "Projects/overment.md",
+=======
+  "active": "716cd38cb4684580",
+  "lastOpenFiles": [
+    "Projects/overment.md",
+    "Projects/eduweb & Ahoy!.md",
+>>>>>>> 6513b276aa531dab3b49ec5bde698cf2613c4aa6
     "Projects/Design Maestro.md",
     "Projects/Automation House.md",
     "Projects/easy_.md",
     "Projects/My Projects.md",
     "index.md",
+<<<<<<< HEAD
+=======
+    "Tools/Apps.md",
+>>>>>>> 6513b276aa531dab3b49ec5bde698cf2613c4aa6
     "qa.md",
     "Learning/Huberman Lab.md",
     "Core/Knowing thyself.md",

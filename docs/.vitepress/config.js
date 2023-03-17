@@ -17,7 +17,7 @@ export default {
         // ['script', { type: 'application/javascript' }, '!window._EC_HASH_7cfdafc7e91e7af57d5ce7fe5f7e6136 && (location.href = "https://app.easycart.pl/r/prod_Lzwxc8kvKviDae");']
         ['script', { type: 'application/javascript' }, `
                 setTimeout(function() {
-                    const searchBox = document.querySelector('.search-text');
+                    const searchBox = document.querySelector('.search-text')w;
                     if (searchBox) {
                         searchBox.textContent = 'Search (⌘K)';
                         document.addEventListener('keydown', (e) => {
