@@ -21,10 +21,7 @@ Please keep in mind, that this project won't be finished. What's most important,
 
 I like to talk to people, so if there is anything I need to know or you'd like to share with me, don't think twice. If I won't reply, please do not consider it personal, but still — I'll do my best.
 
-- [Instagram](https://www.instagram.com/_overment/)
-- [YouTube](https://youtube.com/overment)
-- [Twitter](https://twitter.com/_overment)
-- [Ahoy!](https://community.ahoy.so/) 
+You can find me on [Instagram](https://www.instagram.com/_overment/), [YouTube](https://www.youtube.com/overment), [Medium](https://medium.com/@overment) and [Twitter](https://twitter.com/_overment)
 
 Feel free to contact me — adam a^t. overment.com
 

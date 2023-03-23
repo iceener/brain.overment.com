@@ -9,5 +9,3 @@ eduweb is an educational platform with video courses for tech outliers. Ahoy! is
 Thanks to [Automation](../Tools/Automation.md), we can do it all with a relatively small team.
 
 I've published many courses and hundreds of articles and posts both on eduweb and ahoy! You can find them here: https://eduweb.pl
-
-

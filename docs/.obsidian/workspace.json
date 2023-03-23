@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "b34b9804e25f6356",
+        "id": "cb1fae50bba82935",
         "type": "tabs",
         "children": [
           {
-            "id": "4ad715a6ca1f7556",
+            "id": "5508232a6e62bfa2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/eduweb.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               }
@@ -43,6 +43,14 @@
             }
           },
           {
+            "id": "c1925c2a556b9882",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
             "id": "4656c3629fed332e",
             "type": "leaf",
             "state": {
@@ -55,14 +63,6 @@
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
-            }
-          },
-          {
-            "id": "c1925c2a556b9882",
-            "type": "leaf",
-            "state": {
-              "type": "starred",
-              "state": {}
             }
           }
         ]
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Projects/eduweb.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Projects/eduweb.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Projects/eduweb.md"
+                "file": "index.md"
               }
             }
           }
@@ -146,10 +146,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4ad715a6ca1f7556",
+  "active": "5508232a6e62bfa2",
   "lastOpenFiles": [
+    "Learn Faster and Remember More.md",
+    "clipper.md",
+    "Projects%2Feduweb.md",
+    "Projects/eduweb.md",
+    "Projects/overment.md",
+    "eduweb.md",
+    "Projects/easy_.md",
     "Apps/Superhuman.md",
-    "Projects/Automation House.md",
-    "Projects/eduweb.md"
+    "Projects/Automation House.md"
   ]
 }
