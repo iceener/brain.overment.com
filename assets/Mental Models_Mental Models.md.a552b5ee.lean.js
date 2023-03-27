@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./app.a1987cd5.js";const M=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Mental Models/Mental Models.md"}'),o={name:"Mental Models/Mental Models.md"};function s(n,r,l,c,d,_){return t(),a("div")}const i=e(o,[["render",s]]);export{M as __pageData,i as default};

@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a,a as i}from"./app.1d76e050.js";const f=JSON.parse('{"title":"Superhuman","description":"","frontmatter":{"title":"Superhuman"},"headers":[],"relativePath":"Apps/Superhuman.md"}'),o={name:"Apps/Superhuman.md"},s=i("",5),n=[s];function r(l,c,d,h,m,u){return t(),a("div",null,n)}const g=e(o,[["render",r]]);export{f as __pageData,g as default};
