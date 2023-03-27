@@ -1,10 +1,10 @@
 ---
-title: Applications I use
+title: Apps
 ---
 
-# Applications I use
+# Apps
 
-This is a lastest (Nov 2022) list of apps I use:
+This is a lastest (Q1 2023) list of apps I use:
 
 - [Arc](https://arc.net/) — Web Browser from The Browser Company
 	- Command Bar is the best feature here
