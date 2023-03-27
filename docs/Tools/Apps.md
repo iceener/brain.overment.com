@@ -14,9 +14,9 @@ This is a lastest (Q1 2023) list of apps I use:
 	- No-code Blueprint — [5th place on the Product Hunt](https://www.producthunt.com/posts/no-code-ai-avatar-blueprint)
 	- AI & Automation — [Ask ChatGPT for Actions, not Answers](https://medium.com/@overment/i-asked-chatgpt-for-actions-not-answers-9b039b76685)
 - [Notion](https://www.notion.so/) — Advanced text editor in which I store almost everything
-	- I've created my own integrations using make.com and OpenAI API
-- [Craft](https://craft.do/) — Text editor, smiliar to Notion
-	- Really cool alternative for Notion. Better design, a bit less features. 
+	- I've created my own integrations using make.com and the OpenAI API
+- [Craft](https://craft.do/) Text editor, similar to Notion:
+	- A really cool alternative to Notion with a better design, but slightly fewer features.
 - [Kindle](https://apps.apple.com/pl/app/amazon-kindle/id302584613?l=pl) & [Audible](https://audible.com/) & [Goodreads](https://www.goodreads.com/user/show/91387486-adam-gospodarczyk) — Apps for reading & listening
 - [Keyboard Maestro](https://www.keyboardmaestro.com/main/) — Automation app for MacOS
 	- [DesignMaestro is my set of package for KM — available for free](https://www.designmaestro.io)
@@ -24,7 +24,7 @@ This is a lastest (Q1 2023) list of apps I use:
 - [Shortcuts](https://apps.apple.com/us/app/shortcuts/id915249334) — Automation app for MacOS & iOS & iPadOS
 - [Better Touch Tool](https://folivora.ai/) — App for custimizing gestures on trackpad
 - [Raycast](https://www.raycast.com/) — Advanced launcher for MacOS
-	- Developer API is great. I have created a couple of extensions, and integrated them with make.com 
+	- The Developer API is great. I've created a couple of extensions and integrated them with Make.com
 - [iA Writer](ia.net) — My favourite text editor
 	- [Focused](https://apps.apple.com/us/app/focused-minimal-markdown-app/id899966452?mt=12) is a really good, free alternative
 - [Superhuman](https://superhuman.com/) — E-mail Client for Superhumans (MacOS)
