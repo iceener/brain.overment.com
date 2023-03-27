@@ -9,8 +9,8 @@ This is a lastest (Q1 2023) list of apps I use:
 - [Arc](https://arc.net/) — Web Browser from The Browser Company
 	- Command Bar is the best feature here
 	- [How do I use Arc](https://community.ahoy.so/c/kawka-i-herbatka/arc-przegladarka-perfekcyjna-d569e245-0e8b-422f-bdfc-d1a5282802d4)? (PL — you can translate this with Google Chrome)
-- [GPT-3.5 API](beta.openai.com) — AI assistant
-	- I've created M.O.N.D.A.Y. — [+macOS app you can get here](https://getmonday.app)
+- [GPT-4 API](beta.openai.com) — AI assistant
+	- I've created Alice — [+macOS app you can get here](https://getmonday.app)
 	- No-code Blueprint — [5th place on the Product Hunt](https://www.producthunt.com/posts/no-code-ai-avatar-blueprint)
 	- AI & Automation — [Ask ChatGPT for Actions, not Answers](https://medium.com/@overment/i-asked-chatgpt-for-actions-not-answers-9b039b76685)
 - [Notion](https://www.notion.so/) — Advanced text editor in which I store almost everything
