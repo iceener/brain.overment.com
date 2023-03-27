@@ -4,7 +4,7 @@ title: Apps
 
 # Apps
 
-This is a lastest (Q1 2023) list of apps I use:
+This is the lastest (Q1 2023) list of apps I use:
 
 - [Arc](https://arc.net/) — Web Browser from The Browser Company
 	- Command Bar is the best feature here
@@ -17,6 +17,7 @@ This is a lastest (Q1 2023) list of apps I use:
 	- I've created my own integrations using make.com and the OpenAI API
 - [Craft](https://craft.do/) Text editor, similar to Notion:
 	- A really cool alternative to Notion with a better design, but slightly fewer features.
+- [Zencal](https://zencal.io/) — for meeting management
 - [Kindle](https://apps.apple.com/pl/app/amazon-kindle/id302584613?l=pl) & [Audible](https://audible.com/) & [Goodreads](https://www.goodreads.com/user/show/91387486-adam-gospodarczyk) — Apps for reading & listening
 - [Keyboard Maestro](https://www.keyboardmaestro.com/main/) — Automation app for MacOS
 	- [DesignMaestro is my set of package for KM — available for free](https://www.designmaestro.io)
