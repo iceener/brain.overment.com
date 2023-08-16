@@ -1,0 +1,1 @@
+import{_ as t,o as e,c as a}from"./app.b0e01820.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Dictionary.md"}'),r={name:"Dictionary.md"};function o(c,n,s,i,p,_){return e(),a("div")}const f=t(r,[["render",o]]);export{m as __pageData,f as default};
