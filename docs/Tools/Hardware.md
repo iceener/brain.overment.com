@@ -23,6 +23,7 @@ The most important thing to me is performance of the hardware, minimalistic desi
 - iPhone 13 Pro Max 512GB with [dbrand skin](https://dbrand.com)
 - AirPods Pro 2
 - AirPods Max
+- Apple Homepod 2
 - Apple Watch Ultra
 - [Embody Chair ~ Herman Miller](https://sklep.k-r.pl/pl/p/Herman-Miller-Embody-Balance-C7/12)
 - Camera Sony ZV-1

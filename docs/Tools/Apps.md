@@ -52,8 +52,7 @@ This is the lastest (Q1 2023) list of apps I use:
 	- Hosting: Github Pages (free)
 	- Deployment: Github Actions
 - [Feedly](https://feedly.com/) — RSS Reader
-- [Texts](https://texts.com/) — All-in-one communicator
-	- Unfortunately an integration with Instagram is not working anymore. 
+- [Beeper](https://www.beeper.com) —be All-in-one communicator
 - [1Password](https://1password.com/) — Password Manager
 - [IntelliJ](https://www.jetbrains.com/idea/) — IDE
 - [AirBuddy](https://v2.airbuddy.app/) — App for managing Airpods

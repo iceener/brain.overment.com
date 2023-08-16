@@ -4,6 +4,8 @@ title: Design Maestro
 
 # Design Maestro
 
+> This project is no longer under development. It has been replaced by the [Alice](Alice.md) app.
+
 This is a package of Keyboard Maestro macro, created for designers who wants to optimise their workflow in macOS / Figma or Webflow. 
 
 ![](https://assets.website-files.com/61b2fbca6d7f8d1f991971f3/61b2fd7ff4169b747cf8a134_DM%20Logo.svg)
@@ -89,7 +91,7 @@ All input values will be saved in Keyboard Maestro variables and names of those 
     "mode": "decision", // decision | confirm. Decision displays boths confirmation & cancel buttons and confirm displays just a confirm button
 
     "visible": true, // true | false - with type of list, actions should be set to false
-
+bra
     "confirmLabel": "Translate", // confirm button label
 
     "cancelLabel": "Nevermind" // cancel button label

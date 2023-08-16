@@ -4,22 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "cb1fae50bba82935",
+        "id": "713b55beae0c196c",
         "type": "tabs",
         "children": [
           {
-            "id": "5508232a6e62bfa2",
+            "id": "fad5a5e38d5619aa",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "50228e09538efbfe",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tools/Apps.md",
+                "file": "Tools/Hardware.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -64,12 +73,20 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "404e37f8c8f32d47",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 318.0004348754883
   },
   "right": {
     "id": "b88000dbb0ddc25a",
@@ -85,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tools/Apps.md",
+                "file": "Tools/Hardware.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Tools/Apps.md",
+                "file": "Tools/Hardware.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tools/Apps.md"
+                "file": "Tools/Hardware.md"
               }
             }
           }
@@ -146,17 +163,33 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5508232a6e62bfa2",
+  "active": "50228e09538efbfe",
   "lastOpenFiles": [
-    "index.md",
-    "Learn Faster and Remember More.md",
-    "clipper.md",
-    "Projects%2Feduweb.md",
-    "Projects/eduweb.md",
+    "Tools/Automation.md",
+    "Tools/Apps.md",
     "Projects/overment.md",
-    "eduweb.md",
+    "Projects/eduweb.md",
     "Projects/easy_.md",
+    "Projects/Design Maestro.md",
+    "Projects/Automation House.md",
+    "Projects/Alice.md",
+    "index.md",
+    "Sharing/LangChain.md",
+    "Apps/Raycast.md",
     "Apps/Superhuman.md",
-    "Projects/Automation House.md"
+    "Tools/Hardware.md",
+    "Tools/Tools.md",
+    "Core/Process.md",
+    "Apps/Make.md",
+    "Mental Models/20 Mile March.md",
+    "Sharing/JavaScript.md",
+    "Mental Models/BHAG.md",
+    "Mental Models/The Compound Effect.md",
+    "Mental Models/Status Quo Bias.md",
+    "Mental Models/Mental Models.md",
+    "Mental Models/Leverage.md",
+    "Mental Models/Genius of the AND.md",
+    "Mental Models/Ergodicity.md",
+    "Mental Models/Commitment Bias.md"
   ]
 }

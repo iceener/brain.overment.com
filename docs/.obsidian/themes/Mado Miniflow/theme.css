@@ -7,6 +7,10 @@
 --------------------------- --------------------------- --------------------------- 
 */
 
+.workspace-split.mod-vertical.mod-root .markdown-source-view .cm-content {
+	padding-inline: 0 !important;
+}
+
 body{
 	/* --accent-h: 210; */
 	/* --accent-s: 93%; */
