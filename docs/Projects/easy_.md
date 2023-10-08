@@ -24,6 +24,7 @@ As for now in easy_ we are creating a products like:
 
 ## Updates:
 
+- October 2023 EasyCart exeedes PLN 40,000,000 in transactions 
 - June 2023 EasyCart exeedes PLN 30,000,000 in transactions 
 - April 2023 EasyCart exeedes PLN 25,000,000 in transactions
 - March 2023 EasyCart exeedes PLN 20,000,000 in transactions
