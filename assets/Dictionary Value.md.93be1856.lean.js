@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a,b as o}from"./app.b0e01820.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Dictionary Value.md"}'),n={name:"Dictionary Value.md"},r=o("p",null,"Text",-1),s=[r];function c(i,_,l,d,p,u){return t(),a("div",null,s)}const h=e(n,[["render",c]]);export{f as __pageData,h as default};

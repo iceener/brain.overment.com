@@ -1,1 +1,0 @@
-import{_ as t,o as e,c as o}from"./app.b0e01820.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Grit.md"}'),r={name:"Books/Grit.md"};function a(s,c,n,i,p,_){return e(),o("div")}const f=t(r,[["render",a]]);export{m as __pageData,f as default};
