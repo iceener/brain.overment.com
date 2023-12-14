@@ -1,8 +1,8 @@
 ![overment-photo](https://space.overment.com/overment/overment.png)
 
-This is a place where I share everything I know. I've create this place primarily for myself. At the same time, I thought you might find it all, equally valuable to you.
+This is a place where I share everything I know. I created this space mainly for myself. At the same time, I figured you might find it just as valuable.
 
-Please keep in mind, that this project won't be finished. What's most important, many things will change over time, because **what's true for me today, tomorrow probably won't be** — this is my strategy for a constantly changing world. 
+Please remember that this project will never be complete. What's most crucial is that many things will change over time, because **what's true for me today, might not be true tomorrow** — that's my approach to an ever-changing world.
 
 ## The most important topics: 
 
@@ -19,7 +19,7 @@ Please keep in mind, that this project won't be finished. What's most important,
 
 ## Where you can find me? 
 
-I like to talk to people, so if there is anything I need to know or you'd like to share with me, don't think twice. If I won't reply, please do not consider it personal, but still — I'll do my best.
+I like talking to people, so if there's anything you need to tell me or want to share, don't hesitate. If I don't respond, please don't take it personally, but still — I'll do my best.
 
 You can find me on [Instagram](https://www.instagram.com/_overment/), [YouTube](https://www.youtube.com/overment), [Medium](https://medium.com/@overment) and [Twitter](https://twitter.com/_overment)
 
