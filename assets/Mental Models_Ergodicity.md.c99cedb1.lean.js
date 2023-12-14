@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as o}from"./app.309216c3.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Mental Models/Ergodicity.md"}'),a={name:"Mental Models/Ergodicity.md"};function r(c,s,n,i,d,p){return t(),o("div")}const m=e(a,[["render",r]]);export{l as __pageData,m as default};

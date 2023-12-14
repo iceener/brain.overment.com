@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as o}from"./app.309216c3.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Great by Choice.md"}'),a={name:"Books/Great by Choice.md"};function r(c,s,n,_,i,p){return t(),o("div")}const f=e(a,[["render",r]]);export{m as __pageData,f as default};

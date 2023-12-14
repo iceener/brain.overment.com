@@ -1,1 +1,0 @@
-import{_ as a,o as t,c as e}from"./app.309216c3.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Gladiators Pirates and Games of Trust.md"}'),s={name:"Books/Gladiators Pirates and Games of Trust.md"};function o(r,n,_,c,d,i){return t(),e("div")}const f=a(s,[["render",o]]);export{p as __pageData,f as default};
