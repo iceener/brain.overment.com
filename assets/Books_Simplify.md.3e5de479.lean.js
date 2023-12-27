@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o}from"./app.9360254b.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Simplify.md"}'),a={name:"Books/Simplify.md"};function r(s,c,i,n,p,m){return t(),o("div")}const d=e(a,[["render",r]]);export{f as __pageData,d as default};

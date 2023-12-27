@@ -1,1 +1,0 @@
-import{_ as e,o as a,c as o}from"./app.e99d93b1.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Way of The Peaceful Warrior.md"}'),r={name:"Books/Way of The Peaceful Warrior.md"};function t(c,s,n,_,f,i){return a(),o("div")}const l=e(r,[["render",t]]);export{d as __pageData,l as default};
