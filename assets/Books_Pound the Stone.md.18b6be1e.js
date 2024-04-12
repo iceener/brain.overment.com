@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o}from"./app.5bc66df0.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Pound the Stone.md"}'),n={name:"Books/Pound the Stone.md"};function a(r,s,c,_,d,p){return t(),o("div")}const f=e(n,[["render",a]]);export{m as __pageData,f as default};
