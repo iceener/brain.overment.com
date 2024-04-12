@@ -14,7 +14,7 @@ Each of the following values are equallty important to me and unchanging through
 
 ## My values
 
-- **Quriosity:** That's a source of everything I love.
+- **Curiosity:** That's the source of everything I love.
 - **Freedom:** Which comes from discipline.
 - **Enthusiasm:** This attitude helps me overcome everything.
 

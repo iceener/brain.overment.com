@@ -1,12 +1,12 @@
 ## Hardware I use
 
-There are a few devices I use for everyday work. Almost all of them are from Apple, because I consider them best from all of available alternatives. I've worked on Windows for many years but since I bought my first MacBook, I just can't imagine going back. 
+I use several devices for my daily work, most of which are from Apple, as I find them to be the best among all available alternatives. I've worked on Windows for many years, but ever since I got my first MacBook, I can't imagine going back.
 
-The most important thing to me is performance of the hardware, minimalistic design and my workflow. This is possible thanks to many [Apps](Apps.md) which are available on macOS / iOS only.
+The most important aspects for me are hardware performance, minimalist design, and my workflow. This is achievable thanks to numerous [Apps](Apps.md) exclusive to macOS/iOS.
 
 **My Desk**
 
-> ⚠️ IMPORTANT: The following specification lists the equipment I currently own. Over the years, I have developed my projects using tools that I simply could not afford at the time. I only made sure to update my setup as much as possible to give me the most comfort while still being within my capabilities.
+> ⚠️ IMPORTANT: The specification below details the equipment I currently own. Over the years, I've developed my projects with tools that were once beyond my budget. I've always aimed to upgrade my setup for maximum comfort, staying within my means.
 
 ![](https://space.overment.com/Screen-Shot-2021-11-20-14-00-50/Screen-Shot-2021-11-20-14-00-50.png)
 
@@ -31,5 +31,3 @@ The most important thing to me is performance of the hardware, minimalistic desi
 - [Accoustic Panels from Addictive Sound](https://addictivesound.eu)
 
 > I bought a Razer Seiren microphone right at the beginning of the development of my YouTube channel. Taking care of high quality audio is key, although nowadays you can get much cheaper equipment that offers more capabilities.
-
-

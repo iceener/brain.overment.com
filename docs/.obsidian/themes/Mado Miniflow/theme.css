@@ -2943,3 +2943,8 @@ settings:
 		default-light: '#'
 		default-dark: '#'
 */
+
+body.theme-dark:not(.css-settings-manager) :is(mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight, .search-result-file-matched-text), body.THT-underline :is(mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight, .search-result-file-matched-text), body.THT-underline-dark.theme-dark :is(mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight, .search-result-file-matched-text), body.THT-underline-light.theme-light :is(mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight, .search-result-file-matched-text) {
+	color: var(--color-accent-2);
+	text-decoration-color: var(--color-accent-2);
+}

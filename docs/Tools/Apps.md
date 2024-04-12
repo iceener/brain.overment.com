@@ -9,14 +9,12 @@ This is the lastest (Q1 2023) list of apps I use:
 - [Arc](https://arc.net/) — Web Browser from The Browser Company
 	- Command Bar is the best feature here
 	- [How do I use Arc](https://community.ahoy.so/c/kawka-i-herbatka/arc-przegladarka-perfekcyjna-d569e245-0e8b-422f-bdfc-d1a5282802d4)? (PL — you can translate this with Google Chrome)
-- [GPT-4 API](beta.openai.com) — AI assistant
-	- I've created Alice — [+macOS app you can get here](https://getmonday.app)
+- [Alice](https://heyalice.app) — GPT- 4/ Claude / Ollama desktop experience.
+- [GPT-4 API](beta.openai.com) / [Anthropic API](console.anthropic.com) — AI assistant
 	- No-code Blueprint — [5th place on the Product Hunt](https://www.producthunt.com/posts/no-code-ai-avatar-blueprint)
 	- AI & Automation — [Ask ChatGPT for Actions, not Answers](https://medium.com/@overment/i-asked-chatgpt-for-actions-not-answers-9b039b76685)
 - [Notion](https://www.notion.so/) — Advanced text editor in which I store almost everything
 	- I've created my own integrations using make.com and the OpenAI API
-- [Craft](https://craft.do/) Text editor, similar to Notion:
-	- A really cool alternative to Notion with a better design, but slightly fewer features.
 - [Zencal](https://zencal.io/) — for meeting management
 - [Kindle](https://apps.apple.com/pl/app/amazon-kindle/id302584613?l=pl) & [Audible](https://audible.com/) & [Goodreads](https://www.goodreads.com/user/show/91387486-adam-gospodarczyk) — Apps for reading & listening
 - [Keyboard Maestro](https://www.keyboardmaestro.com/main/) — Automation app for MacOS
@@ -27,13 +25,12 @@ This is the lastest (Q1 2023) list of apps I use:
 - [Raycast](https://www.raycast.com/) — Advanced launcher for MacOS
 	- The Developer API is great. I've created a couple of extensions and integrated them with Make.com
 - [iA Writer](ia.net) — My favourite text editor
-	- [Focused](https://apps.apple.com/us/app/focused-minimal-markdown-app/id899966452?mt=12) is a really good, free alternative
+	- [Paper](https://papereditor.app/) is a really good alternative
 - [Superhuman](https://superhuman.com/) — E-mail Client for Superhumans (MacOS)
-- [Endel.io](https://endel.io/) — Soundscapes which helps me to focus
-- [Cron](https://cron.com/) — Superhuman-like calendar app
+- [endel.io](https://endel.io/) — Soundscapes which helps me to focus
+- [Notion Calendar](https://cron.com/) — Superhuman-like calendar app
 - [Paste](https://setapp.com/apps/paste) — Clipboard manager for macOS
 	- Definitely "a must have" app
-- [Anki](https://ankiweb.net/) — App for learning with flashcards
 - [Procreate](https://apps.apple.com/us/app/procreate/id425073498) — App for Digital Arists for iPadOS
 - [Airtable](https://airtable.com/) — Excel-like database tool which I'm using for [Automation](Automation.md)
 - [Dropshare](https://dropshare.app/) — An app for quickly sharing files with my VPS Server
@@ -52,7 +49,6 @@ This is the lastest (Q1 2023) list of apps I use:
 	- Hosting: Github Pages (free)
 	- Deployment: Github Actions
 - [Feedly](https://feedly.com/) — RSS Reader
-- [Beeper](https://www.beeper.com) —be All-in-one communicator
 - [1Password](https://1password.com/) — Password Manager
 - [IntelliJ](https://www.jetbrains.com/idea/) — IDE
 - [AirBuddy](https://v2.airbuddy.app/) — App for managing Airpods
