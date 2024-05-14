@@ -36,3 +36,10 @@
 [alt="easy_"] {
     max-width: 375px;
 }
+
+[alt="Alice"] {
+
+    margin: 0 auto 25px;
+    display: block;
+    width: 150px;
+}

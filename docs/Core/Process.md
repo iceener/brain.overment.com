@@ -4,7 +4,7 @@ title: My Process
 
 # My Process
 
-My everyday activities are based on a process I've created for myself. To make it better each day and what's more important, to make it effective, I'm constantly questioning, modyfing and improving it. It probably **will not work for you**, but you will certainly find plenty of inspiration and resources, which may help you build your own. 
+My daily activities are based on a process I've crafted for myself. To enhance it daily and, more importantly, to ensure its effectiveness, I continuously question, modify, and improve it. It likely **won't work for you**, but you'll find plenty of inspiration and resources to help you build your own.
 
 > *Everyone is constantly telling you what is good for you. They don't want you to look for your own answers. They want you to believe in theirs.* ~ Dan Millman
 
