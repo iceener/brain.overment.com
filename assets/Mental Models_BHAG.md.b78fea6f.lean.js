@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./app.5bc66df0.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Mental Models/BHAG.md"}'),o={name:"Mental Models/BHAG.md"};function r(s,n,c,d,p,_){return t(),a("div")}const m=e(o,[["render",r]]);export{i as __pageData,m as default};

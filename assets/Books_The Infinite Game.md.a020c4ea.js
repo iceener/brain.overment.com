@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./app.5bc66df0.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/The Infinite Game.md"}'),n={name:"Books/The Infinite Game.md"};function o(r,s,c,i,_,m){return t(),a("div")}const d=e(n,[["render",o]]);export{f as __pageData,d as default};

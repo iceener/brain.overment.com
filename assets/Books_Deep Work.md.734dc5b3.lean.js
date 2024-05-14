@@ -1,1 +1,0 @@
-import{_ as e,o,c as t,a as i}from"./app.5bc66df0.js";const m=JSON.parse('{"title":"Deep Work","description":"","frontmatter":{"title":"Deep Work"},"headers":[],"relativePath":"Books/Deep Work.md"}'),a={name:"Books/Deep Work.md"},r=i("",7),s=[r];function n(l,d,p,c,h,f){return o(),t("div",null,s)}const u=e(a,[["render",n]]);export{m as __pageData,u as default};
