@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books/Books.md",
+                "file": "Core/Values.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,8 +73,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Books/Books.md",
+                "file": "Core/Values.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Books/Books.md",
+                "file": "Core/Values.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Books/Books.md"
+                "file": "Core/Values.md"
               }
             }
           }
@@ -157,6 +156,7 @@
   },
   "active": "43d1c643baeda38c",
   "lastOpenFiles": [
+    "Books/Books.md",
     "Books/The Happines Advantage.md",
     "index.md",
     "Usage.md",

@@ -30,4 +30,4 @@ There was a program, [Reign and Own](https://zenjaskiniowca.pl/programy/panuj-i-
 
 Recently, I added enthusiasm to my list due to a "moment of realization" while reading the book [Almanack of Naval Ravikant](../Books/Almanack%20of%20Naval%20Ravikant.md). One quote from Naval states that feeling happy is a decision we make. I believe enthusiasm is a crucial part of this.
 
-From that point on, I decided to take it seriously, contrary to what "The Big Five" test indicated, suggesting that in terms of enthusiasm, I'm in the 1st percentile (lowest). Simultaneously, books like [The Happiness Advantage](../Books/The%20Happiness%20Advantage.md) and [Letting Go](../Books/Letting%20Go.md) unequivocally suggest the significant role of enthusiasm in achieving anything.
+From that point on, I decided to take it seriously, contrary to what "The Big Five" test indicated, suggesting that in terms of enthusiasm, I'm in the 1st percentile (lowest). Simultaneously, books like [The Happines Advantage](../Books/The%20Happines%20Advantage.md) and [Letting Go](../Books/Letting%20Go.md) unequivocally suggest the significant role of enthusiasm in achieving anything.
