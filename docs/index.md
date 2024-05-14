@@ -1,4 +1,4 @@
-![overment-photo](https://cloud.overment.com/overment-1715702331.jpg)
+![overment-photo](https://cloud.overment.com/2024-05-14/overment-1715702331-b2ecba03-7.png)
 
 This is where **I share everything I know.** I develop it mainly for myself, but I believe you'll find something valuable too.
 
