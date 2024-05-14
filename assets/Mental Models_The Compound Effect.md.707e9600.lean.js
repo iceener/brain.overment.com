@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as o}from"./app.f1edff4b.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Mental Models/The Compound Effect.md"}'),a={name:"Mental Models/The Compound Effect.md"};function n(c,r,s,d,p,f){return t(),o("div")}const l=e(a,[["render",n]]);export{m as __pageData,l as default};
