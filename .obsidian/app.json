@@ -1,0 +1,9 @@
+{
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "alwaysUpdateLinks": true,
+  "userIgnoreFilters": [
+    "public/",
+    "qa"
+  ]
+}

@@ -8,11 +8,12 @@ The most important aspects for me are hardware performance, minimalist design, a
 
 > ⚠️ IMPORTANT: The specification below details the equipment I currently own. Over the years, I've developed my projects with tools that were once beyond my budget. I've always aimed to upgrade my setup for maximum comfort, staying within my means.
 
-![](https://space.overment.com/Screen-Shot-2021-11-20-14-00-50/Screen-Shot-2021-11-20-14-00-50.png)
 
-- MacBook Pro 2021 14" with [dbrand skin](https://dbrand.com)
-- Processor M1 Max - 10 core CPU / 32 GPU / 16 NE
-- 64 GB RAM
+![](https://cloud.overment.com/2025-02-22/zautomatyzowani_desk-c6a577ba-8.png)
+
+- MacBook Pro 2024 14" with [dbrand skin](https://dbrand.com)
+- Processor M4 Max - 16 core CPU / 40 GPU / 16 NE
+- 128 GB RAM
 - 2 TB SSD
 - [Apple Pro Display XDR](https://www.apple.com/pl/pro-display-xdr)
 - Elgato Keylight
