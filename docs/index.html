@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burning Material Simulator</title>
+</head>
+<body style="background: #111">
+    
+<script>// Realistic Material Simulator with Burning Physics
+class MaterialSimulator {
+  constructor(canvasId, options = {}) {
+    // Canvas setup
+    this.canvas = document.getElementById(canvasId);
+    this.ctx = this.canvas.getContext('2d');
+    this.canvas.width = options.width || window.innerWidth;
+    this.canvas.height = options.height || window.innerHeight;
+    
+    // Physics settings
+    this.gravity = options.gravity || 0.2;
+    this.friction = options.friction || 0.99;
+    this.groundFriction = options.groundFriction || 0.7;
+    this.tearDistance = options.tearDistance || 20;
+    this.constraintIterations = options.constraintIterations || 3;
+    this.particleRadius = options.particleRadius || 3;
+    
+    // Performance settings
+    this.useRequestAnimationFrame = true;
+    this.particlePoolSize = options.particlePoolSize || 500;
+    this.maxFireParticles = options.maxFireParticles || 200;
+    this.maxEmberParticles = options.maxEmberParticles || 150;
+    this.maxAshParticles = options.maxAshParticles || 100;
+    this.maxTearParticles = options.maxTearParticles || 100;
+    this.spatialGridSize = options.spatialGridSize || 50;
+    this.spatialGrid = {};
+    this.frameSkipThreshold = 1000/55; // ms threshold to start optimizing
+    this.lastFrameTime = 0;
+    this.frameTimeHistory = [];
+    this.adaptivePhysicsEnabled = true;
+    this.renderQuality = options.renderQuality || 'high'; // 'low', 'medium', 'high'
+    
+    // Material properties
+    this.stiffness = options.stiffness || 0.8;
+    this.elasticity = options.elasticity || 12;
+    this.density = options.density || 1.0;
+    
+    // Fire and burning properties
+    this.fireRadius = options.fireRadius || 150;
+    this.fireIntensity = options.fireIntensity || 80;
+    this.fireEnabled = true;
+    this.burnThreshold = options.burnThreshold || 0.7; // Heat threshold to start burning
+    this.burnRate = options.burnRate || 0.03; // How fast material burns
+    this.ignitionChance = options.ignitionChance || 0.1; // Chance of ignition spreading
+    this.emberCount = options.emberCount || 3; // Embers produced when burning
+    
+    // Mouse interaction
+    this.mouse = { x: 0, y: 0, px: 0, py: 0, down: false, cutting: false };
+    this.cuttingRadius = options.cuttingRadius || 5;
+    this.cutForce = options.cutForce || 2;
+    
+    // Simulation objects
+    this.particles = [];
+    this.constraints = [];
+    this.tearParticles = [];
+    this.fireParticles = [];
+    this.emberParticles = [];
+    this.ashParticles = [];
+    
+    // Material colors
+    this.materialColor = options.color || '#34495e';
+    this.tearColor = options.tearColor || '#e74c3c';
+    this.fireColors = ['#FF5500', '#FF8800', '#FFAA00', '#FFCC00', '#FFFF00'];
+    this.emberColors = ['#FF3300', '#FF5500', '#FF7700'];
+    this.ashColor = 'rgba(120, 120, 120, 0.7)';
+    
+    // Setup event listeners
+    this.setupEventListeners();
+    
+    // Initialize material
+    this.initializeMaterial(options.type || 'cloth');
+    
+    // Start simulation loop
+    this.lastTime = performance.now();
+    
+    // Add new performance settings
+    this.fpsTarget = 45; // Target FPS to maintain
+    this.lastFpsValues = []; // Keep track of recent FPS values
+    this.dynamicParticleLimit = true; // Enable dynamic particle limiting based on FPS
+    this.particleScaleFactor = 1.0; // Dynamic scaling factor for particle counts
+    this.particleSkipFrames = 0; // Occasionally skip particle generation on low FPS
+    this.skipFrameCounter = 0; // Counter for skipping frames
+    
+    this.animate();
+  }
+  
+  setupEventListeners() {
+    this.canvas.addEventListener('mousedown', (e) => {
+      this.mouse.down = true;
+      this.mouse.x = e.clientX - this.canvas.offsetLeft;
+      this.mouse.y = e.clientY - this.canvas.offsetTop;
+      this.mouse.px = this.mouse.x;
+      this.mouse.py = this.mouse.y;
+      
+      if (e.ctrlKey || e.button === 2) {
+        this.mouse.cutting = true;
+      }
+    });
+    
+    window.addEventListener('mouseup', () => {
+      this.mouse.down = false;
+      this.mouse.cutting = false;
+    });
+    
+    window.addEventListener('mousemove', (e) => {
+      this.mouse.px = this.mouse.x;
+      this.mouse.py = this.mouse.y;
+      this.mouse.x = e.clientX - this.canvas.offsetLeft;
+      this.mouse.y = e.clientY - this.canvas.offsetTop;
+      
+      if (this.mouse.cutting && this.mouse.down) {
+        this.cutMaterial();
+      }
+    });
+    
+    // Prevent context menu on right-click
+    this.canvas.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+    });
+    
+    // Handle canvas resize
+    window.addEventListener('resize', () => {
+      this.canvas.width = window.innerWidth;
+      this.canvas.height = window.innerHeight;
+    });
+    
+    // Add toggle for fire effect
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'f') {
+        this.fireEnabled = !this.fireEnabled;
+      }
+    });
+    
+    // Add handler for mouse leaving the canvas to prevent undefined coordinates
+    this.canvas.addEventListener('mouseleave', () => {
+      // Default to center of canvas if mouse leaves
+      this.mouse.px = this.mouse.x;
+      this.mouse.py = this.mouse.y;
+      this.mouse.down = false;
+      this.mouse.cutting = false;
+    });
+  }
+  
+  initializeMaterial(type) {
+    switch(type) {
+      case 'cloth':
+        this.createCloth();
+        break;
+      case 'jelly':
+        this.createJelly();
+        break;
+      case 'rope':
+        this.createRope();
+        break;
+      default:
+        this.createCloth();
+    }
+  }
+  
+  createParticle(x, y, pinned = false) {
+    const particle = {
+      x: x,
+      y: y,
+      px: x, // previous x
+      py: y, // previous y
+      vx: 0,
+      vy: 0,
+      pinned: pinned,
+      mass: this.density,
+      heat: 0, // Heat level
+      burning: false, // Is the particle currently burning?
+      burnProgress: 0, // 0 to 1 (fully burned)
+      burnTime: 100 + Math.random() * 50, // How long it takes to burn
+      destroyed: false // Has the particle been destroyed by fire?
+    };
+    
+    this.particles.push(particle);
+    return this.particles.length - 1;
+  }
+  
+  createConstraint(p1Index, p2Index, stiffness = this.stiffness) {
+    const p1 = this.particles[p1Index];
+    const p2 = this.particles[p2Index];
+    
+    const dx = p2.x - p1.x;
+    const dy = p2.y - p1.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    
+    this.constraints.push({
+      p1: p1Index,
+      p2: p2Index,
+      distance: distance,
+      stiffness: stiffness,
+      broken: false,
+      heat: 0, // Heat level
+      burnProgress: 0 // 0 to 1 (fully burned)
+    });
+  }
+  
+  createCloth(width = 30, height = 20, spacing = 12, pinnedTopRow = true, detailLevel = 'medium') {
+    // Calculate optimal dimensions based on canvas size and performance capacity
+    const maxParticles = this.particlePoolSize;
+    
+    // Apply performance-based scaling
+    if (width * height > maxParticles * 1.5) {
+      // Scale down proportionally if too many particles requested
+      const scale = Math.sqrt(maxParticles * 1.5 / (width * height));
+      width = Math.floor(width * scale);
+      height = Math.floor(height * scale);
+      console.log(`Scaled cloth to ${width}x${height} to maintain performance`);
+      
+      // Show warning to user if size was significantly reduced
+      if (scale < 0.5) {
+        const warningMsg = document.createElement('div');
+        warningMsg.style.position = 'absolute';
+        warningMsg.style.bottom = '50px';
+        warningMsg.style.left = '50%';
+        warningMsg.style.transform = 'translateX(-50%)';
+        warningMsg.style.background = 'rgba(255,100,0,0.8)';
+        warningMsg.style.color = 'white';
+        warningMsg.style.padding = '10px';
+        warningMsg.style.borderRadius = '5px';
+        warningMsg.style.fontFamily = 'Arial, sans-serif';
+        warningMsg.style.zIndex = '2000';
+        warningMsg.innerHTML = `Cloth size was reduced to ${width}x${height} for better performance`;
+        document.body.appendChild(warningMsg);
+        setTimeout(() => document.body.removeChild(warningMsg), 5000);
+      }
+    }
+    
+    // Adjust constraint creation based on detail level
+    let skipDiagonals = false;
+    let skipStructural = false;
+    let skipSecondaryDiagonals = true;
+    let useBendConstraints = false;
+    
+    switch (detailLevel) {
+      case 'ultralow':
+        skipDiagonals = true;
+        skipStructural = true;
+        break;
+      case 'low':
+        skipDiagonals = false;
+        skipStructural = true;
+        skipSecondaryDiagonals = true;
+        break;
+      case 'medium':
+        skipDiagonals = false;
+        skipStructural = true;
+        skipSecondaryDiagonals = true;
+        break;
+      case 'high':
+        skipDiagonals = false;
+        skipStructural = false;
+        skipSecondaryDiagonals = true;
+        break;
+      case 'ultrahigh':
+        skipDiagonals = false;
+        skipStructural = false;
+        skipSecondaryDiagonals = false;
+        useBendConstraints = true;
+        break;
+    }
+    
+    const startX = (this.canvas.width - (width * spacing)) / 2;
+    const startY = 50;
+    
+    // Create particles in a grid
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        const posX = startX + x * spacing;
+        const posY = startY + y * spacing;
+        
+        // Adjust pin points based on cloth width for better stability
+        let pinSpacing = Math.min(8, Math.max(3, Math.floor(width/8)));
+        
+        // Pin top row with more attachments for larger cloth (adjust pins based on cloth width)
+        const pinned = pinnedTopRow && y === 0 && (
+          x === 0 || 
+          x === width - 1 || 
+          x % pinSpacing === 0
+        );
+        
+        this.createParticle(posX, posY, pinned);
+      }
+    }
+    
+    // Create constraints with detail level consideration
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        const idx = y * width + x;
+        
+        // Horizontal connections
+        if (x < width - 1) {
+          this.createConstraint(idx, idx + 1);
+        }
+        
+        // Vertical connections
+        if (y < height - 1) {
+          this.createConstraint(idx, idx + width);
+        }
+        
+        // Diagonal connections (skip for ultralow detail)
+        if (!skipDiagonals && x < width - 1 && y < height - 1) {
+          // Primary diagonals
+          this.createConstraint(idx, idx + width + 1, this.stiffness * 0.8);
+          this.createConstraint(idx + 1, idx + width, this.stiffness * 0.8);
+          
+          // Secondary diagonals for ultra high detail (crosses between 4 particles)
+          if (!skipSecondaryDiagonals && x < width - 2 && y < height - 2) {
+            this.createConstraint(idx, idx + width + 2, this.stiffness * 0.6);
+            this.createConstraint(idx + 2, idx + width, this.stiffness * 0.6);
+          }
+        }
+        
+        // Additional structural constraints (skip for low/medium detail)
+        if (!skipStructural) {
+          // Horizontal structural
+          if (x < width - 2) {
+            this.createConstraint(idx, idx + 2, this.stiffness * 0.5);
+          }
+          // Vertical structural
+          if (y < height - 2) {
+            this.createConstraint(idx, idx + width * 2, this.stiffness * 0.5);
+          }
+        }
+        
+        // Bend constraints for ultra high detail - helps with natural folding behavior
+        if (useBendConstraints) {
+          // Horizontal bend
+          if (x < width - 3) {
+            this.createConstraint(idx, idx + 3, this.stiffness * 0.3);
+          }
+          // Vertical bend
+          if (y < height - 3) {
+            this.createConstraint(idx, idx + width * 3, this.stiffness * 0.3);
+          }
+        }
+      }
+    }
+  }
+  
+  createJelly(radius = 80, segments = 20, x = null, y = null) {
+    x = x || this.canvas.width / 2;
+    y = y || this.canvas.height / 3;
+    
+    // Create outer particles
+    const centerIdx = this.createParticle(x, y);
+    const outerIndices = [];
+    
+    for (let i = 0; i < segments; i++) {
+      const angle = (i / segments) * Math.PI * 2;
+      const px = x + Math.cos(angle) * radius;
+      const py = y + Math.sin(angle) * radius;
+      outerIndices.push(this.createParticle(px, py));
+    }
+    
+    // Connect outer particles in a loop
+    for (let i = 0; i < segments; i++) {
+      this.createConstraint(outerIndices[i], outerIndices[(i + 1) % segments]);
+    }
+    
+    // Connect center to each outer particle
+    for (let i = 0; i < segments; i++) {
+      this.createConstraint(centerIdx, outerIndices[i], this.stiffness * 0.7);
+    }
+    
+    // Add cross-connections for stability
+    for (let i = 0; i < segments; i++) {
+      this.createConstraint(outerIndices[i], outerIndices[(i + Math.floor(segments/2)) % segments], this.stiffness * 0.5);
+    }
+  }
+  
+  createRope(segments = 20, length = 300, startX = null, startY = null) {
+    startX = startX || this.canvas.width / 2;
+    startY = startY || 50;
+    
+    const segmentLength = length / segments;
+    
+    // Create first particle (pinned)
+    this.createParticle(startX, startY, true);
+    
+    // Create rest of the particles
+    for (let i = 1; i < segments; i++) {
+      this.createParticle(startX, startY + i * segmentLength);
+    }
+    
+    // Create constraints between adjacent particles
+    for (let i = 0; i < segments - 1; i++) {
+      this.createConstraint(i, i + 1);
+    }
+  }
+  
+  cutMaterial() {
+    const radius = this.cuttingRadius;
+    const mouseVelocityX = this.mouse.x - this.mouse.px;
+    const mouseVelocityY = this.mouse.y - this.mouse.py;
+    
+    // Check each constraint
+    for (let i = 0; i < this.constraints.length; i++) {
+      if (this.constraints[i].broken) continue;
+      
+      const c = this.constraints[i];
+      const p1 = this.particles[c.p1];
+      const p2 = this.particles[c.p2];
+      
+      // Line segment intersection with mouse path
+      if (this.lineIntersectsLine(
+        p1.x, p1.y, p2.x, p2.y,
+        this.mouse.px, this.mouse.py, this.mouse.x, this.mouse.y
+      )) {
+        // Break the constraint
+        this.constraints[i].broken = true;
+        
+        // Add tear particles for visual effect
+        const midX = (p1.x + p2.x) / 2;
+        const midY = (p1.y + p2.y) / 2;
+        
+        // Add tear particles with velocity
+        for (let j = 0; j < 5; j++) {
+          this.tearParticles.push({
+            x: midX + (Math.random() - 0.5) * 5,
+            y: midY + (Math.random() - 0.5) * 5,
+            vx: mouseVelocityX * 0.5 + (Math.random() - 0.5) * 2,
+            vy: mouseVelocityY * 0.5 + (Math.random() - 0.5) * 2,
+            life: 40 + Math.random() * 20
+          });
+        }
+        
+        // Apply force to nearby particles
+        p1.vx += mouseVelocityX * this.cutForce * (p1.pinned ? 0 : 1);
+        p1.vy += mouseVelocityY * this.cutForce * (p1.pinned ? 0 : 1);
+        p2.vx += mouseVelocityX * this.cutForce * (p2.pinned ? 0 : 1);
+        p2.vy += mouseVelocityY * this.cutForce * (p2.pinned ? 0 : 1);
+      }
+    }
+  }
+  
+  updateFireParticles() {
+    // Generate new fire particles with rate limiting and performance optimization
+    if (this.fireEnabled && this.fireParticles.length < this.maxFireParticles) {
+      // Safety check for mouse position
+      if (!this.mouse || typeof this.mouse.x !== 'number' || typeof this.mouse.y !== 'number') {
+        return;
+      }
+      
+      // Skip particle generation on some frames when performance is low
+      if (this.particleSkipFrames > 0) {
+        this.skipFrameCounter++;
+        if (this.skipFrameCounter < this.particleSkipFrames) {
+          // Skip this frame for particle generation
+          return;
+        }
+        this.skipFrameCounter = 0;
+      }
+      
+      // Limit particles based on performance
+      const effectiveMaxParticles = Math.floor(this.maxFireParticles * this.particleScaleFactor);
+      const particlesToAdd = Math.min(3, effectiveMaxParticles - this.fireParticles.length);
+      
+      for (let i = 0; i < particlesToAdd; i++) {
+        this.fireParticles.push({
+          x: this.mouse.x + (Math.random() - 0.5) * 20,
+          y: this.mouse.y + (Math.random() - 0.5) * 20,
+          vx: (Math.random() - 0.5) * 2,
+          vy: -2 - Math.random() * 2,
+          size: 4 + Math.random() * 10,
+          color: this.fireColors[Math.floor(Math.random() * this.fireColors.length)],
+          life: 30 + Math.random() * 20
+        });
+      }
+    }
+    
+    // Safety check for array
+    if (!Array.isArray(this.fireParticles)) {
+      this.fireParticles = [];
+      return;
+    }
+    
+    // Batch update all particles for better cache performance
+    const count = this.fireParticles.length;
+    for (let i = count - 1; i >= 0; i--) {
+      // Make sure index is valid
+      if (i < 0 || i >= this.fireParticles.length) continue;
+      
+      const p = this.fireParticles[i];
+      
+      // Skip undefined particles
+      if (!p) {
+        // Remove invalid particle by splicing
+        this.fireParticles.splice(i, 1);
+        continue;
+      }
+      
+      // Apply physics
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy -= 0.05; // Make fire rise faster
+      p.size *= 0.95; // Shrink particle
+      p.life--;
+      
+      // Remove dead particles by swapping with the last particle and reducing length
+      if (p.life <= 0 || p.size < 0.5) {
+        // Safer swap implementation
+        if (i < this.fireParticles.length - 1) {
+          this.fireParticles[i] = this.fireParticles[this.fireParticles.length - 1];
+        }
+        this.fireParticles.pop();
+      }
+    }
+  }
+  
+  updateEmberParticles() {
+    // Safety check for array
+    if (!Array.isArray(this.emberParticles)) {
+      this.emberParticles = [];
+      return;
+    }
+    
+    // Use optimized batch processing
+    const count = this.emberParticles.length;
+    for (let i = count - 1; i >= 0; i--) {
+      // Make sure index is valid
+      if (i < 0 || i >= this.emberParticles.length) continue;
+      
+      const p = this.emberParticles[i];
+      
+      // Skip undefined particles
+      if (!p) {
+        this.emberParticles.splice(i, 1);
+        continue;
+      }
+      
+      // Apply physics
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.02; // Slight gravity
+      p.vx *= 0.99; // Drag
+      p.vy *= 0.99; // Drag
+      p.size *= 0.98; // Shrink particle
+      p.life--;
+      
+      // Occasionally make embers flicker (reduce frequency for better performance)
+      if (Math.random() < 0.05) {
+        p.size *= (0.8 + Math.random() * 0.4);
+      }
+      
+      // Remove dead particles with efficient swap-and-pop
+      if (p.life <= 0 || p.size < 0.5) {
+        if (i < this.emberParticles.length - 1) {
+          this.emberParticles[i] = this.emberParticles[this.emberParticles.length - 1];
+        }
+        this.emberParticles.pop();
+      }
+    }
+  }
+  
+  updateAshParticles() {
+    // Safety check for array
+    if (!Array.isArray(this.ashParticles)) {
+      this.ashParticles = [];
+      return;
+    }
+    
+    // Update existing ash particles
+    for (let i = this.ashParticles.length - 1; i >= 0; i--) {
+      // Make sure index is valid
+      if (i < 0 || i >= this.ashParticles.length) continue;
+      
+      const p = this.ashParticles[i];
+      
+      // Skip undefined particles
+      if (!p) {
+        this.ashParticles.splice(i, 1);
+        continue;
+      }
+      
+      // Apply physics
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.05; // Gravity
+      p.vx *= 0.98; // Air resistance
+      p.vy *= 0.98; // Air resistance
+      p.life--;
+      
+      // Random drift
+      p.x += (Math.random() - 0.5) * 0.5;
+      
+      // Remove dead particles or those that have fallen off screen
+      if (p.life <= 0 || p.y > this.canvas.height) {
+        this.ashParticles.splice(i, 1);
+      }
+    }
+  }
+  
+  updateBurningEffects() {
+    if (!this.fireEnabled) {
+      // Gradually cool down all particles if fire is disabled
+      for (let i = 0; i < this.particles.length; i++) {
+        if (!this.particles[i].destroyed) {
+          this.particles[i].heat *= 0.95;
+          if (this.particles[i].heat < 0.2) {
+            this.particles[i].burning = false;
+          }
+        }
+      }
+      return;
+    }
+    
+    // Process burning for each particle with performance optimization
+    for (let i = 0; i < this.particles.length; i++) {
+      const p = this.particles[i];
+      if (!p || p.destroyed) continue;
+      
+      // If particle is already burning, progress the burn
+      if (p.burning) {
+        p.burnProgress += this.burnRate;
+        
+        // Generate embers while burning - with performance-based limit
+        if (Math.random() < 0.2 * this.particleScaleFactor) {
+          // Skip ember creation if we're above our performance-adjusted limit
+          if (this.emberParticles.length < this.maxEmberParticles * this.particleScaleFactor) {
+            this.emberParticles.push({
+              x: p.x + (Math.random() - 0.5) * 5,
+              y: p.y + (Math.random() - 0.5) * 5,
+              vx: (Math.random() - 0.5) * 2,
+              vy: -1 - Math.random() * 2,
+              size: 1 + Math.random() * 3,
+              color: this.emberColors[Math.floor(Math.random() * this.emberColors.length)],
+              life: 20 + Math.random() * 30
+            });
+          }
+        }
+        
+        // If burn complete, destroy the particle
+        if (p.burnProgress >= 1) {
+          p.destroyed = true;
+          
+          // Create ash particles
+          for (let j = 0; j < 2 + Math.random() * 3; j++) {
+            this.ashParticles.push({
+              x: p.x + (Math.random() - 0.5) * 8,
+              y: p.y + (Math.random() - 0.5) * 8,
+              vx: (Math.random() - 0.5) * 0.5,
+              vy: -0.1 - Math.random() * 0.5,
+              size: 1 + Math.random() * 2,
+              alpha: 0.6 + Math.random() * 0.4,
+              life: 100 + Math.random() * 100
+            });
+          }
+        }
+        
+        // Fire spreads to neighbors
+        if (Math.random() < this.ignitionChance) {
+          this.spreadFire(i);
+        }
+      } 
+      // If not yet burning, check if it should ignite
+      else if (p.heat > this.burnThreshold) {
+        p.burning = true;
+        
+        // Create initial embers when ignition starts
+        for (let j = 0; j < this.emberCount; j++) {
+          this.emberParticles.push({
+            x: p.x + (Math.random() - 0.5) * 5,
+            y: p.y + (Math.random() - 0.5) * 5,
+            vx: (Math.random() - 0.5) * 3,
+            vy: -1 - Math.random() * 3,
+            size: 2 + Math.random() * 4,
+            color: this.emberColors[Math.floor(Math.random() * this.emberColors.length)],
+            life: 30 + Math.random() * 20
+          });
+        }
+      }
+    }
+    
+    // Process constraints burning
+    for (let i = 0; i < this.constraints.length; i++) {
+      const c = this.constraints[i];
+      if (c.broken) continue;
+      
+      // Safety check - validate particle indices
+      if (c.p1 === undefined || c.p2 === undefined || 
+          c.p1 < 0 || c.p1 >= this.particles.length || 
+          c.p2 < 0 || c.p2 >= this.particles.length) {
+        c.broken = true;
+        continue;
+      }
+      
+      const p1 = this.particles[c.p1];
+      const p2 = this.particles[c.p2];
+      
+      // Safety check - ensure particles exist
+      if (!p1 || !p2) {
+        c.broken = true;
+        continue;
+      }
+      
+      // If either particle is destroyed, break the constraint
+      if (p1.destroyed || p2.destroyed) {
+        c.broken = true;
+        continue;
+      }
+      
+      // If either particle is burning, burn the constraint too
+      if (p1.burning || p2.burning) {
+        c.burnProgress += this.burnRate * 1.5;
+        c.heat = Math.max(p1.heat, p2.heat);
+        
+        // Break constraint when burn progress reaches threshold
+        if (c.burnProgress >= 0.8) {
+          c.broken = true;
+          
+          // Create embers at break point
+          const midX = (p1.x + p2.x) / 2;
+          const midY = (p1.y + p2.y) / 2;
+          for (let j = 0; j < 5; j++) {
+            this.emberParticles.push({
+              x: midX + (Math.random() - 0.5) * 8,
+              y: midY + (Math.random() - 0.5) * 8,
+              vx: (Math.random() - 0.5) * 2,
+              vy: -1 - Math.random() * 2,
+              size: 2 + Math.random() * 3,
+              color: this.emberColors[Math.floor(Math.random() * this.emberColors.length)],
+              life: 20 + Math.random() * 30
+            });
+          }
+        }
+      } else {
+        // Update heat from particles
+        c.heat = (p1.heat + p2.heat) / 2;
+      }
+    }
+  }
+  
+  spreadFire(particleIndex) {
+    // Safety check - validate particle index
+    if (particleIndex === undefined || particleIndex < 0 || particleIndex >= this.particles.length) {
+      return;
+    }
+    
+    // Find connected particles via constraints
+    for (let i = 0; i < this.constraints.length; i++) {
+      const c = this.constraints[i];
+      if (c.broken) continue;
+      
+      // If this constraint connects to our burning particle
+      if (c.p1 === particleIndex || c.p2 === particleIndex) {
+        // Get the other particle
+        const otherIndex = (c.p1 === particleIndex) ? c.p2 : c.p1;
+        
+        // Safety check - validate the other particle index
+        if (otherIndex === undefined || otherIndex < 0 || otherIndex >= this.particles.length) {
+          c.broken = true;
+          continue;
+        }
+        
+        const otherParticle = this.particles[otherIndex];
+        
+        // Safety check - ensure other particle exists
+        if (!otherParticle) {
+          c.broken = true;
+          continue;
+        }
+        
+        // Increase heat and possibly ignite
+        if (!otherParticle.destroyed && !otherParticle.burning) {
+          otherParticle.heat += 0.1 + Math.random() * 0.1;
+          
+          // Random chance to immediately ignite based on heat
+          if (otherParticle.heat > this.burnThreshold * 0.7 && Math.random() < 0.1) {
+            otherParticle.burning = true;
+          }
+        }
+      }
+    }
+  }
+  
+  updateHeatEffects() {
+    // Skip if fire is disabled
+    if (!this.fireEnabled) {
+      // Efficiently cool all particles in one pass
+      for (let i = 0; i < this.particles.length; i++) {
+        if (!this.particles[i].destroyed) {
+          this.particles[i].heat *= 0.95;
+        }
+      }
+      return;
+    }
+    
+    // Update spatial grid for efficient queries
+    this.updateSpatialGrid();
+    
+    // Only process particles near the fire source
+    const nearbyIndices = this.getNearbyParticles(this.mouse.x, this.mouse.y, this.fireRadius * 1.1);
+    
+    // Create a Set for O(1) lookup instead of using includes() which is O(n)
+    const nearbySet = new Set(nearbyIndices);
+    
+    // Process particles in two groups: near fire and away from fire
+    for (let i = 0; i < this.particles.length; i++) {
+      const p = this.particles[i];
+      if (p.destroyed) continue;
+      
+      if (nearbySet.has(i)) {
+        // Calculate distance to mouse (fire source)
+        const dx = p.x - this.mouse.x;
+        const dy = p.y - this.mouse.y;
+        const distSq = dx * dx + dy * dy; // Squared distance for efficiency
+        const fireRadiusSq = this.fireRadius * this.fireRadius;
+        
+        // Apply heat based on proximity to fire (use squared distance for efficiency)
+        if (distSq < fireRadiusSq) {
+          const heat = (1 - Math.sqrt(distSq) / this.fireRadius) * 1.0;
+          p.heat = Math.max(p.heat, heat); // Take the highest heat value
+          
+          // Add upward force from heat
+          if (!p.pinned && heat > 0.3) {
+            p.vy -= heat * 0.2;
+          }
+        } else {
+          // Cool down gradually
+          p.heat *= 0.98;
+        }
+      } else {
+        // Cool down particles not near fire
+        p.heat *= 0.98;
+      }
+    }
+  }
+  
+  lineIntersectsLine(x1, y1, x2, y2, x3, y3, x4, y4) {
+    // Check if two line segments intersect
+    const den = (y4 - y3) * (x2 - x1) - (x4 - x3) * (y2 - y1);
+    if (den === 0) return false;
+    
+    const ua = ((x4 - x3) * (y1 - y3) - (y4 - y3) * (x1 - x3)) / den;
+    const ub = ((x2 - x1) * (y1 - y3) - (y2 - y1) * (x1 - x3)) / den;
+    
+    return ua >= 0 && ua <= 1 && ub >= 0 && ub <= 1;
+  }
+  
+  updateParticles(dt) {
+    // Apply forces and update positions
+    for (let i = 0; i < this.particles.length; i++) {
+      const p = this.particles[i];
+      if (p.pinned || p.destroyed) continue;
+      
+      // Calculate velocity from current and previous position
+      let vx = (p.x - p.px) * this.friction;
+      let vy = (p.y - p.py) * this.friction;
+      
+      // Save previous position
+      p.px = p.x;
+      p.py = p.y;
+      
+      // Apply gravity (reduced if burning - hot air rises)
+      const gravityMod = p.burning ? (0.5 - p.burnProgress * 0.2) : 1.0;
+      vy += this.gravity * p.mass * gravityMod;
+      
+      // Update position based on velocity
+      p.x += vx;
+      p.y += vy;
+      
+      // Store velocity for other calculations
+      p.vx = vx;
+      p.vy = vy;
+      
+      // Burning particles occasionally pop and move erratically
+      if (p.burning && Math.random() < 0.1) {
+        p.vx += (Math.random() - 0.5) * 2;
+        p.vy -= Math.random() * 1.5;
+      }
+      
+      // Ground collision
+      if (p.y > this.canvas.height - this.particleRadius) {
+        p.y = this.canvas.height - this.particleRadius;
+        p.py = p.y + vy * this.groundFriction;
+      }
+      
+      // Wall collisions
+      if (p.x < this.particleRadius) {
+        p.x = this.particleRadius;
+        p.px = p.x - vx * 0.8;
+      } else if (p.x > this.canvas.width - this.particleRadius) {
+        p.x = this.canvas.width - this.particleRadius;
+        p.px = p.x - vx * 0.8;
+      }
+    }
+  }
+  
+  solveConstraints() {
+    // Iterate multiple times for more stable constraints
+    for (let iteration = 0; iteration < this.constraintIterations; iteration++) {
+      // Solve distance constraints
+      for (let i = 0; i < this.constraints.length; i++) {
+        const c = this.constraints[i];
+        if (c.broken) continue;
+        
+        // Safety check - validate particle indices
+        if (c.p1 === undefined || c.p2 === undefined || 
+            c.p1 < 0 || c.p1 >= this.particles.length || 
+            c.p2 < 0 || c.p2 >= this.particles.length) {
+          c.broken = true;
+          continue;
+        }
+        
+        const p1 = this.particles[c.p1];
+        const p2 = this.particles[c.p2];
+        
+        // Safety check - ensure particles exist
+        if (!p1 || !p2) {
+          c.broken = true;
+          continue;
+        }
+        
+        // Skip if either particle is destroyed
+        if (p1.destroyed || p2.destroyed) {
+          c.broken = true;
+          continue;
+        }
+        
+        // Calculate current distance
+        const dx = p2.x - p1.x;
+        const dy = p2.y - p1.y;
+        const currentDist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (currentDist === 0) continue;
+        
+        // Check for tearing - reduce tear threshold when burning
+        const tearModifier = 1 - c.burnProgress * 0.5;
+        if (currentDist > c.distance * this.tearDistance * tearModifier) {
+          c.broken = true;
+          
+          // Create embers for burn-related tears
+          if (c.heat > 0.4) {
+            const midX = (p1.x + p2.x) / 2;
+            const midY = (p1.y + p2.y) / 2;
+            for (let j = 0; j < 3; j++) {
+              this.emberParticles.push({
+                x: midX + (Math.random() - 0.5) * 8,
+                y: midY + (Math.random() - 0.5) * 8,
+                vx: (Math.random() - 0.5) * 2,
+                vy: -1 - Math.random() * 2,
+                size: 2 + Math.random() * 3,
+                color: this.emberColors[Math.floor(Math.random() * this.emberColors.length)],
+                life: 20 + Math.random() * 30
+              });
+            }
+          }
+          continue;
+        }
+        
+        // Calculate the displacement required (burning materials have reduced stiffness)
+        const stiffnessMod = 1 - c.burnProgress * 0.7;
+        const diff = (c.distance - currentDist) / currentDist;
+        const offsetX = dx * diff * 0.5 * c.stiffness * stiffnessMod;
+        const offsetY = dy * diff * 0.5 * c.stiffness * stiffnessMod;
+        
+        // Move particles to maintain constraint length
+        if (!p1.pinned && !p1.destroyed) {
+          p1.x -= offsetX;
+          p1.y -= offsetY;
+        }
+        
+        if (!p2.pinned && !p2.destroyed) {
+          p2.x += offsetX;
+          p2.y += offsetY;
+        }
+      }
+    }
+  }
+  
+  updateTearParticles() {
+    for (let i = this.tearParticles.length - 1; i >= 0; i--) {
+      const p = this.tearParticles[i];
+      
+      // Apply gravity and update position
+      p.vy += this.gravity * 0.4;
+      p.x += p.vx;
+      p.y += p.vy;
+      
+      // Apply friction
+      p.vx *= 0.96;
+      p.vy *= 0.96;
+      
+      // Decrease life
+      p.life--;
+      
+      // Remove expired particles
+      if (p.life <= 0) {
+        this.tearParticles.splice(i, 1);
+      }
+    }
+  }
+  
+  render() {
+    // Clear canvas
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    
+    // Skip rendering for offscreen objects
+    const viewportMargin = 100;
+    const isVisible = (x, y) => {
+      return x > -viewportMargin && 
+             x < this.canvas.width + viewportMargin && 
+             y > -viewportMargin && 
+             y < this.canvas.height + viewportMargin;
+    };
+    
+    // Create glow effect for fire
+    if (this.fireEnabled) {
+      const glow = this.ctx.createRadialGradient(
+        this.mouse.x, this.mouse.y, 10,
+        this.mouse.x, this.mouse.y, this.fireRadius
+      );
+      glow.addColorStop(0, 'rgba(255, 150, 50, 0.4)');
+      glow.addColorStop(0.4, 'rgba(255, 100, 50, 0.2)');
+      glow.addColorStop(1, 'rgba(255, 50, 0, 0)');
+      
+      this.ctx.fillStyle = glow;
+      this.ctx.beginPath();
+      this.ctx.arc(this.mouse.x, this.mouse.y, this.fireRadius, 0, Math.PI * 2);
+      this.ctx.fill();
+    }
+    
+    // Batch render ash particles for better performance
+    if (this.ashParticles.length > 0) {
+      this.ctx.fillStyle = this.ashColor;
+      for (let i = 0; i < this.ashParticles.length; i++) {
+        const p = this.ashParticles[i];
+        if (!isVisible(p.x, p.y)) continue;
+        
+        this.ctx.globalAlpha = p.alpha * (p.life / 200);
+        this.ctx.beginPath();
+        this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        this.ctx.fill();
+      }
+      this.ctx.globalAlpha = 1;
+    }
+    
+    // Batch render constraints (material fibers) with fewer style changes
+    let currentStyle = '';
+    let currentWidth = 0;
+    let pathStarted = false;
+    
+    this.ctx.beginPath();
+    for (let i = 0; i < this.constraints.length; i++) {
+      const c = this.constraints[i];
+      if (c.broken) continue;
+      
+      const p1 = this.particles[c.p1];
+      const p2 = this.particles[c.p2];
+      
+      // Skip if not visible or if particles are destroyed
+      if (p1.destroyed || p2.destroyed || 
+          (!isVisible(p1.x, p1.y) && !isVisible(p2.x, p2.y))) {
+        continue;
+      }
+      
+      let style, width;
+      
+      // Determine style based on constraint state
+      if (c.burnProgress > 0) {
+        const burningIntensity = c.burnProgress;
+        const r = Math.floor(52 + 203 * burningIntensity);
+        const g = Math.floor(73 + 40 * (1 - burningIntensity));
+        const b = Math.floor(94 * (1 - burningIntensity));
+        
+        style = `rgb(${r}, ${g}, ${b})`;
+        width = 2 * (1 - burningIntensity * 0.5);
+      }
+      else if (c.heat > 0.01) {
+        const intensity = Math.min(c.heat, 1);
+        const r = Math.floor(52 + 203 * intensity);
+        const g = Math.floor(73 + (100 - 73) * intensity);
+        const b = Math.floor(94 * (1 - intensity));
+        
+        style = `rgb(${r}, ${g}, ${b})`;
+        width = 2 + intensity * 1.5;
+      } 
+      else {
+        style = this.materialColor;
+        width = 2;
+      }
+      
+      // Only change styles when necessary to reduce state changes
+      if (style !== currentStyle || width !== currentWidth) {
+        if (pathStarted) {
+          this.ctx.stroke();
+          this.ctx.beginPath();
+        }
+        
+        currentStyle = style;
+        currentWidth = width;
+        this.ctx.strokeStyle = style;
+        this.ctx.lineWidth = width;
+        pathStarted = false;
+      }
+      
+      // Draw line
+      this.ctx.moveTo(p1.x, p1.y);
+      this.ctx.lineTo(p2.x, p2.y);
+      pathStarted = true;
+    }
+    
+    if (pathStarted) {
+      this.ctx.stroke();
+    }
+    
+    // Draw ember particles (with glow) - optimized version
+    if (this.emberParticles.length > 0) {
+      this.ctx.globalCompositeOperation = 'lighter';
+      
+      // Batch ember particles by color to reduce gradient creation
+      const emberBatches = {};
+      
+      // Group embers by color
+      for (let i = 0; i < this.emberParticles.length; i++) {
+        const p = this.emberParticles[i];
+        if (!isVisible(p.x, p.y)) continue;
+        
+        if (!emberBatches[p.color]) {
+          emberBatches[p.color] = [];
+        }
+        emberBatches[p.color].push(p);
+      }
+      
+      // Draw each batch with the same gradient
+      for (const color in emberBatches) {
+        const particles = emberBatches[color];
+        
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          const alpha = p.life / 50;
+          
+          this.ctx.globalAlpha = alpha;
+          
+          // Simplified rendering for small embers
+          if (p.size < 2 || (this.adaptivePhysicsEnabled && this.frameTimeHistory.length > 0 && 
+              this.frameTimeHistory[this.frameTimeHistory.length-1] > this.frameSkipThreshold)) {
+            // Use solid color for better performance
+            this.ctx.fillStyle = color;
+            this.ctx.beginPath();
+            this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            this.ctx.fill();
+          } else {
+            // Use gradient for larger embers when performance allows
+            const gradient = this.ctx.createRadialGradient(
+              p.x, p.y, 0,
+              p.x, p.y, p.size * 2
+            );
+            gradient.addColorStop(0, color);
+            gradient.addColorStop(1, 'rgba(255, 50, 0, 0)');
+            
+            this.ctx.fillStyle = gradient;
+            this.ctx.beginPath();
+            this.ctx.arc(p.x, p.y, p.size * 2, 0, Math.PI * 2);
+            this.ctx.fill();
+            
+            // Draw ember core only for larger particles
+            if (p.size > 2) {
+              this.ctx.fillStyle = '#FFFFFF';
+              this.ctx.beginPath();
+              this.ctx.arc(p.x, p.y, p.size * 0.5, 0, Math.PI * 2);
+              this.ctx.fill();
+            }
+          }
+        }
+      }
+      
+      this.ctx.globalAlpha = 1;
+    }
+    
+    // Optimized fire particles rendering
+    if (this.fireParticles.length > 0) {
+      // Determine rendering quality based on performance
+      const useSimpleRendering = this.particleScaleFactor < 0.7 || 
+                                (this.adaptivePhysicsEnabled && 
+                                 this.frameTimeHistory.length > 0 && 
+                                 this.frameTimeHistory[this.frameTimeHistory.length-1] > this.frameSkipThreshold);
+      
+      // Batch fire particles by color
+      const fireBatches = {};
+      
+      // Group fire particles by color
+      for (let i = 0; i < this.fireParticles.length; i++) {
+        const p = this.fireParticles[i];
+        if (!isVisible(p.x, p.y)) continue;
+        
+        if (!fireBatches[p.color]) {
+          fireBatches[p.color] = [];
+        }
+        fireBatches[p.color].push(p);
+      }
+      
+      // Draw each batch with appropriate quality
+      for (const color in fireBatches) {
+        const particles = fireBatches[color];
+        
+        if (useSimpleRendering) {
+          // Ultra-simplified rendering for performance mode
+          this.ctx.fillStyle = color;
+          this.ctx.globalAlpha = 0.7;
+          this.ctx.beginPath();
+          
+          for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            this.ctx.moveTo(p.x, p.y);
+            this.ctx.arc(p.x, p.y, p.size * 0.6, 0, Math.PI * 2);
+          }
+          
+          this.ctx.fill();
+        } else {
+          // Standard rendering for each particle
+          for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            const alpha = p.life / 50;
+            
+            this.ctx.globalAlpha = alpha;
+            
+            // Use solid colors for better performance
+            this.ctx.fillStyle = color;
+            this.ctx.beginPath();
+            this.ctx.arc(p.x, p.y, p.size * 0.8, 0, Math.PI * 2);
+            this.ctx.fill();
+          }
+        }
+      }
+      
+      this.ctx.globalAlpha = 1;
+    }
+    
+    this.ctx.globalCompositeOperation = 'source-over';
+    this.ctx.globalAlpha = 1;
+    
+    // Draw tear particles - optimized batch rendering
+    if (this.tearParticles.length > 0) {
+      this.ctx.fillStyle = this.tearColor;
+      
+      for (let i = 0; i < this.tearParticles.length; i++) {
+        const p = this.tearParticles[i];
+        if (!isVisible(p.x, p.y)) continue;
+        
+        const alpha = p.life / 60;
+        this.ctx.globalAlpha = alpha;
+        this.ctx.beginPath();
+        this.ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+        this.ctx.fill();
+      }
+      
+      this.ctx.globalAlpha = 1;
+    }
+    
+    // Draw particles at constraint intersections - with batching by type
+    // First collect particles by rendering type
+    const normalParticles = [];
+    const heatedParticles = [];
+    const burningParticles = [];
+    
+    for (let i = 0; i < this.particles.length; i++) {
+      const p = this.particles[i];
+      if (p.destroyed || !isVisible(p.x, p.y)) continue;
+      
+      if (p.burning) {
+        burningParticles.push(p);
+      } else if (p.heat > 0.01) {
+        heatedParticles.push(p);
+      } else {
+        normalParticles.push(p);
+      }
+    }
+    
+    // Draw normal particles in a batch
+    if (normalParticles.length > 0) {
+      this.ctx.fillStyle = this.materialColor;
+      this.ctx.beginPath();
+      
+      for (let i = 0; i < normalParticles.length; i++) {
+        const p = normalParticles[i];
+        this.ctx.moveTo(p.x, p.y);
+        this.ctx.arc(p.x, p.y, this.particleRadius, 0, Math.PI * 2);
+      }
+      
+      this.ctx.fill();
+    }
+    
+    // Draw heated particles
+    for (let i = 0; i < heatedParticles.length; i++) {
+      const p = heatedParticles[i];
+      const intensity = Math.min(p.heat, 1);
+      const r = Math.floor(52 + 203 * intensity);
+      const g = Math.floor(73 + (100 - 73) * intensity);
+      const b = Math.floor(94 * (1 - intensity));
+      
+      this.ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
+      this.ctx.beginPath();
+      this.ctx.arc(p.x, p.y, this.particleRadius + intensity * 2, 0, Math.PI * 2);
+      this.ctx.fill();
+    }
+    
+    // Draw burning particles with glow effect
+    this.ctx.globalCompositeOperation = 'lighter';
+    
+    for (let i = 0; i < burningParticles.length; i++) {
+      const p = burningParticles[i];
+      const burnIntensity = p.burnProgress;
+      const r = 255;
+      const g = Math.floor(165 * (1 - burnIntensity * 0.8));
+      const b = 0;
+      
+      // Only use glow effects if performance allows
+      const useGlow = !(this.adaptivePhysicsEnabled && this.frameTimeHistory.length > 0 && 
+                    this.frameTimeHistory[this.frameTimeHistory.length-1] > this.frameSkipThreshold);
+      
+      this.ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
+      
+      // Create flickering effect for burning particles
+      const flickerSize = this.particleRadius * (1.5 - burnIntensity * 0.5) * 
+                          (useGlow ? (0.8 + Math.random() * 0.4) : 1.0);
+      
+      this.ctx.beginPath();
+      this.ctx.arc(p.x, p.y, flickerSize, 0, Math.PI * 2);
+      this.ctx.fill();
+      
+      // Add glow for burning particles - but only if performance allows
+      if (useGlow) {
+        const burnGlow = this.ctx.createRadialGradient(
+          p.x, p.y, 0,
+          p.x, p.y, flickerSize * 3
+        );
+        burnGlow.addColorStop(0, `rgba(255, ${g}, 0, 0.6)`);
+        burnGlow.addColorStop(1, 'rgba(255, 50, 0, 0)');
+        
+        this.ctx.fillStyle = burnGlow;
+        this.ctx.beginPath();
+        this.ctx.arc(p.x, p.y, flickerSize * 3, 0, Math.PI * 2);
+        this.ctx.fill();
+      }
+    }
+    
+    this.ctx.globalCompositeOperation = 'source-over';
+    
+    // Draw cutting line when active
+    if (this.mouse.cutting && this.mouse.down) {
+      this.ctx.strokeStyle = 'rgba(255, 0, 0, 0.7)';
+      this.ctx.lineWidth = 2;
+      this.ctx.beginPath();
+      this.ctx.moveTo(this.mouse.px, this.mouse.py);
+      this.ctx.lineTo(this.mouse.x, this.mouse.y);
+      this.ctx.stroke();
+      
+      // Draw cutting point
+      this.ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+      this.ctx.beginPath();
+      this.ctx.arc(this.mouse.x, this.mouse.y, this.cuttingRadius, 0, Math.PI * 2);
+      this.ctx.fill();
+    }
+  }
+  
+  update(dt) {
+    this.updateParticles(dt);
+    this.solveConstraints();
+    this.updateTearParticles();
+    this.updateFireParticles();
+    this.updateEmberParticles();
+    this.updateAshParticles();
+    this.updateHeatEffects();
+    this.updateBurningEffects();
+  }
+  
+  animate() {
+    // Add safety mechanism to prevent animation loop from running if page is not visible
+    if (document.hidden) {
+      requestAnimationFrame(() => this.animate());
+      return;
+    }
+    
+    // Add error tracking
+    if (!this.errorCount) this.errorCount = 0;
+    
+    try {
+      const currentTime = performance.now();
+      const elapsed = currentTime - this.lastTime;
+      this.lastTime = currentTime;
+      
+      // If more than 500ms passed since last frame, assume browser throttled background tab
+      if (elapsed > 500) {
+        requestAnimationFrame(() => this.animate());
+        return;
+      }
+      
+      // Reset error count when successfully running frames
+      this.errorCount = 0;
+      
+      // Frame time tracking for adaptive quality
+      this.frameTimeHistory.push(elapsed);
+      if (this.frameTimeHistory.length > 10) { // Reduced from 30 to be more responsive
+        this.frameTimeHistory.shift();
+      }
+      
+      // Calculate average frame time
+      const avgFrameTime = this.frameTimeHistory.reduce((sum, time) => sum + time, 0) / 
+                            this.frameTimeHistory.length;
+      
+      // Emergency throttling if performance is very poor
+      if (avgFrameTime > 100) { // More than 100ms per frame (less than 10 FPS)
+        this.emergencyPerformanceReduction();
+      } 
+      // Adaptive quality adjustments based on performance
+      else if (this.adaptivePhysicsEnabled) {
+        if (avgFrameTime > this.frameSkipThreshold) {
+          // Reduce quality to maintain frame rate
+          this.reduceSimulationQuality();
+        } else if (avgFrameTime < this.frameSkipThreshold * 0.7) {
+          // We have headroom to increase quality
+          this.increaseSimulationQuality();
+        }
+      }
+      
+      // Cap delta time to prevent large jumps
+      const dt = Math.min(elapsed / 1000, 1/30); // Convert to seconds, cap at 1/30
+      
+      // Set a maximum time for physics calculations
+      const maxPhysicsTime = 16; // ms
+      const physicsStartTime = performance.now();
+      
+      this.update(dt);
+      
+      // Skip render if physics took too long
+      if (performance.now() - physicsStartTime < maxPhysicsTime) {
+        this.render();
+      }
+    } catch (error) {
+      console.error("Animation error:", error);
+      this.errorCount++;
+      
+      // Specifically handle particle array issues
+      if (error.message && error.message.includes("Cannot read properties of undefined")) {
+        console.warn("Fixing particle arrays...");
+        
+        // Filter out any undefined particles in all particle arrays
+        this.fireParticles = Array.isArray(this.fireParticles) ? 
+          this.fireParticles.filter(p => p !== undefined && p !== null) : [];
+          
+        this.emberParticles = Array.isArray(this.emberParticles) ? 
+          this.emberParticles.filter(p => p !== undefined && p !== null) : [];
+          
+        this.ashParticles = Array.isArray(this.ashParticles) ? 
+          this.ashParticles.filter(p => p !== undefined && p !== null) : [];
+          
+        this.tearParticles = Array.isArray(this.tearParticles) ? 
+          this.tearParticles.filter(p => p !== undefined && p !== null) : [];
+      }
+      
+      // If we get too many errors in a row, do a hard reset of the simulation
+      if (this.errorCount > 5) {
+        console.warn("Too many errors, resetting simulation...");
+        this.particles = [];
+        this.constraints = [];
+        this.tearParticles = [];
+        this.fireParticles = [];
+        this.emberParticles = [];
+        this.ashParticles = [];
+        this.initializeMaterial('cloth');
+        this.errorCount = 0;
+        
+        // Show reset notification
+        const resetNotice = document.createElement('div');
+        resetNotice.style.position = 'absolute';
+        resetNotice.style.top = '50%';
+        resetNotice.style.left = '50%';
+        resetNotice.style.transform = 'translate(-50%, -50%)';
+        resetNotice.style.background = 'rgba(0,0,0,0.8)';
+        resetNotice.style.color = 'white';
+        resetNotice.style.padding = '20px';
+        resetNotice.style.borderRadius = '10px';
+        resetNotice.style.fontFamily = 'Arial, sans-serif';
+        resetNotice.style.zIndex = '2000';
+        resetNotice.innerHTML = '<h3>Simulation Reset</h3><p>The application has been reset due to performance issues.</p>';
+        document.body.appendChild(resetNotice);
+        
+        // Remove the notice after 3 seconds
+        setTimeout(() => {
+          document.body.removeChild(resetNotice);
+        }, 3000);
+      } else {
+        // For non-critical errors, just reduce simulation complexity
+        this.emergencyPerformanceReduction();
+      }
+    }
+    
+    requestAnimationFrame(() => this.animate());
+  }
+  
+  // Add new emergency method for extreme performance issues
+  emergencyPerformanceReduction() {
+    console.log("Emergency performance reduction activated");
+    // Drastically reduce particles
+    this.maxFireParticles = Math.min(this.maxFireParticles, 20);
+    this.maxEmberParticles = Math.min(this.maxEmberParticles, 10);
+    this.maxAshParticles = Math.min(this.maxAshParticles, 5);
+    this.constraintIterations = 1;
+    
+    // Clear some particles immediately
+    if (this.fireParticles.length > 20) {
+      this.fireParticles.length = 20;
+    }
+    if (this.emberParticles.length > 10) {
+      this.emberParticles.length = 10;
+    }
+    if (this.ashParticles.length > 5) {
+      this.ashParticles.length = 5;
+    }
+  }
+  
+  reduceSimulationQuality() {
+    // Dynamically reduce simulation quality to maintain framerate
+    this.constraintIterations = Math.max(1, this.constraintIterations - 1);
+    this.maxFireParticles = Math.max(20, this.maxFireParticles * 0.8); // More aggressive reduction
+    this.maxEmberParticles = Math.max(15, this.maxEmberParticles * 0.8);
+    this.maxAshParticles = Math.max(10, this.maxAshParticles * 0.8);
+  }
+  
+  increaseSimulationQuality() {
+    // Gradually increase quality when performance allows
+    if (this.constraintIterations < 3) {
+      this.constraintIterations += 1;
+    }
+    const originalFireMax = 200;
+    const originalEmberMax = 150;
+    if (this.maxFireParticles < originalFireMax) {
+      this.maxFireParticles = Math.min(originalFireMax, this.maxFireParticles * 1.1);
+    }
+    if (this.maxEmberParticles < originalEmberMax) {
+      this.maxEmberParticles = Math.min(originalEmberMax, this.maxEmberParticles * 1.1);
+    }
+  }
+  
+  // Optimized spatial grid for faster physics calculations
+  updateSpatialGrid() {
+    this.spatialGrid = {};
+    
+    // Add each particle to its cell in the grid
+    for (let i = 0; i < this.particles.length; i++) {
+      if (this.particles[i].destroyed) continue;
+      
+      const p = this.particles[i];
+      const cellX = Math.floor(p.x / this.spatialGridSize);
+      const cellY = Math.floor(p.y / this.spatialGridSize);
+      const cellKey = `${cellX},${cellY}`;
+      
+      if (!this.spatialGrid[cellKey]) {
+        this.spatialGrid[cellKey] = [];
+      }
+      
+      this.spatialGrid[cellKey].push(i);
+    }
+  }
+  
+  // Optimize spatial grid to reduce duplicates without expensive Set operations
+  getNearbyParticles(x, y, radius) {
+    const nearbyIndices = [];
+    const seenIndices = {}; // Hash map to track seen indices
+    
+    // Limit search radius to prevent excessive grid cell checks
+    const limitedRadius = Math.min(radius, this.spatialGridSize * 5);
+    
+    const startCellX = Math.floor((x - limitedRadius) / this.spatialGridSize);
+    const endCellX = Math.floor((x + limitedRadius) / this.spatialGridSize);
+    const startCellY = Math.floor((y - limitedRadius) / this.spatialGridSize);
+    const endCellY = Math.floor((y + limitedRadius) / this.spatialGridSize);
+    
+    // Limit the maximum number of cells to check to prevent performance issues
+    const maxCellsToCheck = 100;
+    let cellsChecked = 0;
+    
+    // Check cells in the radius
+    for (let cellX = startCellX; cellX <= endCellX; cellX++) {
+      for (let cellY = startCellY; cellY <= endCellY; cellY++) {
+        // Emergency break if checking too many cells
+        if (cellsChecked++ > maxCellsToCheck) break;
+        
+        const cellKey = `${cellX},${cellY}`;
+        if (this.spatialGrid[cellKey]) {
+          const cellParticles = this.spatialGrid[cellKey];
+          const len = cellParticles.length;
+          // Use a fast loop with cached length
+          for (let i = 0; i < len; i++) {
+            const index = cellParticles[i];
+            if (!seenIndices[index]) {
+              nearbyIndices.push(index);
+              seenIndices[index] = true;
+            }
+          }
+        }
+      }
+    }
+    
+    return nearbyIndices;
+  }
+  
+  // Add performance monitoring
+  initPerformanceMonitoring() {
+    // Create FPS display if it doesn't exist
+    if (!document.getElementById('fps-display')) {
+      const fpsDisplay = document.createElement('div');
+      fpsDisplay.id = 'fps-display';
+      fpsDisplay.style.position = 'absolute';
+      fpsDisplay.style.top = '5px';
+      fpsDisplay.style.left = '5px';
+      fpsDisplay.style.background = 'rgba(0,0,0,0.5)';
+      fpsDisplay.style.color = 'white';
+      fpsDisplay.style.padding = '5px';
+      fpsDisplay.style.borderRadius = '3px';
+      fpsDisplay.style.fontFamily = 'monospace';
+      fpsDisplay.style.fontSize = '12px';
+      fpsDisplay.style.zIndex = '1000';
+      document.body.appendChild(fpsDisplay);
+    }
+    
+    // Update FPS counter
+    this.fpsUpdateInterval = setInterval(() => {
+      if (this.frameTimeHistory.length === 0) return;
+      
+      const fps = Math.round(1000 / (this.frameTimeHistory.reduce((a, b) => a + b, 0) / this.frameTimeHistory.length));
+      document.getElementById('fps-display').textContent = 
+        `FPS: ${fps} | Particles: ${this.particles.length} | Fire: ${this.fireParticles.length} | Embers: ${this.emberParticles.length}`;
+    }, 500);
+  }
+}
+
+// Create the HTML elements
+function setupSimulator() {
+  // Create canvas if it doesn't exist
+  if (!document.getElementById('material-canvas')) {
+    const canvas = document.createElement('canvas');
+    canvas.id = 'material-canvas';
+    canvas.style.position = 'absolute';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    document.body.appendChild(canvas);
+  }
+  
+  // Create control panel
+  if (!document.getElementById('control-panel')) {
+    const panel = document.createElement('div');
+    panel.id = 'control-panel';
+    panel.style.position = 'absolute';
+    panel.style.top = '10px';
+    panel.style.right = '10px';
+    panel.style.padding = '10px';
+    panel.style.background = 'rgba(0,0,0,0.7)';
+    panel.style.color = 'white';
+    panel.style.borderRadius = '5px';
+    panel.style.fontFamily = 'Arial, sans-serif';
+    panel.style.zIndex = '1000';
+    
+    panel.innerHTML = `
+      <h3 style="margin-top:0">Burning Material Simulator</h3>
+      <p>Hold right mouse button to cut<br>or Ctrl+left button</p>
+      <p>Move mouse to light material with fire<br>Press 'F' to toggle fire</p>
+      
+      <div>
+        <label for="performance-mode">Performance Mode:</label>
+        <select id="performance-mode">
+          <option value="high">High Quality</option>
+          <option value="balanced" selected>Balanced</option>
+          <option value="performance">Performance</option>
+        </select>
+      </div>
+      
+      <div>
+        <label for="material-type">Material:</label>
+        <select id="material-type">
+          <option value="cloth">Cloth</option>
+          <option value="jelly">Jelly</option>
+          <option value="rope">Rope</option>
+        </select>
+      </div>
+      
+      <div>
+        <label for="cloth-size">Cloth Size:</label>
+        <select id="cloth-size">
+          <option value="tiny">Tiny (20×10)</option>
+          <option value="small">Small (25×15)</option>
+          <option value="medium" selected>Medium (30×20)</option>
+          <option value="large">Large (40×30)</option>
+          <option value="xlarge">Extra Large (50×40)</option>
+          <option value="xxlarge">XXL (70×50)</option>
+          <option value="huge">Huge (100×80)</option>
+          <option value="custom">Custom Size</option>
+        </select>
+      </div>
+      
+      <div id="custom-size-controls" style="display: none;">
+        <div>
+          <label for="custom-width">Width:</label>
+          <input type="number" id="custom-width" min="10" max="200" value="50" style="width:60px">
+        </div>
+        <div>
+          <label for="custom-height">Height:</label>
+          <input type="number" id="custom-height" min="5" max="150" value="40" style="width:60px">
+        </div>
+        <button id="apply-custom-size">Apply</button>
+      </div>
+      
+      <div>
+        <label for="cloth-detail">Cloth Detail:</label>
+        <select id="cloth-detail">
+          <option value="ultralow">Ultra Low (Fastest)</option>
+          <option value="low">Low (Better Performance)</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High (Better Physics)</option>
+          <option value="ultrahigh">Ultra High (Best Physics)</option>
+        </select>
+      </div>
+      
+      <div>
+        <label for="cloth-density">Cloth Density:</label>
+        <select id="cloth-density">
+          <option value="loose">Loose (15px)</option>
+          <option value="medium" selected>Medium (12px)</option>
+          <option value="dense">Dense (10px)</option>
+          <option value="verydense">Very Dense (8px)</option>
+        </select>
+      </div>
+      
+      <div>
+        <label for="gravity-slider">Gravity:</label>
+        <input type="range" id="gravity-slider" min="0" max="1" step="0.05" value="0.2">
+      </div>
+      
+      <div>
+        <label for="stiffness-slider">Stiffness:</label>
+        <input type="range" id="stiffness-slider" min="0.1" max="1" step="0.05" value="0.8">
+      </div>
+      
+      <div>
+        <label for="fire-intensity">Fire Intensity:</label>
+        <input type="range" id="fire-intensity" min="40" max="200" step="10" value="80">
+      </div>
+      
+      <div>
+        <label for="burn-rate">Burn Rate:</label>
+        <input type="range" id="burn-rate" min="0.01" max="0.1" step="0.01" value="0.03">
+      </div>
+      
+      <button id="reset-btn">Reset Material</button>
+    `;
+    
+    document.body.appendChild(panel);
+  }
+  
+  // Initialize the simulator
+  const simulator = new MaterialSimulator('material-canvas', {
+    gravity: 0.2,
+    stiffness: 0.8,
+    color: '#34495e',
+    burnRate: 0.03
+  });
+  
+  // Set up control event listeners
+  document.getElementById('material-type').addEventListener('change', function() {
+    simulator.particles = [];
+    simulator.constraints = [];
+    simulator.tearParticles = [];
+    simulator.fireParticles = [];
+    simulator.emberParticles = [];
+    simulator.ashParticles = [];
+    
+    if (this.value === 'cloth') {
+      const width = simulator.preferredClothWidth || 30;
+      const height = simulator.preferredClothHeight || 20;
+      const detailLevel = document.getElementById('cloth-detail').value;
+      const spacing = simulator.preferredClothSpacing || 12;
+      simulator.createCloth(width, height, spacing, true, detailLevel);
+    } else {
+      simulator.initializeMaterial(this.value);
+    }
+  });
+  
+  // Fix cloth size handler
+  document.getElementById('cloth-size').addEventListener('change', function() {
+    let width, height;
+    
+    // Toggle custom size controls visibility
+    const customControls = document.getElementById('custom-size-controls');
+    if (this.value === 'custom') {
+      customControls.style.display = 'block';
+      return; // Don't reset yet, wait for Apply button
+    } else {
+      customControls.style.display = 'none';
+    }
+    
+    // Set dimensions based on selection
+    switch(this.value) {
+      case 'tiny':
+        width = 20; height = 10;
+        break;
+      case 'small':
+        width = 25; height = 15;
+        break;
+      case 'medium':
+        width = 30; height = 20;
+        break;
+      case 'large':
+        width = 40; height = 30;
+        break;
+      case 'xlarge':
+        width = 50; height = 40;
+        break;
+      case 'xxlarge':
+        width = 70; height = 50;
+        break;
+      case 'huge':
+        width = 100; height = 80;
+        break;
+      default:
+        width = 30; height = 20;
+    }
+    
+    applyClothChanges(simulator, width, height);
+  });
+  
+  // Add handlers for custom size
+  document.getElementById('apply-custom-size').addEventListener('click', function() {
+    const width = parseInt(document.getElementById('custom-width').value);
+    const height = parseInt(document.getElementById('custom-height').value);
+    
+    // Validate inputs
+    if (isNaN(width) || isNaN(height) || width < 5 || height < 5 || width > 200 || height > 150) {
+      alert('Please enter valid dimensions (Width: 5-200, Height: 5-150)');
+      return;
+    }
+    
+    applyClothChanges(simulator, width, height);
+  });
+  
+  // Add handler for cloth detail
+  document.getElementById('cloth-detail').addEventListener('change', function() {
+    applyClothChanges(simulator);
+  });
+  
+  // Add handler for cloth density
+  document.getElementById('cloth-density').addEventListener('change', function() {
+    let spacing;
+    
+    switch(this.value) {
+      case 'loose':
+        spacing = 15;
+        break;
+      case 'medium':
+        spacing = 12;
+        break;
+      case 'dense':
+        spacing = 10;
+        break;
+      case 'verydense':
+        spacing = 8;
+        break;
+      default:
+        spacing = 12;
+    }
+    
+    simulator.preferredClothSpacing = spacing;
+    applyClothChanges(simulator);
+  });
+  
+  // Add helper function to apply cloth changes
+  function applyClothChanges(simulator, width, height) {
+    if (width !== undefined && height !== undefined) {
+      simulator.preferredClothWidth = width;
+      simulator.preferredClothHeight = height;
+    } else {
+      width = simulator.preferredClothWidth || 30;
+      height = simulator.preferredClothHeight || 20;
+    }
+    
+    const detailLevel = document.getElementById('cloth-detail').value;
+    const spacing = simulator.preferredClothSpacing || 12;
+    
+    // Reset with new parameters
+    simulator.particles = [];
+    simulator.constraints = [];
+    simulator.tearParticles = [];
+    simulator.fireParticles = [];
+    simulator.emberParticles = [];
+    simulator.ashParticles = [];
+    
+    // If the width × height is extremely large, increase particle pool
+    if (width * height > simulator.particlePoolSize) {
+      simulator.particlePoolSize = Math.min(5000, width * height * 1.2);
+    }
+    
+    simulator.createCloth(width, height, spacing, true, detailLevel);
+  }
+  
+  // Reset button handler
+  document.getElementById('reset-btn').addEventListener('click', function() {
+    simulator.particles = [];
+    simulator.constraints = [];
+    simulator.tearParticles = [];
+    simulator.fireParticles = [];
+    simulator.emberParticles = [];
+    simulator.ashParticles = [];
+    
+    // Get current settings
+    const materialType = document.getElementById('material-type').value;
+    
+    if (materialType === 'cloth') {
+      const width = simulator.preferredClothWidth || 30;
+      const height = simulator.preferredClothHeight || 20;
+      const detailLevel = document.getElementById('cloth-detail').value;
+      const spacing = simulator.preferredClothSpacing || 12;
+      simulator.createCloth(width, height, spacing, true, detailLevel);
+    } else {
+      simulator.initializeMaterial(materialType);
+    }
+  });
+  
+  // Add performance mode handler
+  document.getElementById('performance-mode').addEventListener('change', function() {
+    switch(this.value) {
+      case 'high':
+        simulator.adaptivePhysicsEnabled = false;
+        simulator.constraintIterations = 3;
+        simulator.maxFireParticles = 200;
+        simulator.maxEmberParticles = 150;
+        break;
+      case 'balanced':
+        simulator.adaptivePhysicsEnabled = true;
+        simulator.constraintIterations = 2;
+        simulator.maxFireParticles = 150;
+        simulator.maxEmberParticles = 100;
+        break;
+      case 'performance':
+        simulator.adaptivePhysicsEnabled = true;
+        simulator.constraintIterations = 1;
+        simulator.maxFireParticles = 80;
+        simulator.maxEmberParticles = 50;
+        // Apply more aggressive particle caps for extremely large cloths
+        if (simulator.particles.length > 1000) {
+          simulator.maxFireParticles = 40;
+          simulator.maxEmberParticles = 20;
+        }
+        break;
+    }
+  });
+  
+  return simulator;
+}
+
+// Initialize everything
+window.onload = function() {
+  setupSimulator();
+  
+  // Add instructions
+  const instructions = document.createElement('div');
+  instructions.style.position = 'absolute';
+  instructions.style.bottom = '10px';
+  instructions.style.left = '10px';
+  instructions.style.padding = '10px';
+  instructions.style.background = 'rgba(0,0,0,0.7)';
+  instructions.style.color = 'white';
+  instructions.style.borderRadius = '5px';
+  instructions.style.fontFamily = 'Arial, sans-serif';
+  instructions.style.zIndex = '1000';
+  instructions.innerHTML = 'Right-click and drag to cut material<br>Move mouse to burn material with fire<br>Press F to toggle fire';
+  document.body.appendChild(instructions);
+};
+</script>
+</body>
+</html>
+

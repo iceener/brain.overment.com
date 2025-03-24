@@ -1,6 +1,6 @@
----
 title: Alice
----
+------------
+
 Alice is a digital AI avatar I've been working with and developing since December 2022, right after the "ChatGPT moment". Alice has her own personality, appearance, voice, and memory. She also possesses a range of skills, allowing her to use the Internet and access applications, services, and even devices.
 
 I am developing the "Alice" project along two paths: **public**, in the form of a desktop application available at [heyalice.app](https://heyalice.app), and **private**, an advanced server application version, exclusively accessible to me, available through various interfaces.
@@ -57,7 +57,7 @@ The technologies I use to develop Alice include:
 - **Notification System:** It's the notification queue that allows Alice to notify herself about something (like finished task) or me.
 - **Scheduling:** This action lets me schedule tasks for Alice
 
-### Interfaces: 
+### Interfaces:
 
 - **API:** This crucial interface enables chatting with Alice and lets her interact with her memories and available tools.
 - **Slack:** Alice has two channels: one for DMs and one for notifications. I use it mainly on my phone
@@ -68,7 +68,6 @@ The technologies I use to develop Alice include:
 ![watch](https://cloud.overment.com/2024-05-14/over_watch-7adc54b8-4.png)
 
 ![car](https://cloud.overment.com/2024-05-14/over_car-7ad25518-d.png)
-
 
 ## Publications
 

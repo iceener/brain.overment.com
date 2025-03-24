@@ -1,24 +1,20 @@
 {
   "main": {
-    "id": "62d3882da32ed2a6",
+    "id": "90ff17b2626b4c51",
     "type": "split",
     "children": [
       {
-        "id": "5487ed185afa9472",
+        "id": "659671dac8558b41",
         "type": "tabs",
         "children": [
           {
-            "id": "dd77a7645d057e6d",
+            "id": "8d323e9988e9f47f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Tools/Hardware.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Hardware"
+              "title": "New tab"
             }
           }
         ]
@@ -27,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "57a9064af0dcba7a",
+    "id": "f824db8ce9b4ba87",
     "type": "split",
     "children": [
       {
-        "id": "8e2c76f523ab7a62",
+        "id": "e86a33b7dea7239f",
         "type": "tabs",
         "children": [
           {
-            "id": "0c57d14fcf54e7a5",
+            "id": "f07d8648bda051a1",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,12 +44,12 @@
             }
           },
           {
-            "id": "4656c3629fed332e",
+            "id": "dff77c3b680eafb5",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "happines",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,17 +61,7 @@
             }
           },
           {
-            "id": "c1925c2a556b9882",
-            "type": "leaf",
-            "state": {
-              "type": "starred",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "404e37f8c8f32d47",
+            "id": "acd8e2687a6bae9e",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -88,23 +74,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.0004348754883
+    "width": 300
   },
   "right": {
-    "id": "b88000dbb0ddc25a",
+    "id": "f68a8ef7d4c6a78a",
     "type": "split",
     "children": [
       {
-        "id": "9126514be83f5126",
+        "id": "0e0b38dd4cf11e0f",
         "type": "tabs",
         "children": [
           {
-            "id": "0959a9cb7af8a6a6",
+            "id": "5a6d8affa99b68a2",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tools/Apps.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,46 +99,49 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Apps"
+              "title": "Backlinks"
             }
           },
           {
-            "id": "6cc4d6abd7416de9",
+            "id": "ac4f0f2c16a7a4fc",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Tools/Apps.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Apps"
+              "title": "Outgoing links"
             }
           },
           {
-            "id": "9872eb82918c7652",
+            "id": "eb4cb4c3daa1dd81",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "Tags"
             }
           },
           {
-            "id": "b725d0a6be54d7c2",
+            "id": "be4c4cc113acb6b1",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tools/Apps.md"
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Apps"
+              "title": "Outline"
             }
           }
         ]
@@ -173,43 +161,6 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "dd77a7645d057e6d",
-  "lastOpenFiles": [
-    "Tools/Hardware.md",
-    "Projects/Techsistence.md",
-    "Projects/overment.md",
-    "Projects/eduweb.md",
-    "Projects/easy_.md",
-    "Projects/Design Maestro.md",
-    "Projects/Alice.md",
-    "Projects/AI_devs.md",
-    "Core/Process.md",
-    "index.md",
-    "Core/Direction.md",
-    "Core/Values.md",
-    "Core/Learning System.md",
-    "Core/Knowing thyself.md",
-    "Books/Books.md",
-    "Apps/Make.md",
-    "Tools/Apps.md",
-    "Books/The Happines Advantage.md",
-    "Usage.md",
-    "Untitled.md",
-    "Comprehensive Qdrant Rust Client API Reference with Examples.md",
-    "Alice/events/general",
-    "Alice/events",
-    "Alice/profiles/work",
-    "Alice/profiles/relationships",
-    "Alice/profiles/preferences",
-    "Alice/profiles/development",
-    "Alice/profiles/basic",
-    "Alice/profiles",
-    "Alice/environment/general",
-    "Alice/environment",
-    "Projects/Automation House.md",
-    "Pasted image 20240514173612.png",
-    "Tools/Tools.md",
-    "Sharing/LangChain.md",
-    "Sharing/JavaScript.md"
-  ]
+  "active": "8d323e9988e9f47f",
+  "lastOpenFiles": []
 }
