@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./app.c9dd1f3c.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Apps/Make.md"}'),r={name:"Apps/Make.md"};function s(o,c,n,p,_,d){return t(),a("div")}const f=e(r,[["render",s]]);export{m as __pageData,f as default};
