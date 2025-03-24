@@ -54,9 +54,7 @@ export default {
                     {text: 'eduweb & ahoy!', link: '/Projects/eduweb.md'},
                     {text: 'easy_', link: '/Projects/easy_.md'},
                     {text: 'Alice', link: '/Projects/Alice.md'},
-                    {text: 'overment', link: '/Projects/overment.md'},
-                    {text: 'Automation House', link: '/Projects/Automation House.md'},
-                    {text: 'Design Maestro', link: '/Projects/Design Maestro.md'},
+                    {text: 'overment', link: '/Projects/overment.md'}
                 ]
             },
             {
