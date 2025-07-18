@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as s}from"./app.77c7ed4f.js";const h=JSON.parse('{"title":"Tech\u2022sistence","description":"","frontmatter":{"title":"Tech\u2022sistence"},"headers":[],"relativePath":"Projects/Techsistence.md"}'),c={name:"Projects/Techsistence.md"};function n(r,a,o,i,p,_){return t(),s("div")}const m=e(c,[["render",n]]);export{h as __pageData,m as default};

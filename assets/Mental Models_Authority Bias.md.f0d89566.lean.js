@@ -1,1 +1,0 @@
-import{_ as t,o as e,c as a}from"./app.77c7ed4f.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Mental Models/Authority Bias.md"}'),o={name:"Mental Models/Authority Bias.md"};function r(s,n,c,i,_,d){return e(),a("div")}const m=t(o,[["render",r]]);export{l as __pageData,m as default};
