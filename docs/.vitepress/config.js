@@ -86,7 +86,7 @@ export default defineConfig({
       {
         text: "Projects",
         items: [
-          { text: "eduweb & ahoy!", link: "/Projects/eduweb.md" },
+          { text: "eduweb", link: "/Projects/eduweb.md" },
           { text: "easy_", link: "/Projects/easy_.md" },
           { text: "Alice", link: "/Projects/Alice.md" },
           { text: "overment", link: "/Projects/overment.md" },

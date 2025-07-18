@@ -31,9 +31,11 @@
 }
 
 [alt="overment-photo"] {
-  margin: 0 auto 25px;
+  margin: 0;
   display: block;
-  width: 150px;
+  width: 95px;
+  border-radius: 8px;
+  border: 1px solid #696969;
 }
 
 [alt="avatar"] {

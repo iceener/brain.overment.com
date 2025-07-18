@@ -175,8 +175,14 @@
   },
   "active": "dd77a7645d057e6d",
   "lastOpenFiles": [
-    "map.md",
+    "Mental Models/index.md",
+    "Business/index.md",
+    "Business",
+    "AI/index.md",
+    "Programming/index.md",
+    "Programming",
     "vite.config.js",
+    "map.md",
     "time.html",
     "qa.md",
     "public/assets/img/favicons/site.webmanifest",
@@ -195,9 +201,7 @@
     "public/assets/img/favicons",
     "public/assets/img",
     "public/assets",
-    "public",
     "index.md",
-    "index.html",
     "Tools/Tools.md",
     "Tools/Hardware.md",
     "Tools/Automation.md",
@@ -216,9 +220,6 @@
     "Mental Models/Genius of the AND.md",
     "Mental Models/Ergodicity.md",
     "Mental Models/Commitment Bias.md",
-    "Mental Models/BHAG.md",
-    "Mental Models/Availability Heuristic.md",
-    "Mental Models/Authority Bias.md",
-    "Mental Models/20 Mile March.md"
+    "Mental Models/BHAG.md"
   ]
 }

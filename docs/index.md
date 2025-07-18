@@ -1,29 +1,26 @@
-> Last updated: February 24, 2025
+> Last update: July 18, 2025
 
 <img src="https://cloud.overment.com/overment-1752861357.jpg" alt="overment-photo" width="200px">
 
-This is where **I share everything I know.** I develop it primarily for myself, but I believe you'll find something valuable here too.
+Hey there, I'm Adam and this is my digital garden where I share **everything I know.** I originally created it for myself, but you might find something valuable here too.
 
-Please remember, this page will never be finished. The information here will evolve over time because **what is true for me today may not be true tomorrow**. This reflects my approach to our ever-changing world.
+This website will never be finished. Everything here will evolve over time, and some things may never be completed, because **what is true for me today may not be true for me tomorrow**. I think this reflects my approach to our ever-changing world.
 
-## The Most Important Topics
+## What you can find here?
 
-- My [Process](Core/Process.md) guides me towards my set [Direction](Core/Direction.md), rooted in my [Values](Core/Values.md) and self-awareness ([Knowing thyself](Core/Knowing%20thyself.md)).
-- How I learn through my [Learning System](Core/Learning%20System.md).
-- Everything I know about [Mental Models](Mental%20Models/Mental%20Models.md).
-- My thoughts on [Books](Books/Books.md) I read.
-- A list of and my opinions on [Apps](Tools/Apps.md).
-- My thoughts on [Hardware](Tools/Hardware.md).
-- Projects I'm working on: [easy.tools](Projects/easy_.md), [eduweb](Projects/eduweb.md), [Alice](Projects/Alice.md), [overment](Projects/overment.md), [Techsistence](Projects/Techsistence.md).
-- My thoughts on [Artificial Intelligence](AI/AI.md) and how I use it in my work.
-- Perspectives and ideas on [Automation](Tools/Automation.md).
-- Additional notes on my [Process](Core/Process.md).
+- My [Process](Core/Process.md) always guides me toward my [Direction](Core/Direction.md), grounded in my [Values](Core/Values.md) and deep self-awareness ([Knowing thyself](Core/Knowing%20thyself.md)).
+- My [Learning System](Core/Learning%20System.md).
+- [Books](Books/Books.md) I've read.
+- [Apps I use and how I use them](Tools/Apps.md).
+- [Hardware I use](Tools/Hardware.md).
+- Projects I'm working on, such as [eduweb](Projects/eduweb.md), [easy.tools](Projects/easy_.md), [Alice](Projects/Alice.md), and [overment](Projects/overment.md).
+- Things I'm learning about: [programming](Programming/index.md), [AI](AI/index.md), [business](Business/index.md), and [mental models](Mental%20Models/index.md).
 - All my free and paid publications.
 
 ## Where to Find Me
 
-I enjoy chatting with people, so feel free to share thoughts or ask questions. If I don't respond, please don't take it personally - I'll do my best to get back to you.
+I enjoy chatting with people, so feel free to share your thoughts or ask questions. If I don't respond, please don't take it personally. I'll do my best to get back to you.
 
-You can find me on [Instagram](https://www.instagram.com/_overment/), [YouTube](https://www.youtube.com/overment), [Substack](https://techsistence.com/), and [X](https://x.com/_overment).
+You can find me on [X](https://x.com/_overment) and [YouTube](https://www.youtube.com/@overment)
 
 Feel free to contact me at adam@overment.com
