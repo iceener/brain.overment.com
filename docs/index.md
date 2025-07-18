@@ -14,7 +14,7 @@ Please remember, this page will never be finished. The information here will evo
 - My thoughts on [Books](Books/Books.md) I read.
 - A list of and my opinions on [Apps](Tools/Apps.md).
 - My thoughts on [Hardware](Tools/Hardware.md).
-- Projects I'm working on: [easy.tools](Projects/easy.tools.md), [eduweb](Projects/eduweb.md), [Alice](Projects/Alice.md), [overment](Projects/overment.md), [Techsistence](Projects/Techsistence.md).
+- Projects I'm working on: [easy.tools](Projects/easy_.md), [eduweb](Projects/eduweb.md), [Alice](Projects/Alice.md), [overment](Projects/overment.md), [Techsistence](Projects/Techsistence.md).
 - My thoughts on [Artificial Intelligence](AI/AI.md) and how I use it in my work.
 - Perspectives and ideas on [Automation](Tools/Automation.md).
 - Additional notes on my [Process](Core/Process.md).
@@ -27,4 +27,3 @@ I enjoy chatting with people, so feel free to share thoughts or ask questions. I
 You can find me on [Instagram](https://www.instagram.com/_overment/), [YouTube](https://www.youtube.com/overment), [Substack](https://techsistence.com/), and [X](https://x.com/_overment).
 
 Feel free to contact me at adam@overment.com
-
