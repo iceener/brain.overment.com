@@ -1,6 +1,6 @@
 > Last updated: February 24, 2025
 
-<img src="https://cloud.overment.com/2024-05-14/overment-1715702331-b2ecba03-7.png" alt="overment-photo" width="200px">
+<img src="https://cloud.overment.com/overment-1752861357.jpg" alt="overment-photo" width="200px">
 
 This is where **I share everything I know.** I develop it primarily for myself, but I believe you'll find something valuable here too.
 

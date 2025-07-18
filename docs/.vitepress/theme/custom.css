@@ -1,45 +1,53 @@
+@import "./tailwind.css";
+
 :root {
-    --vp-c-brand: #FF00FB;
-    --vp-c-brand-light: #747bff;
-    --vp-c-brand-dark: #a518a3;
+  --vp-c-brand-1: #ff00fb;
+  --vp-c-brand-2: #ff00fb;
+  --vp-c-brand-3: #ff00fb;
+  --vp-c-brand-soft: rgba(255, 0, 251, 0.14);
+}
+
+.dark {
+  --vp-c-brand-1: #ff00fb;
+  --vp-c-brand-2: #ff52fc;
+  --vp-c-brand-3: #c200bf;
+  --vp-c-brand-soft: rgba(255, 0, 251, 0.14);
 }
 
 .search-text {
-    background: #1a1a1a;
+  background: #1a1a1a;
 }
 
-@media(max-width: 600px) {
-    .search-text {
-        font-size: 9px;
-        padding: 3px 14px;
-    }
+@media (max-width: 600px) {
+  .search-text {
+    font-size: 9px;
+    padding: 3px 14px;
+  }
 }
 
 .modal {
-    min-width: initial;
-    max-width: 95vw;
+  min-width: initial;
+  max-width: 95vw;
 }
 
-
 [alt="overment-photo"] {
-    margin: 0 auto 25px;
-    display: block;
-    width: 150px;
+  margin: 0 auto 25px;
+  display: block;
+  width: 150px;
 }
 
 [alt="avatar"] {
-    width: 150px;
-    border: 1px solid #1a1a1a;
-    border-radius: 3px;
+  width: 150px;
+  border: 1px solid #1a1a1a;
+  border-radius: 3px;
 }
 
 [alt="easy_"] {
-    max-width: 375px;
+  max-width: 375px;
 }
 
 [alt="Alice"] {
-
-    margin: 0 auto 25px;
-    display: block;
-    width: 150px;
+  margin: 0 auto 25px;
+  display: block;
+  width: 150px;
 }
