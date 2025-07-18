@@ -1,0 +1,1 @@
+import{_ as t,c as a,o as e}from"./chunks/framework.Bw-5EFTY.js";const d=JSON.parse('{"title":"Superhuman","description":"","frontmatter":{"title":"Superhuman"},"headers":[],"relativePath":"Apps/Raycast.md","filePath":"Apps/Raycast.md"}'),s={name:"Apps/Raycast.md"};function r(c,p,n,o,i,m){return e(),a("div")}const f=t(s,[["render",r]]);export{d as __pageData,f as default};

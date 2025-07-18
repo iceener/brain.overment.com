@@ -1,0 +1,1 @@
+import{_ as e,c as t,o}from"./chunks/framework.Bw-5EFTY.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Pound the Stone.md","filePath":"Books/Pound the Stone.md"}'),n={name:"Books/Pound the Stone.md"};function a(s,r,c,d,_,p){return o(),t("div")}const f=e(n,[["render",a]]);export{m as __pageData,f as default};

@@ -1,0 +1,1 @@
+import{_ as t,c as e,o}from"./chunks/framework.Bw-5EFTY.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Grit.md","filePath":"Books/Grit.md"}'),r={name:"Books/Grit.md"};function a(s,c,n,i,p,_){return o(),e("div")}const f=t(r,[["render",a]]);export{m as __pageData,f as default};

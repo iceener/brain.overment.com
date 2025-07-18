@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as t}from"./chunks/framework.Bw-5EFTY.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Hyperfocus.md","filePath":"Books/Hyperfocus.md"}'),s={name:"Books/Hyperfocus.md"};function r(a,c,n,p,f,_){return t(),o("div")}const m=e(s,[["render",r]]);export{i as __pageData,m as default};
