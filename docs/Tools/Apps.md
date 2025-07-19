@@ -2,6 +2,8 @@
 title: Apps
 ---
 
+# Apps
+
 This is the latest (Q2 2025) list of apps I use:
 
 ## Fundamentals

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "Mega/index.md.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "index.md"
             }
           }
         ]
@@ -88,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.0004348754883
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "b88000dbb0ddc25a",
@@ -175,6 +176,9 @@
   },
   "active": "dd77a7645d057e6d",
   "lastOpenFiles": [
+    "index.md",
+    "Mega/index.md.md",
+    "Mega",
     "Mental Models/index.md",
     "Business/index.md",
     "Business",
@@ -200,8 +204,6 @@
     "public/assets/img/favicons/android-chrome-512x512.png",
     "public/assets/img/favicons",
     "public/assets/img",
-    "public/assets",
-    "index.md",
     "Tools/Tools.md",
     "Tools/Hardware.md",
     "Tools/Automation.md",
@@ -219,7 +221,6 @@
     "Mental Models/Leverage.md",
     "Mental Models/Genius of the AND.md",
     "Mental Models/Ergodicity.md",
-    "Mental Models/Commitment Bias.md",
-    "Mental Models/BHAG.md"
+    "Mental Models/Commitment Bias.md"
   ]
 }

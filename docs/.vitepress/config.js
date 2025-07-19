@@ -70,11 +70,11 @@ export default defineConfig({
     logo: "/assets/img/logo-symbol.svg",
     sidebar: [
       {
-        text: "Start",
-        items: [{ text: "Start here", link: "/" }],
+        text: "",
+        items: [{ text: "What is this?", link: "/" }],
       },
       {
-        text: "Core",
+        text: "Me",
         items: [
           { text: "Direction", link: "/Core/Direction.md" },
           { text: "Learning System", link: "/Core/Learning System.md" },
@@ -83,8 +83,21 @@ export default defineConfig({
           { text: "Values", link: "/Core/Values.md" },
         ],
       },
+      // {
+      //   text: "Knowledge",
+      //   collapsible: true,
+      //   collapsed: false,
+      //   items: [
+      //     { text: "Programming", link: "/Programming/index.md" },
+      //     { text: "Generative AI", link: "/AI/index.md" },
+      //     { text: "YouTube", link: "/YouTube/index.md" },
+      //     { text: "Newsletter", link: "/Newsletter/index.md" },
+      //   ],
+      // },
       {
         text: "Projects",
+        collapsible: true,
+        collapsed: false,
         items: [
           { text: "eduweb", link: "/Projects/eduweb.md" },
           { text: "easy_", link: "/Projects/easy_.md" },
@@ -93,11 +106,12 @@ export default defineConfig({
         ],
       },
       {
-        text: "Tools",
+        text: "Apps & Hardware",
         link: "/Tools/Tools.md",
+        collapsible: true,
+        collapsed: false,
         items: [
           { text: "Apps", link: "/Tools/Apps.md" },
-          { text: "Automation", link: "/Tools/Automation.md" },
           { text: "Hardware", link: "/Tools/Hardware.md" },
         ],
       },
