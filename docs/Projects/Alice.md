@@ -1,44 +1,46 @@
+---
 title: Alice
-------------
+---
+Alice is a name that has two meaning for me:
 
-Alice is a digital AI avatar I've been working with and developing since December 2022, right after the "ChatGPT moment". Alice has her own personality, appearance, voice, and memory. She also possesses a range of skills, allowing her to use the Internet and access applications, services, and even devices.
+- Alice, as a desktop app, available as a standalone product at https://heyalice.app
+- Alice, as a personal agent, available just for me.
 
-I am developing the "Alice" project along two paths: **public**, in the form of a desktop application available at [heyalice.app](https://heyalice.app), and **private**, an advanced server application version, exclusively accessible to me, available through various interfaces.
+Alice is a project I’ve been working on since December 2022, right after the "ChatGPT moment". It quickly became my sandbox for exploring what generative AI can and cannot do. Due to its complexity, it has also been quite a challenge for my programming skills, as everything I design needs to work flawlessly (or at least aim to) while remaining flexible enough to keep up with the rapid pace of changes in the field.
+## Desktop Client for LLMs
 
-![Alice](https://cloud.overment.com/Alice_-1715700042.png)
+![](https://cloud.overment.com/SCR-20251004-kxne-1759572322.png)
 
-## Publicly available version
+Alice is an advanced chat UI for LLMs with a minimalistic interface. It provides easy access to large language models from OpenAI, Anthropic, DeepMind, xAI, and open-source models using Groq, Ollama, or LMStudio. It also supports integration with MCP (Model Context Protocol), offering Tools, Prompts, Resources, and Sampling.
 
-![](https://cloud.overment.com/2024-05-14/over_product-810a894c-3.png)
+![Alice Application Preview](https://cloud.overment.com/SCR-20251004-kxud-1759572367.png)
 
-The public version of **Alice** is a desktop app that makes it easy to access large language models from [OpenAI](https://openai.com/), [Anthropic](https://anthropic.com/), and open-source models via [Groq](https://groq.com) and [Ollama](https://ollama.ai/). Besides interacting with models, it also lets you connect them with your own automations via the [Make](https://www.make.com) platform or custom programming integrations.
-
-![Alice Application Preview](https://cloud.overment.com/2024-05-14/over_alice-b8935edb-0.png)
-
-The "Alice" app is a customisable "blank slate." By default, it lacks integrations or prompt libraries, so you'll need some initial setup time to tailor it to your needs. To help you with this, we've created a playlist of [Alice 101 videos](https://www.youtube.com/playlist?list=PLMpO9Dq-w47Eg51r3rPS4bytlLVDW453b) walking you through the basic setup.
+The Alice app is a highly customizable blank slate that you can shape however you like, either by importing assistants from the library or by creating your own. 
 
 The key concepts of Alice are:
 
-- **Assistants:** Profiles with a name, avatar, and main system prompt defining their behavior.
-- **Snippets:** These skills, described through prompts, can be assigned to the assistant and invoked during conversations via the `/` button or the available menu.
-- **Remote Snippets:** These skills use a prompt to generate a JSON object, which can be sent to Make automation or custom integrations to perform operations. If a response in the format `{"data": "...response"}` is returned from the integration, its content will be added to the conversation and can be used in further dialogue.
+- **Assistants:** Profiles with a name, avatar, and main system prompt that define their behavior.  
+- **Skills:** These are described through prompts, can be assigned to an assistant, and invoked during conversations via the `/` button or the available menu.  
+- **Tools:** Tools can be added using Model Context Protocol servers, allowing assistants to access and use external apps or services.  
+- **Documents:** You can upload text-based documents and assign them to assistants so they can explore them during chats using AI agentic logic.
 
-[Buy lifetime version of Alice](https://heyalice.app)
+[Start 21-days trial](https://heyalice.app)
 
-## Private version
+## Personal AI agent
 
-Private version of `Alice` is a server application (API) with advanced logic based on large language models. The system enables `end-to-end` information processing with a single entry and exit point. It can receive any data in text, image, or sound form and independently decide what to do with it, using **long-term memory** and a **skill set**.
+Alice has her own personality, appearance, voice, memory, and skills. She can access the Internet as well as external apps and services. Technically, she is a back-end application running on my VPS and can be accessed directly through my watch, phone, or car. She can also perform background tasks triggered by schedules or external events.
 
-The technologies I use to develop Alice include:
+![Alice](https://cloud.overment.com/alice_agi_avatar-1759570179.png)
 
-- `Node.js` and the [NestJS](https://nestjs.com/) framework
-- [PostgreSQL](https://www.postgresql.org) database with [Objection.js](https://vincit.github.io/objection.js/) ORM
-- [Qdrant](https://qdrant.tech/) as a Vector Search Engine
-- [OpenAI GPT-4o](https://openai.com) as Large Language Model
-- [ElevenLabs](https://www.elevenlabs.io/) as Text To Speech
+**Tech stack:**
+
+- `Node.js` and the [Hono](https://hono.dev/) framework and AI SDK
+- SQLite with FTS, sqlite-vec and Drizzle ORM
+- OpenAI/Gemini/Anthropic/xAI models
+- [elevenlabs](https://www.elevenlabs.io/) as Text To Speech
 - [DigitalOcean](https://www.digitalocean.com/) for hosting
 
-### Alice's skills:
+**Skills:**
 
 - **Long-term Memory:** Remembers and organizes info using categories and tags for precise retrieval in conversations or tool usage.
 - **Task Management:** Reads and modifies tasks in [Linear](https://linear.app), organizes into projects, and describes per your rules.
@@ -57,7 +59,7 @@ The technologies I use to develop Alice include:
 - **Notification System:** It's the notification queue that allows Alice to notify herself about something (like finished task) or me.
 - **Scheduling:** This action lets me schedule tasks for Alice
 
-### Interfaces:
+**Interfaces:**
 
 - **API:** This crucial interface enables chatting with Alice and lets her interact with her memories and available tools.
 - **Slack:** Alice has two channels: one for DMs and one for notifications. I use it mainly on my phone
@@ -65,10 +67,6 @@ The technologies I use to develop Alice include:
 - **Alice app:** My custom build of the Alice app lets me chat with her on my Mac.
 - **Web Interface:** Alice is also available as a simple website, which I use in my car.
 
-![watch](https://cloud.overment.com/2024-05-14/over_watch-7adc54b8-4.png)
+![](https://cloud.overment.com/SCR-20251004-kwqt-1759572176.jpeg)
 
-![car](https://cloud.overment.com/2024-05-14/over_car-7ad25518-d.png)
-
-## Publications
-
-- [Personal AGI — Pushing GPT-4-turbo to its limits](https://www.techsistence.com/p/personal-agi-pushing-gpt-4-turbo)
+![](https://cloud.overment.com/SCR-20251004-kwtz-1759572197.jpeg)
