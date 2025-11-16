@@ -18,12 +18,12 @@ This is the latest (Q2 2025) list of apps I use:
 
 ## Productivity
 
+- Alice WatchOS — my personal AI Agent
 - [Linear](https://linear.app) — for managing tasks
 - [easy.tools](https://easy.tools) — for selling products
 - [Zencal](https://zencal.io/) — for meeting scheduling
 - [Paste](https://setapp.com/apps/paste) — clipboard manager for macOS
 - [Dropshare](https://dropshare.app/) — for sending things to my FTP
-- [Xnapper](https://xnapper.com/) - for taking screenshots
 
 ## Automation
 
@@ -38,7 +38,6 @@ This is the latest (Q2 2025) list of apps I use:
 - [Procreate](https://apps.apple.com/us/app/procreate/id425073498) — drawing app for iPad
 - [Screenflow](http://www.telestream.net/screenflow/overview.htm) — how I record courses
 - [Screen Studio](https://screen.studio/) — tool for recording short-form videos
-- [Rocket](https://matthewpalmer.net/rocket/) — custom emoji picker for macOS
 
 ## AI & Generative Tools
 
@@ -55,6 +54,7 @@ This is the latest (Q2 2025) list of apps I use:
 
 - [endel.io](https://endel.io/) — soundscapes to help me focus
 - [Headspace](https://headspace.com/) — meditation app
+- [Pliability](https://pliability.com/) — stretching exercises app
 
 ## Development
 
