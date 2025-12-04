@@ -100,7 +100,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: "eduweb", link: "/Projects/eduweb.md" },
-          { text: "easy_", link: "/Projects/easy_.md" },
+          { text: "Easytools", link: "/Projects/Easytools.md" },
           { text: "Alice", link: "/Projects/Alice.md" },
           { text: "overment", link: "/Projects/overment.md" },
         ],
