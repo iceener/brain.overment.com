@@ -47,7 +47,7 @@ This is the latest (Q2 2025) list of apps I use:
 
 ## Notes, Knowledge & Organization
 
-- [Obsidian](https://obsidian.md) — my go-to for notes
+- [Obsidian](https://obsidian.md) — my go-to for notes & acts as Alice's (my AI Agent) operational memory
 - [Airtable](https://airtable.com/) — basically Excel but cooler, I use it for [Automation](Automation.md)
 
 ## Health & Wellbeing

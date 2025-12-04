@@ -7,13 +7,13 @@ Alice is a name that has two meanings for me:
 - Alice, as a personal agent, available just for me.
 
 Alice is a project I've been working on since December 2022, right after the "ChatGPT moment". It quickly became my sandbox for exploring what generative AI can and cannot do. Due to its complexity, it has been a significant programming challenge, as everything I design needs to work flawlessly (or at least aim to) while remaining flexible enough to keep up with the rapid pace of changes in the field.
+
+![Alice Application Preview](https://cloud.overment.com/SCR-20251004-kxud-1759572367.png)
 ## Desktop Client for LLMs
 
 ![](https://cloud.overment.com/SCR-20251004-kxne-1759572322.png)
 
 Alice is an advanced chat UI for LLMs with a minimalistic interface. It provides easy access to large language models from OpenAI, Anthropic, DeepMind, xAI, and open-source models using Groq, Ollama, or LMStudio. It also supports integration with MCP (Model Context Protocol), offering Tools, Prompts, Resources, and Sampling.
-
-![Alice Application Preview](https://cloud.overment.com/SCR-20251004-kxud-1759572367.png)
 
 The Alice app is a highly customizable blank slate that you can shape however you like, either by importing assistants from the library or by creating your own. 
 
@@ -23,6 +23,7 @@ The key concepts of Alice are:
 - **Skills:** These are described through prompts, can be assigned to an assistant, and invoked during conversations via the `/` button or the available menu.  
 - **Tools:** Tools can be added using Model Context Protocol servers, allowing assistants to access and use external apps or services.  
 - **Documents:** You can upload text-based documents and assign them to assistants so they can explore them during chats using AI agentic logic.
+- **Memories**: Enable memory for assistants to store and retrieve information. Create memories manually or ask assistants to memorize things during conversations. Stored memories become available in future chats and tool use.
 
 [Start 21-days trial](https://heyalice.app)
 
