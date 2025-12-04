@@ -1,7 +1,6 @@
 ---
-title: easy_
+title: Easytools
 ---
-
 # Easytools
 
 ![](https://cloud.overment.com/easytools-1764819186.png)

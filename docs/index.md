@@ -13,7 +13,7 @@ This website will never be finished. Everything here will evolve over time, and 
 - [Books](Books/Books.md) I've read.
 - [Apps I use and how I use them](Tools/Apps.md).
 - [Hardware I use](Tools/Hardware.md).
-- Projects I'm working on, such as [eduweb](Projects/eduweb.md), [easy.tools](Projects/easy_.md), [Alice](Projects/Alice.md), and [overment](Projects/overment.md).
+- Projects I'm working on, such as [eduweb](Projects/eduweb.md), [easy.tools](Projects/Easytools.md), [Alice](Projects/Alice.md), and [overment](Projects/overment.md).
 - Things I'm learning about: Programming, AI, Business and Mental Models
 - All my free and paid publications.
 
