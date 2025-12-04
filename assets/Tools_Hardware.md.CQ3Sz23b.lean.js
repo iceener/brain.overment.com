@@ -1,1 +1,0 @@
-import{_ as a,c as r,o,ag as t}from"./chunks/framework.Bw-5EFTY.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Tools/Hardware.md","filePath":"Tools/Hardware.md"}'),i={name:"Tools/Hardware.md"};function l(n,e,s,p,d,c){return o(),r("div",null,e[0]||(e[0]=[t("",8)]))}const u=a(i,[["render",l]]);export{m as __pageData,u as default};

@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.Bw-5EFTY.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"YouTube/index.md","filePath":"YouTube/index.md"}'),o={name:"YouTube/index.md"};function n(r,s,c,d,i,p){return a(),t("div")}const m=e(o,[["render",n]]);export{u as __pageData,m as default};

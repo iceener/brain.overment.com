@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as n}from"./chunks/framework.Bw-5EFTY.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Learning/Huberman Lab.md","filePath":"Learning/Huberman Lab.md"}'),r={name:"Learning/Huberman Lab.md"};function t(o,s,c,i,m,_){return n(),a("div")}const b=e(r,[["render",t]]);export{d as __pageData,b as default};
