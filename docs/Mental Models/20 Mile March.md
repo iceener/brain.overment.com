@@ -8,3 +8,5 @@ A concept of a steady pace helps me develop my [Process](../Core/Process.md) so 
 
 [Read more about 20 Mile March](https://www.jimcollins.com/concepts/twenty-mile-march.html)
 
+....
+

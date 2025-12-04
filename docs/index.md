@@ -14,7 +14,7 @@ This website will never be finished. Everything here will evolve over time, and 
 - [Apps I use and how I use them](Tools/Apps.md).
 - [Hardware I use](Tools/Hardware.md).
 - Projects I'm working on, such as [eduweb](Projects/eduweb.md), [easy.tools](Projects/easy_.md), [Alice](Projects/Alice.md), and [overment](Projects/overment.md).
-- Things I'm learning about: [programming](Programming/index.md), [AI](AI/index.md), [business](Business/index.md), and [mental models](Mental%20Models/index.md).
+- Things I'm learning about: Programming, AI, Business and Mental Models
 - All my free and paid publications.
 
 ## Where to Find Me

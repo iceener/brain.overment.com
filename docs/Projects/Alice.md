@@ -1,12 +1,12 @@
 ---
 title: Alice
 ---
-Alice is a name that has two meaning for me:
+Alice is a name that has two meanings for me:
 
 - Alice, as a desktop app, available as a standalone product at https://heyalice.app
 - Alice, as a personal agent, available just for me.
 
-Alice is a project I’ve been working on since December 2022, right after the "ChatGPT moment". It quickly became my sandbox for exploring what generative AI can and cannot do. Due to its complexity, it has also been quite a challenge for my programming skills, as everything I design needs to work flawlessly (or at least aim to) while remaining flexible enough to keep up with the rapid pace of changes in the field.
+Alice is a project I've been working on since December 2022, right after the "ChatGPT moment". It quickly became my sandbox for exploring what generative AI can and cannot do. Due to its complexity, it has been a significant programming challenge, as everything I design needs to work flawlessly (or at least aim to) while remaining flexible enough to keep up with the rapid pace of changes in the field.
 ## Desktop Client for LLMs
 
 ![](https://cloud.overment.com/SCR-20251004-kxne-1759572322.png)
@@ -42,8 +42,8 @@ Alice has her own personality, appearance, voice, memory, and skills. She can ac
 
 **Skills:**
 
-- **Long-term Memory:** Remembers and organizes info using categories and tags for precise retrieval in conversations or tool usage.
-- **Task Management:** Reads and modifies tasks in [Linear](https://linear.app), organizes into projects, and describes per your rules.
+- **Long-term Memory:** Remembers and organizes information using categories and tags for precise retrieval in conversations or tool usage.
+- **Task Management:** Reads and modifies tasks in [Linear](https://linear.app), organizes into projects, and describes according to your rules.
 - **Calendar Management:** Reads and organizes calendar events.
 - **Spotify:** Uses Spotify API to search, play songs on devices, and create playlists.
 - **Newsfeed:** Manages your newsfeed, especially "Read Later," by adding entries from followed sources or your messages.
@@ -63,7 +63,7 @@ Alice has her own personality, appearance, voice, memory, and skills. She can ac
 
 - **API:** This crucial interface enables chatting with Alice and lets her interact with her memories and available tools.
 - **Slack:** Alice has two channels: one for DMs and one for notifications. I use it mainly on my phone
-- **Siri Shortcuts:** I can send Alice a message through the Shortcuts app on my Apple Watch.
+- **Siri Shortcuts:** I can send a message to Alice through the Shortcuts app on my Apple Watch.
 - **Alice app:** My custom build of the Alice app lets me chat with her on my Mac.
 - **Web Interface:** Alice is also available as a simple website, which I use in my car.
 

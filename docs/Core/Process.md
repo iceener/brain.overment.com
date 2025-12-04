@@ -20,7 +20,7 @@ In a practice, I find it difficult to determine the future for more than a week 
 
 A well-defined goal, **determines the end result** and a deadline ([SMART](https://www.mindtools.com/pages/article/smart-goals.htm).) . Combined with the visualization of a realized goal, we form the right attitudes (e.g.: enthusiasm, one of my [Values](Values.md)).
 
-For a bigger goals, it is a good idea to divide them into a smaller chunks, to reduce "Resistance" about you can learn more in the [War of Art](../Books/War%20of%20Art.md) book. The realization of smaller goals imparts momentum through, among other things, the use of dopamine, about which more you can learn from [Huberman Lab](../Learning/Huberman%20Lab.md). 
+For a bigger goals, it is a good idea to divide them into a smaller chunks, to reduce "Resistance" about you can learn more in the [War of Art](../Books/War%20of%20Art.md) book. The realization of smaller goals imparts momentum through, among other things, the use of dopamine, about which more you can learn from Huberman Lab.
 
 **In practice, goals have a few important drawbacks:**
 
@@ -82,7 +82,7 @@ While designing my Process I rely on:
 
 In practice, my Process is baed on a foundation which is my health — both physical and mental. I manage to keep a good condition with activities like:
 
-- **Regular Sleep** — you can learn more about this from [Huberman Lab](../Learning/Huberman%20Lab.md) podcast. I sleep at least 7 hours and do not use additional aids beside of Ashwagandha. I avoid screens at least an hour before bedtime. 
+- **Regular Sleep** — you can learn more about this from Huberman Lab podcast. I sleep at least 7 hours and do not use additional aids beside of Ashwagandha. I avoid screens at least an hour before bedtime.
 - **Diet** — Vitamin D, K, Omega 3 and Magnesium. Once every quarter I eat bee pollen diluted overnight in boiled, cooled water (⚠️ NOTE: bee pollen is a strong allergen).
 - **Sport** — [3x a week](https://www.reddit.com/r/bodyweightfitness/wiki/kb/recommended_routine/) and Romwod (see more at [Apps](../Tools/Apps.md)).
 - **Breathing exercises with apps** — [Oak](https://apps.apple.com/us/app/oak-meditation-breathing/id1210209691), [Headspace](https://headspace.com/) and [Reveri](https://www.reveri.com/) (see more at [Apps](../Tools/Apps.md)).

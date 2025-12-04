@@ -9,7 +9,7 @@ I consider the ability to **learn quickly** as one of the most important of all,
 For example I can see that my memory has become **incomparably better over the past few years**. I could be wrong but I assume it's connected with:
 
 - reading [Books](../Books/Books.md)
-- listening to i.e. [Huberman Lab](../Learning/Huberman%20Lab.md)
+- listening to i.e. Huberman Lab
 - taking care of [Process](Process.md)
 - much less stress because of my new environment and wisdom from [Books](../Books/Books.md)
 
@@ -35,7 +35,7 @@ At the end you can say thtat my learning process is all about:
 
 ## How much do I learn?
 
-I don't measure it in any way, but learning is my habit and integral part of my day. This means that I use practically **every free moment to learn something**. AT the same time I also have space for total non-thinking, rest and silence, which I also see as a important part of the process of acquring knowledge ([Huberman Lab](../Learning/Huberman%20Lab.md) again, confirm that).
+I don't measure it in any way, but learning is my habit and integral part of my day. This means that I use practically **every free moment to learn something**. AT the same time I also have space for total non-thinking, rest and silence, which I also see as a important part of the process of acquring knowledge (Huberman Lab again, confirm that).
 
 ## Newsletters I like to read
 

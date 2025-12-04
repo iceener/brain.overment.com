@@ -5,3 +5,10 @@ yarn-error.log
 docs/.vitepress/dist/
 docs/.vitepress/cache/
 docs/Mega
+docs/private
+# macOS metadata
+.DS_Store
+**/.DS_Store
+._.DS_Store
+**/._.DS_Store
+._*

@@ -1,20 +1,24 @@
 {
   "main": {
-    "id": "90ff17b2626b4c51",
+    "id": "dbcc8ba3ac370245",
     "type": "split",
     "children": [
       {
-        "id": "659671dac8558b41",
+        "id": "2181a70f77559de9",
         "type": "tabs",
         "children": [
           {
-            "id": "8d323e9988e9f47f",
+            "id": "a9f16d29f3d00ba7",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "docs/index.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "index"
             }
           }
         ]
@@ -23,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "f824db8ce9b4ba87",
+    "id": "f0ba5910127a576a",
     "type": "split",
     "children": [
       {
-        "id": "e86a33b7dea7239f",
+        "id": "7e2263fd96eba25a",
         "type": "tabs",
         "children": [
           {
-            "id": "f07d8648bda051a1",
+            "id": "ab0b5d82a0da5e11",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +48,7 @@
             }
           },
           {
-            "id": "dff77c3b680eafb5",
+            "id": "aa7231ee7d8436dd",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +65,7 @@
             }
           },
           {
-            "id": "acd8e2687a6bae9e",
+            "id": "c70467fb3ecccb44",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -77,15 +81,15 @@
     "width": 300
   },
   "right": {
-    "id": "f68a8ef7d4c6a78a",
+    "id": "b8806f65f6053132",
     "type": "split",
     "children": [
       {
-        "id": "0e0b38dd4cf11e0f",
+        "id": "1548b9b06137c0ac",
         "type": "tabs",
         "children": [
           {
-            "id": "5a6d8affa99b68a2",
+            "id": "e6b3e965eb273d6a",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -103,7 +107,7 @@
             }
           },
           {
-            "id": "ac4f0f2c16a7a4fc",
+            "id": "0d4677e779460939",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -116,7 +120,7 @@
             }
           },
           {
-            "id": "eb4cb4c3daa1dd81",
+            "id": "7450220ccc584467",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -131,7 +135,21 @@
             }
           },
           {
-            "id": "be4c4cc113acb6b1",
+            "id": "871a236ff382c900",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "500abaad662812ba",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -158,9 +176,57 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
     }
   },
-  "active": "8d323e9988e9f47f",
-  "lastOpenFiles": []
+  "active": "a9f16d29f3d00ba7",
+  "lastOpenFiles": [
+    "docs/Core/Learning System.md",
+    "docs/Tools/Hardware.md",
+    "docs/Tools/Tools.md",
+    "docs/Tools/Automation.md",
+    "docs/Tools/Apps.md",
+    "docs/Core/Direction.md",
+    "docs/Projects/overment.md",
+    "docs/private/profiles/relationships/marta.md",
+    "docs/private/profiles/relationships/kate.md",
+    "docs/private",
+    "docs/Projects/Easytools.md",
+    "docs/Projects/eduweb.md",
+    "docs/Projects/Alice.md",
+    "docs/config/mutagen-sync.md",
+    "docs/Config/mutagen-sync.md",
+    "docs/Config",
+    "docs/AI/resources.md",
+    "docs/AI/aidevs4.md",
+    "docs/public/assets/img/favicons/site.webmanifest",
+    "docs/public/assets/img/favicons/safari-pinned-tab.svg",
+    "docs/public/assets/img/favicons/mstile-150x150.png",
+    "docs/public/assets/img/favicons/mstile-310x310.png",
+    "docs/public/assets/img/favicons/mstile-70x70.png",
+    "docs/public/assets/img/favicons/mstile-310x150.png",
+    "docs/public/assets/img/favicons/mstile-144x144.png",
+    "docs/public/assets/img/favicons/favicon.ico",
+    "docs/public/assets/img/favicons/favicon-32x32.png",
+    "docs/public/assets/img/favicons/favicon-16x16.png",
+    "docs/public/assets/img/favicons/browserconfig.xml",
+    "docs/public/assets/img/favicons/apple-touch-icon.png",
+    "docs/public/assets/img/favicons/android-chrome-512x512.png",
+    "docs/public/assets/img/favicons",
+    "docs/private/profiles/relationships/friends.md",
+    "docs/private/profiles/preferences/music.md",
+    "docs/private/profiles/basic/adam.md",
+    "docs/public/assets/img",
+    "docs/private/profiles/relationships",
+    "docs/private/profiles/preferences",
+    "docs/private/profiles/basic",
+    "docs/YouTube/index.md",
+    "docs/Mental Models/index.md",
+    "docs/Mental Models/The Compound Effect.md",
+    "docs/Mental Models/Status Quo Bias.md",
+    "docs/Mental Models/Mental Models.md",
+    "docs/Mental Models/Leverage.md",
+    "docs/Mental Models/Genius of the AND.md"
+  ]
 }
