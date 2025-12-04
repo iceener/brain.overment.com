@@ -1,1 +1,0 @@
-import{_ as a,c as t,o as r,ag as o}from"./chunks/framework.Bw-5EFTY.js";const d=JSON.parse('{"title":"aidevs4","description":"","frontmatter":{},"headers":[],"relativePath":"AI/aidevs4.md","filePath":"AI/aidevs4.md"}'),s={name:"AI/aidevs4.md"};function i(n,e,l,c,m,h){return r(),t("div",null,e[0]||(e[0]=[o("",2)]))}const g=a(s,[["render",i]]);export{d as __pageData,g as default};
