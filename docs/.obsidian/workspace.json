@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "62d3882da32ed2a6",
+    "id": "90ff17b2626b4c51",
     "type": "split",
     "children": [
       {
-        "id": "5487ed185afa9472",
+        "id": "e5a40c6450703bd9",
         "type": "tabs",
         "children": [
           {
-            "id": "dd77a7645d057e6d",
+            "id": "7dc452dc53519b2e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mega/index.md.md",
+                "file": "AI/resources.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index.md"
+              "title": "resources"
             }
           }
         ]
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "57a9064af0dcba7a",
+    "id": "f824db8ce9b4ba87",
     "type": "split",
     "children": [
       {
-        "id": "8e2c76f523ab7a62",
+        "id": "e86a33b7dea7239f",
         "type": "tabs",
         "children": [
           {
-            "id": "0c57d14fcf54e7a5",
+            "id": "f07d8648bda051a1",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,12 +48,12 @@
             }
           },
           {
-            "id": "4656c3629fed332e",
+            "id": "dff77c3b680eafb5",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "happines",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,17 +65,7 @@
             }
           },
           {
-            "id": "c1925c2a556b9882",
-            "type": "leaf",
-            "state": {
-              "type": "starred",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "404e37f8c8f32d47",
+            "id": "acd8e2687a6bae9e",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -88,24 +78,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
-    "id": "b88000dbb0ddc25a",
+    "id": "f68a8ef7d4c6a78a",
     "type": "split",
     "children": [
       {
-        "id": "9126514be83f5126",
+        "id": "0e0b38dd4cf11e0f",
         "type": "tabs",
         "children": [
           {
-            "id": "0959a9cb7af8a6a6",
+            "id": "5a6d8affa99b68a2",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tools/Apps.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,46 +103,63 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Apps"
+              "title": "Backlinks"
             }
           },
           {
-            "id": "6cc4d6abd7416de9",
+            "id": "ac4f0f2c16a7a4fc",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Tools/Apps.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Apps"
+              "title": "Outgoing links"
             }
           },
           {
-            "id": "9872eb82918c7652",
+            "id": "eb4cb4c3daa1dd81",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "Tags"
             }
           },
           {
-            "id": "b725d0a6be54d7c2",
+            "id": "be4c4cc113acb6b1",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tools/Apps.md"
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Apps"
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "8364294320fb8b96",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
             }
           }
         ]
@@ -166,61 +171,51 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "templates:Insert template": false,
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
       "command-palette:Open command palette": false
     }
   },
-  "active": "dd77a7645d057e6d",
+  "active": "7dc452dc53519b2e",
   "lastOpenFiles": [
-    "index.md",
-    "Mega/index.md.md",
-    "Mega",
-    "Mental Models/index.md",
-    "Business/index.md",
-    "Business",
-    "AI/index.md",
-    "Programming/index.md",
-    "Programming",
-    "vite.config.js",
+    "workshops/Generative Fundaments.md",
     "map.md",
-    "time.html",
+    "AI/Personal AGI.md",
+    "index.html",
+    "ergodicity.md",
+    "Config/mutagen-sync.md",
+    "AI/resources.md",
+    "Core/Learning System.md",
+    "Core/Knowing thyself.md",
+    "Config/mlx_audio.md",
     "qa.md",
-    "public/assets/img/favicons/site.webmanifest",
-    "public/assets/img/favicons/safari-pinned-tab.svg",
-    "public/assets/img/favicons/mstile-70x70.png",
-    "public/assets/img/favicons/mstile-310x310.png",
-    "public/assets/img/favicons/mstile-310x150.png",
-    "public/assets/img/favicons/mstile-150x150.png",
-    "public/assets/img/favicons/mstile-144x144.png",
-    "public/assets/img/favicons/favicon.ico",
-    "public/assets/img/favicons/favicon-32x32.png",
-    "public/assets/img/favicons/favicon-16x16.png",
-    "public/assets/img/favicons/browserconfig.xml",
-    "public/assets/img/favicons/apple-touch-icon.png",
-    "public/assets/img/favicons/android-chrome-512x512.png",
-    "public/assets/img/favicons",
-    "public/assets/img",
-    "Tools/Tools.md",
-    "Tools/Hardware.md",
-    "Tools/Automation.md",
-    "Tools/Apps.md",
-    "Sharing/LangChain.md",
-    "Sharing/JavaScript.md",
-    "Projects/easy_.md",
-    "Projects/Techsistence.md",
-    "Projects/overment.md",
-    "Projects/eduweb.md",
+    "Untitled 1.base",
+    "Untitled.base",
+    "index.md",
+    "Books/All I want to Know is Where Im Going to Die So Ill Never Go There.md",
+    "crypto.md",
+    "design/prompts/mountain_landscape_seedream4_16x9_2025-12-12.md",
+    "agent/websearch.md",
+    "private/profiles/basic/adam.md",
+    "private/profiles/preferences/music.md",
     "Projects/Alice.md",
-    "Mental Models/The Compound Effect.md",
-    "Mental Models/Status Quo Bias.md",
-    "Mental Models/Mental Models.md",
-    "Mental Models/Leverage.md",
-    "Mental Models/Genius of the AND.md",
-    "Mental Models/Ergodicity.md",
-    "Mental Models/Commitment Bias.md"
+    "knowledge/crypto.md",
+    "knowledge",
+    "private/workflows/linear.md",
+    "private/workflows/training-routine.md",
+    "private/training/training-routine.md",
+    "private/workflows/daily-updates.md",
+    "the5/zarzadzanie.md",
+    "the5/the5-tomasz-karwatka.md",
+    "the5/sales_pricing.md",
+    "the5",
+    "private/training/progress/2025-12",
+    "private/training/progress",
+    "private/training",
+    "workshops"
   ]
 }
