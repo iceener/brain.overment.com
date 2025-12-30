@@ -1,1 +1,0 @@
-import{_ as l,c as e,o as i,ag as t}from"./chunks/framework.Bw-5EFTY.js";const h=JSON.parse('{"title":"Project Structure","description":"","frontmatter":{},"headers":[],"relativePath":"map.md","filePath":"map.md"}'),o={name:"map.md"};function r(d,a,s,n,m,u){return i(),e("div",null,a[0]||(a[0]=[t("",17)]))}const p=l(o,[["render",r]]);export{h as __pageData,p as default};
