@@ -6,6 +6,9 @@ docs/.vitepress/dist/
 docs/.vitepress/cache/
 docs/Mega
 docs/private
+docs/Journal
+docs/Youtube
+docs/Personal
 # macOS metadata
 .DS_Store
 **/.DS_Store
