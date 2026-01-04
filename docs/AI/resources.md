@@ -4,6 +4,7 @@
 - [On the Fundamental Limits of LLMs at Scale](https://arxiv.org/abs/2511.12869)
 - [Solving a Million-Step LLM Task with Zero Errors](https://arxiv.org/abs/2511.09030) (Meyerson et al., 2025) — MAKER uses microagents + voting-based error correction to run 1M+ LLM steps with zero errors.
 - https://arxiv.org/pdf/2510.04618
+- [Towards a Science of Scaling Agent System](https://arxiv.org/pdf/2512.08296)
 
 Word2Vec (2013) - arXiv:1301.3781
 Contextualized Word Embeddings (2020) - arXiv:2010.13057
@@ -34,3 +35,4 @@ Demystifying Embedding Spaces using Large Language Models (2023) - arXiv:2310.04
 - [Nano banana](https://github.com/ZeroLu/awesome-nanobanana-pro)
 - https://rlancemartin.github.io/2025/10/15/manus/
 - [Stanford Online – Lecture on LLMs](https://www.youtube.com/watch?v=Ub3GoFaUcds)
+- [Recursive Language Models: the paradigm of 2026](https://www.primeintellect.ai/blog/rlm)

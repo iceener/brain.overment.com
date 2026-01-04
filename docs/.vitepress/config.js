@@ -71,7 +71,10 @@ export default defineConfig({
     sidebar: [
       {
         text: "",
-        items: [{ text: "What is this?", link: "/" }],
+        items: [
+          { text: "What is this?", link: "/" },
+          { text: "Connect", link: "/newsletter" },
+        ],
       },
       {
         text: "Me",
