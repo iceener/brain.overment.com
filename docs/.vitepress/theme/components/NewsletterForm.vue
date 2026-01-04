@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 
 const email = ref('')
 const firstName = ref('')
-const status = ref('idle') // idle | loading | success | exists | error
+const status = ref('idle') // idle | loading | success | exists | error | invalid
 const message = ref('')
 
 const isValidEmail = computed(() => {
@@ -86,10 +86,14 @@ const subscribe = async () => {
       </button>
     </form>
     
-    <Transition name="fade">
-      <p v-if="message" class="message" :class="`message-${status}`">
-        {{ message }}
-      </p>
+    <Transition name="slide-fade">
+      <div v-if="message" class="status-message" :class="status">
+        <div class="status-icon">
+          <svg v-if="status === 'success' || status === 'exists'" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg v-else width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        </div>
+        <span>{{ message }}</span>
+      </div>
     </Transition>
   </div>
 </template>
@@ -119,13 +123,13 @@ const subscribe = async () => {
   border-radius: 8px;
   background: var(--vp-c-bg-soft);
   color: var(--vp-c-text-1);
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: all 0.2s ease;
 }
 
 .input-field:focus {
   outline: none;
   border-color: var(--vp-c-brand-1);
-  box-shadow: 0 0 0 3px rgba(var(--vp-c-brand-1-rgb), 0.1);
+  background: var(--vp-c-bg);
 }
 
 .input-field:disabled {
@@ -146,7 +150,7 @@ const subscribe = async () => {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,15 +160,17 @@ const subscribe = async () => {
 
 .submit-btn:hover:not(:disabled) {
   background: var(--vp-c-brand-2);
+  transform: translateY(-1px);
 }
 
 .submit-btn:active:not(:disabled) {
-  transform: scale(0.98);
+  transform: translateY(0);
 }
 
 .btn-disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  background: var(--vp-c-gray-3);
 }
 
 .btn-loading {
@@ -184,39 +190,44 @@ const subscribe = async () => {
   to { transform: rotate(360deg); }
 }
 
-.message {
+.status-message {
   margin-top: 1rem;
-  padding: 0.875rem 1rem;
-  border-radius: 8px;
-  font-size: 0.9375rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--vp-c-text-2);
 }
 
-.message-success {
-  background: rgba(34, 197, 94, 0.1);
-  color: #22c55e;
-  border: 1px solid rgba(34, 197, 94, 0.2);
+.status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.message-exists {
-  background: rgba(59, 130, 246, 0.1);
-  color: #3b82f6;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+.status-message.success,
+.status-message.exists {
+  color: var(--vp-c-brand-1);
 }
 
-.message-error,
-.message-invalid {
-  background: rgba(239, 68, 68, 0.1);
-  color: #ef4444;
-  border: 1px solid rgba(239, 68, 68, 0.2);
+.status-message.error,
+.status-message.invalid {
+  color: var(--vp-c-danger-1);
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
 }
 
-.fade-enter-from,
-.fade-leave-to {
+.slide-fade-leave-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(-10px);
   opacity: 0;
 }
 
@@ -234,4 +245,3 @@ const subscribe = async () => {
   }
 }
 </style>
-
