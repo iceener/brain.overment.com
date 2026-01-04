@@ -4,16 +4,22 @@ import { ref, computed } from 'vue'
 const email = ref('')
 const status = ref('idle') // idle | loading | success | exists | error
 const message = ref('')
+const touched = ref(false)
 
 const isValidEmail = computed(() => {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim().toLowerCase())
 })
 
 const canSubmit = computed(() => {
   return isValidEmail.value && status.value !== 'loading'
 })
 
+const showValidationError = computed(() => {
+  return touched.value && email.value.length > 0 && !isValidEmail.value
+})
+
 const subscribe = async () => {
+  touched.value = true
   if (!canSubmit.value) return
   
   status.value = 'loading'
@@ -36,12 +42,12 @@ const subscribe = async () => {
     const data = await response.json()
     status.value = data.status || (response.ok ? 'success' : 'error')
     
-    // Human messages, not system messages
     if (status.value === 'success') {
-      message.value = "Got it. Talk soon."
+      message.value = data.message || 'Got it. Talk soon.'
       email.value = ''
+      touched.value = false
     } else if (status.value === 'exists') {
-      message.value = "You're already on the list!"
+      message.value = data.message || "You're already on the list."
     } else {
       message.value = data.message || "Hmm, that didn't work. Try again?"
     }
@@ -53,200 +59,190 @@ const subscribe = async () => {
 </script>
 
 <template>
-  <div class="connect-form">
-    <!-- Success state: clean and warm -->
-    <Transition name="fade" mode="out-in">
-      <div v-if="status === 'success'" class="success-state">
-        <span class="success-text">{{ message }}</span>
-      </div>
-      
-      <!-- Form state -->
-      <form v-else @submit.prevent="subscribe" class="form-row">
-        <div class="input-wrapper">
-          <input
-            v-model="email"
-            type="email"
-            placeholder="your email"
-            class="email-input"
-            :class="{ 'has-value': email.length > 0 }"
-            :disabled="status === 'loading'"
-            autocomplete="email"
-          />
-          <div class="input-line"></div>
-        </div>
-        
-        <button 
-          type="submit" 
-          class="send-btn"
-          :class="{ 'is-loading': status === 'loading', 'is-ready': canSubmit }"
-          :disabled="!canSubmit"
-        >
-          <span v-if="status === 'loading'" class="loading-dots">
-            <span></span><span></span><span></span>
-          </span>
-          <span v-else>→</span>
-        </button>
-      </form>
-    </Transition>
-    
-    <!-- Error/exists message -->
-    <Transition name="slide">
-      <p v-if="message && status !== 'success'" class="feedback" :class="status">
-        {{ message }}
+  <div class="connectForm">
+    <form class="connectForm__form" @submit.prevent="subscribe">
+      <input
+        v-model="email"
+        class="connectForm__input"
+        :class="{ 'is-invalid': showValidationError }"
+        type="email"
+        inputmode="email"
+        autocomplete="email"
+        placeholder="your@email.com"
+        :disabled="status === 'loading'"
+        :aria-invalid="showValidationError ? 'true' : 'false'"
+        @blur="touched = true"
+      />
+
+      <button
+        class="connectForm__button"
+        type="submit"
+        :disabled="!canSubmit"
+      >
+        <span v-if="status === 'loading'">Sending…</span>
+        <span v-else>I'm in</span>
+      </button>
+    </form>
+
+    <Transition name="fade">
+      <p v-if="showValidationError" class="connectForm__hint connectForm__hint--error">
+        That email doesn’t look right.
       </p>
+    </Transition>
+
+    <Transition name="fade">
+      <div
+        v-if="message && !showValidationError"
+        class="connectForm__notice"
+        :class="`is-${status}`"
+        role="status"
+        aria-live="polite"
+      >
+        <span class="connectForm__noticeIcon" aria-hidden="true">
+          <svg v-if="status === 'success' || status === 'exists'" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+          <svg v-else width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 8v4" /><path d="M12 16h.01" /></svg>
+        </span>
+        <span class="connectForm__noticeText">{{ message }}</span>
+      </div>
     </Transition>
   </div>
 </template>
 
 <style scoped>
-.connect-form {
-  max-width: 340px;
-  margin: 2.5rem 0;
+.connectForm {
+  max-width: 420px;
+  margin: 2rem 0;
 }
 
-.form-row {
+.connectForm__form {
   display: flex;
+  gap: 10px;
   align-items: center;
-  gap: 1rem;
 }
 
-.input-wrapper {
+.connectForm__input {
   flex: 1;
-  position: relative;
-}
-
-.email-input {
-  width: 100%;
-  padding: 0.75rem 0;
-  font-size: 1.1rem;
-  font-family: inherit;
+  height: 40px;
+  border-radius: 8px;
+  padding: 0 12px;
+  border: 1px solid var(--vp-input-border-color);
+  background-color: var(--vp-input-bg-color);
+  color: var(--vp-c-text-1);
+  font-size: 14px;
+  font-weight: 500;
   letter-spacing: -0.01em;
-  color: var(--vp-c-text-1);
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--vp-c-divider);
-  outline: none;
-  transition: all 0.3s ease;
+  transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s;
 }
 
-.email-input::placeholder {
-  color: var(--vp-c-text-3);
-  font-style: italic;
-  opacity: 0.7;
+.connectForm__input::placeholder {
+  color: var(--vp-c-text-2);
+  opacity: 0.75;
 }
 
-.email-input:focus {
-  border-color: var(--vp-c-text-2);
+.connectForm__input:hover {
+  border-color: var(--vp-c-border);
 }
 
-.email-input.has-value {
-  border-color: var(--vp-c-text-2);
-}
-
-.email-input:disabled {
-  opacity: 0.5;
-}
-
-.input-line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--vp-c-brand-1);
-  transition: width 0.3s ease;
-}
-
-.email-input:focus ~ .input-line,
-.email-input.has-value ~ .input-line {
-  width: 100%;
-}
-
-.send-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  font-size: 1.5rem;
-  color: var(--vp-c-text-3);
-  background: transparent;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.send-btn:disabled {
-  cursor: not-allowed;
-  opacity: 0.4;
-}
-
-.send-btn.is-ready {
-  color: var(--vp-c-text-1);
-  border-color: var(--vp-c-text-2);
-}
-
-.send-btn.is-ready:hover {
-  color: var(--vp-c-brand-1);
+.connectForm__input:focus {
   border-color: var(--vp-c-brand-1);
-  transform: translateX(4px);
+  box-shadow: 0 0 0 3px var(--vp-c-brand-soft);
 }
 
-.send-btn.is-loading {
-  border-color: var(--vp-c-text-3);
+.connectForm__input:disabled {
+  opacity: 0.6;
 }
 
-.loading-dots {
+.connectForm__input.is-invalid {
+  border-color: var(--vp-c-danger-1);
+  box-shadow: 0 0 0 3px var(--vp-c-danger-soft);
+}
+
+.connectForm__button {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: var(--vp-button-alt-bg);
+  color: var(--vp-button-alt-text);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: color 0.25s, border-color 0.25s, background-color 0.25s;
+  white-space: nowrap;
+}
+
+.connectForm__button:hover:enabled {
+  border-color: var(--vp-c-brand-1);
+  background-color: var(--vp-button-alt-hover-bg);
+}
+
+.connectForm__button:active:enabled {
+  background-color: var(--vp-button-alt-active-bg);
+}
+
+.connectForm__button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.connectForm__hint {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--vp-c-text-2);
+}
+
+.connectForm__hint--error {
+  color: var(--vp-c-danger-1);
+}
+
+.connectForm__notice {
+  margin-top: 12px;
   display: flex;
-  gap: 3px;
-}
-
-.loading-dots span {
-  width: 4px;
-  height: 4px;
-  background: var(--vp-c-text-2);
-  border-radius: 50%;
-  animation: bounce 1.4s ease-in-out infinite both;
-}
-
-.loading-dots span:nth-child(1) { animation-delay: -0.32s; }
-.loading-dots span:nth-child(2) { animation-delay: -0.16s; }
-.loading-dots span:nth-child(3) { animation-delay: 0s; }
-
-@keyframes bounce {
-  0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
-  40% { transform: scale(1); opacity: 1; }
-}
-
-.success-state {
-  padding: 1rem 0;
-}
-
-.success-text {
-  font-size: 1.1rem;
+  gap: 10px;
+  align-items: flex-start;
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  background-color: var(--vp-c-default-soft);
   color: var(--vp-c-text-1);
-  font-style: italic;
 }
 
-.feedback {
-  margin-top: 1rem;
-  font-size: 0.9rem;
+.connectForm__noticeIcon {
+  margin-top: 1px;
   color: var(--vp-c-text-2);
 }
 
-.feedback.error {
-  color: var(--vp-c-text-2);
+.connectForm__noticeText {
+  font-size: 14px;
+  line-height: 20px;
 }
 
-.feedback.exists {
-  color: var(--vp-c-text-2);
+.connectForm__notice.is-success,
+.connectForm__notice.is-exists {
+  border-color: var(--vp-c-brand-1);
+  border-color: color-mix(in srgb, var(--vp-c-brand-1) 25%, transparent);
+  background-color: var(--vp-c-brand-soft);
 }
 
-/* Transitions */
+.connectForm__notice.is-success .connectForm__noticeIcon,
+.connectForm__notice.is-exists .connectForm__noticeIcon {
+  color: var(--vp-c-brand-1);
+}
+
+.connectForm__notice.is-error {
+  border-color: var(--vp-c-danger-1);
+  border-color: color-mix(in srgb, var(--vp-c-danger-1) 35%, transparent);
+  background-color: var(--vp-c-danger-soft);
+}
+
+.connectForm__notice.is-error .connectForm__noticeIcon {
+  color: var(--vp-c-danger-1);
+}
+
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s;
 }
 
 .fade-enter-from,
@@ -254,20 +250,14 @@ const subscribe = async () => {
   opacity: 0;
 }
 
-.slide-enter-active {
-  transition: all 0.3s ease-out;
-}
+@media (max-width: 520px) {
+  .connectForm__form {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-.slide-leave-active {
-  transition: all 0.2s ease-in;
-}
-
-.slide-enter-from {
-  opacity: 0;
-  transform: translateY(-8px);
-}
-
-.slide-leave-to {
-  opacity: 0;
+  .connectForm__button {
+    width: 100%;
+  }
 }
 </style>
