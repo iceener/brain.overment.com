@@ -1,0 +1,1 @@
+import{_ as e,c as t,o}from"./chunks/framework.V7jGl-OZ.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Simplify.md","filePath":"Books/Simplify.md"}'),a={name:"Books/Simplify.md"};function s(i,r,c,n,p,m){return o(),t("div")}const _=e(a,[["render",s]]);export{l as __pageData,_ as default};

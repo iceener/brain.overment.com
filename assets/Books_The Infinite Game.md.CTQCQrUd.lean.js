@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./chunks/framework.Bw-5EFTY.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/The Infinite Game.md","filePath":"Books/The Infinite Game.md"}'),n={name:"Books/The Infinite Game.md"};function o(s,i,r,c,m,_){return a(),t("div")}const d=e(n,[["render",o]]);export{p as __pageData,d as default};

@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./chunks/framework.Bw-5EFTY.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Skin in The Game.md","filePath":"Books/Skin in The Game.md"}'),n={name:"Books/Skin in The Game.md"};function o(s,i,r,c,_,m){return a(),t("div")}const k=e(n,[["render",o]]);export{d as __pageData,k as default};

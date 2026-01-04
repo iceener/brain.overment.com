@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as t}from"./chunks/framework.V7jGl-OZ.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Seeking Wisdom.md","filePath":"Books/Seeking Wisdom.md"}'),s={name:"Books/Seeking Wisdom.md"};function a(n,i,r,c,d,m){return t(),o("div")}const k=e(s,[["render",a]]);export{p as __pageData,k as default};

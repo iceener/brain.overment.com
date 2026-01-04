@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.V7jGl-OZ.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Mental Models/BHAG.md","filePath":"Mental Models/BHAG.md"}'),o={name:"Mental Models/BHAG.md"};function s(n,r,c,d,l,p){return a(),t("div")}const m=e(o,[["render",s]]);export{i as __pageData,m as default};

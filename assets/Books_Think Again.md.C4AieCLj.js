@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.V7jGl-OZ.js";const k=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Think Again.md","filePath":"Books/Think Again.md"}'),n={name:"Books/Think Again.md"};function o(s,i,r,c,_,p){return a(),t("div")}const m=e(n,[["render",o]]);export{k as __pageData,m as default};

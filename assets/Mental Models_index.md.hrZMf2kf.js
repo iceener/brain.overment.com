@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./chunks/framework.Bw-5EFTY.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Mental Models/index.md","filePath":"Mental Models/index.md"}'),n={name:"Mental Models/index.md"};function o(s,r,d,c,i,l){return a(),t("div")}const m=e(n,[["render",o]]);export{_ as __pageData,m as default};

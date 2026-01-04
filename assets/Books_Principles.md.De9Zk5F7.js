@@ -1,1 +1,0 @@
-import{_ as e,c as t,o}from"./chunks/framework.Bw-5EFTY.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Principles.md","filePath":"Books/Principles.md"}'),s={name:"Books/Principles.md"};function r(a,c,n,i,p,l){return o(),t("div")}const m=e(s,[["render",r]]);export{d as __pageData,m as default};

@@ -1,0 +1,1 @@
+import{_ as t,c as o,o as e}from"./chunks/framework.V7jGl-OZ.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/War of Art.md","filePath":"Books/War of Art.md"}'),r={name:"Books/War of Art.md"};function a(s,c,n,_,f,p){return e(),o("div")}const m=t(r,[["render",a]]);export{i as __pageData,m as default};

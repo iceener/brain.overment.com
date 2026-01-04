@@ -1,0 +1,1 @@
+import{_ as e,c as t,o}from"./chunks/framework.V7jGl-OZ.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/The Dip.md","filePath":"Books/The Dip.md"}'),a={name:"Books/The Dip.md"};function s(r,c,n,p,i,_){return o(),t("div")}const f=e(a,[["render",s]]);export{m as __pageData,f as default};
